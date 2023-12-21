@@ -8,6 +8,7 @@ import { auth } from "../../../config/firebase";
 import {createUserWithEmailAndPassword} from "firebase/auth"
 import { useFormik } from "formik";
 import * as yup from "yup";
+import "./signIn.css"
 
 const validationSchema = yup.object({
   email: yup.string().email("Invalid email address").required("Required"),
@@ -36,8 +37,8 @@ export default function SignIn() {
     <div className="min-h-screen flex flex-col sm:flex-row">
       <div className="flex-1 py-16 flex flex-col justify-center px-4 sm:px-6  lg:px-20 xl:px-24">
         <div className="mx-auto w-full max-w-sm lg:max-w-md xl:max-w-lg">
-          <div className="mx-auto  sm:text-center">
-            <Image alt="Golobe" className="h-12 w-auto" src={Logo} width={100} />
+          <div className="mx-auto form__header">
+            <Image alt="Golobe" className="h-12 w-44" src={Logo} width={100} />
             <h2 className="mt-6 text-3xl font-extrabold text-gray-900">Login</h2>
             <p className="mt-2 text-sm text-gray-600">
               Login to access your Golobe account

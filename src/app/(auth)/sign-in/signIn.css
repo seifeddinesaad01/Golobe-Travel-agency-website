@@ -1,0 +1,13 @@
+.form__header{
+    display: flex;
+    flex-direction: column;
+}
+@media screen and (max-width: 640px) {
+    .form__header {
+      align-items: center;
+      justify-self: center;
+      align-self: center;
+      text-align: center;
+    }
+  }
+  
