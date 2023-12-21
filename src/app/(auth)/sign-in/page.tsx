@@ -185,7 +185,7 @@ export default function SignIn() {
           </div>
         </div>
       </div>
-      <div className="flex-1 flex justify-center py-16 ">
+      <div className="flex-1 flex justify-center py-16 image">
         <Image
           alt="Hotel resort"
           className="object-cover object-center rounded-lg"

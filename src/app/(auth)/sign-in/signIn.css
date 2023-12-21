@@ -9,5 +9,8 @@
       align-self: center;
       text-align: center;
     }
+    .image{
+        display: none;
+    }
   }
   
