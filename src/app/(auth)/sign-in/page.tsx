@@ -124,7 +124,7 @@ export default function SignIn() {
                   className="relative flex justify-center text-sm pb-4"
                 >
                   <p>
-                    Don’t have an account?{" "}
+                    Don’t have an account?
                     <span
 
                       style={{
