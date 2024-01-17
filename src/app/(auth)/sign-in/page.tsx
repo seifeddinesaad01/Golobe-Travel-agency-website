@@ -5,10 +5,14 @@ import Logo from "../../../../public/Logo.png";
 import SignInImage from "../../../../public/SignIn/sideImage.png";
 import { FaGoogle, FaApple, FaFacebook } from "react-icons/fa";
 import { auth } from "../../../config/firebase";
-import {createUserWithEmailAndPassword} from "firebase/auth"
+import { createUserWithEmailAndPassword } from "firebase/auth"
 import { useFormik } from "formik";
 import * as yup from "yup";
 import "./signIn.css"
+import Link from "next/link";
+import {useRouter} from "next/navigation";
+import GuestGuard from "@/components/GuestGuard/GuestGuard";
+
 
 const validationSchema = yup.object({
   email: yup.string().email("Invalid email address").required("Required"),
@@ -16,6 +20,7 @@ const validationSchema = yup.object({
 });
 
 export default function SignIn() {
+  const router=useRouter();
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -23,10 +28,12 @@ export default function SignIn() {
     },
     validationSchema: validationSchema,
     onSubmit: async (values) => {
-      console.log("Form submitted with values:", values);
-
       try {
-        await createUserWithEmailAndPassword(auth, values.email, values.password);
+        const userCredential:any = await createUserWithEmailAndPassword(auth, values.email, values.password);
+        // Access the user information from the UserCredential object
+        const user = userCredential.user;
+        localStorage.setItem('userToken', JSON.stringify(user?.accessToken));
+        router.push("/home");
       } catch (err) {
         console.error(err);
       }
@@ -34,6 +41,7 @@ export default function SignIn() {
   });
 
   return (
+    <GuestGuard>
     <div className="min-h-screen flex flex-col sm:flex-row">
       <div className="flex-1 py-16 flex flex-col justify-center px-4 sm:px-6  lg:px-20 xl:px-24">
         <div className="mx-auto w-full max-w-sm lg:max-w-md xl:max-w-lg">
@@ -57,11 +65,10 @@ export default function SignIn() {
                 <div className="mt-1">
                   <input
                     autoComplete="email"
-                    className={`${
-                      formik.touched.email && formik.errors.email
-                        ? "border-red-300"
-                        : "border-gray-300"
-                    } appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}
+                    className={`${formik.touched.email && formik.errors.email
+                      ? "border-red-300"
+                      : "border-gray-300"
+                      } appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}
                     id="email"
                     name="email"
                     placeholder="john.doe@gmail.com"
@@ -85,11 +92,10 @@ export default function SignIn() {
                 <div className="mt-1">
                   <input
                     autoComplete="current-password"
-                    className={`${
-                      formik.touched.password && formik.errors.password
-                        ? "border-red-300"
-                        : "border-gray-300"
-                    } appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}
+                    className={`${formik.touched.password && formik.errors.password
+                      ? "border-red-300"
+                      : "border-gray-300"
+                      } appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}
                     id="password"
                     name="password"
                     placeholder="******************"
@@ -125,22 +131,24 @@ export default function SignIn() {
                 >
                   <p>
                     Don’t have an account?
-                    <span
-
+                    <Link
+                      href="/sign-up"
                       style={{
                         color: "#ff8682ff",
-                        fontSize: "1.1rem",
+                        fontSize: "1rem",
                         cursor: "pointer",
+                        paddingLeft: "0.5rem",
+                        fontWeight: '500'
                       }}
                     >
                       Sign up
-                    </span>
+                    </Link>
                   </p>
                 </div>
                 <div className="relative flex justify-center text-sm">
-                  <span className="px-2 bg-white text-gray-500">
-                    Or login with
-                  </span>
+                  <div className="relative flex justify-center text-sm">
+                    <span className="px-2 bg-white text-gray-500">Or Sign up with</span>
+                  </div>
                 </div>
               </div>
               <div className="mt-6 flex flex-wrap  justify-center gap-3 w-full">
@@ -194,5 +202,6 @@ export default function SignIn() {
         />
       </div>
     </div>
+    </GuestGuard>
   );
 }

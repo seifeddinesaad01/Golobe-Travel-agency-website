@@ -5,18 +5,19 @@ import SignInImage from "../../../../public/SignIn/sideImage.png";
 import Logo from "../../../../public/Logo.png";
 import { FaGoogle, FaApple, FaFacebook } from "react-icons/fa";
 import Image from "next/image";
+import Link from "next/link";
 export default function Component() {
   return (
     <div className="min-h-screen bg-white flex">
       <div
-        className="flex justify-center items-center  lg:w-1/2 py-16 px-8"
+        className="flex justify-center items-center  lg:w-1/2  py-16 px-8"
       >
-        <Image src={SignInImage} alt="image"  className=" h-full"/>
+        <Image src={SignInImage} alt="image" className="h-full" />
       </div>
       <div className="w-full lg:w-1/2 p-8">
         <div className="w-full">
           <div className="mb-6">
-            <Image src={Logo} alt="logo" className="mb-4"/>
+            <Image src={Logo} alt="logo" className="mb-4" />
             <h1 className="text-4xl font-bold mt-2 mb-6">Sign up</h1>
             <p className="text-gray-600">Let’s get you all set up so you can access your personal account.</p>
           </div>
@@ -71,16 +72,25 @@ export default function Component() {
                 I agree to all the
               </label>
             </div>
-            <Button className="w-full text-black"  style={{
-                    backgroundColor: "#8cd4b9ff",
-                  }}>Create account</Button>
+            <Button className="w-full text-black" style={{
+              backgroundColor: "#8cd4b9ff",
+            }}>Create account</Button>
           </form>
           <div className="mt-6 text-center">
             <p className="text-sm">
               Already have an account?{" "}
-              <a className="text-indigo-600 hover:text-indigo-500" href="#">
+              <Link
+                href="/sign-in"
+                style={{
+                  color: "#ff8682ff",
+                  fontSize: "1rem",
+                  cursor: "pointer",
+                  paddingLeft:"0.5rem",
+                  fontWeight:'500'
+                }}
+                 className="text-indigo-600 hover:text-indigo-500">
                 Login
-              </a>
+              </Link>
             </p>
           </div>
           <div className="mt-6">
