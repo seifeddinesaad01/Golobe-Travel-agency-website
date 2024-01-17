@@ -4,8 +4,8 @@ import Image from "next/image";
 import Logo from "../../../../public/Logo.png";
 import SignInImage from "../../../../public/SignIn/sideImage.png";
 import { FaGoogle, FaApple, FaFacebook } from "react-icons/fa";
-import { auth } from "../../../config/firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth"
+import { auth, googleProvider } from "../../../config/firebase";
+import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth"
 import { useFormik } from "formik";
 import * as yup from "yup";
 import "./signIn.css"
@@ -39,6 +39,13 @@ export default function SignIn() {
       }
     },
   });
+  const signInWithGoogle = async () => {
+    try {
+      await signInWithPopup(auth, googleProvider);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   return (
     <GuestGuard>
@@ -152,42 +159,39 @@ export default function SignIn() {
                 </div>
               </div>
               <div className="mt-6 flex flex-wrap  justify-center gap-3 w-full">
-                <div className="w-1/4">
-                  <a
+                <button className="w-1/4">
+                  <div
                     className="w-full inline-flex justify-center py-2 px-4 border border-green-300 rounded-md shadow-sm bg-white text-sm font-medium  hover:bg-gray-50"
-                    href="#"
                     style={{
                       padding: "1rem",
                     }}
                   >
                     <span className="sr-only">Sign in with Facebook</span>
                     <FaFacebook color="#1877f2ff" />
-                  </a>
-                </div>
-                <div className="w-1/4">
-                  <a
+                  </div>
+                </button>
+                <button type="submit" className="w-1/4" onClick={signInWithGoogle}>
+                  <div
                     className="w-full inline-flex justify-center py-2 px-4 border border-green-300 rounded-md shadow-sm bg-white text-sm font-medium  hover:bg-gray-50"
-                    href="#"
                     style={{
                       padding: "1rem",
                     }}
                   >
                     <span className="sr-only">Sign in with Google</span>
                     <FaGoogle />
-                  </a>
-                </div>
-                <div className="w-1/4">
-                  <a
+                  </div>
+                </button>
+                <button className="w-1/4">
+                  <div
                     className="w-full inline-flex justify-center py-2 px-4 border border-green-300 rounded-md shadow-sm bg-white text-sm font-medium  hover:bg-gray-50"
-                    href="#"
                     style={{
                       padding: "1rem",
                     }}
                   >
                     <span className="sr-only">Sign in with Apple</span>
                     <FaApple />
-                  </a>
-                </div>
+                  </div>
+                </button>
               </div>
             </div>
           </div>
