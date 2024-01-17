@@ -3,8 +3,9 @@ import React from "react";
 import Image from "next/image";
 import Logo from "../../../../public/Logo.png";
 import SignInImage from "../../../../public/SignIn/sideImage.png";
-import { FaGoogle, FaApple, FaFacebook } from "react-icons/fa";
-import { auth, googleProvider } from "../../../config/firebase";
+import { FaGoogle, FaApple, FaGithub } from "react-icons/fa";
+
+import { auth, googleProvider, githubProvider } from "../../../config/firebase";
 import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth"
 import { useFormik } from "formik";
 import * as yup from "yup";
@@ -46,6 +47,16 @@ export default function SignIn() {
       console.error(err);
     }
   };
+  const signInWithGitHub = async () => {
+    try {
+      const result = await signInWithPopup(auth, githubProvider);
+      const user = result.user;
+      console.log("GitHub user:", user);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+  
 
   return (
     <GuestGuard>
@@ -159,15 +170,15 @@ export default function SignIn() {
                 </div>
               </div>
               <div className="mt-6 flex flex-wrap  justify-center gap-3 w-full">
-                <button className="w-1/4">
+                <button onClick={signInWithGitHub} className="w-1/4">
                   <div
                     className="w-full inline-flex justify-center py-2 px-4 border border-green-300 rounded-md shadow-sm bg-white text-sm font-medium  hover:bg-gray-50"
                     style={{
                       padding: "1rem",
                     }}
                   >
-                    <span className="sr-only">Sign in with Facebook</span>
-                    <FaFacebook color="#1877f2ff" />
+                    <span className="sr-only">Sign in with Github</span>
+                    <FaGithub fontSize="1.2rem"/>
                   </div>
                 </button>
                 <button type="submit" className="w-1/4" onClick={signInWithGoogle}>
@@ -178,18 +189,7 @@ export default function SignIn() {
                     }}
                   >
                     <span className="sr-only">Sign in with Google</span>
-                    <FaGoogle />
-                  </div>
-                </button>
-                <button className="w-1/4">
-                  <div
-                    className="w-full inline-flex justify-center py-2 px-4 border border-green-300 rounded-md shadow-sm bg-white text-sm font-medium  hover:bg-gray-50"
-                    style={{
-                      padding: "1rem",
-                    }}
-                  >
-                    <span className="sr-only">Sign in with Apple</span>
-                    <FaApple />
+                    <FaGoogle fontSize="1.2rem"/>
                   </div>
                 </button>
               </div>
