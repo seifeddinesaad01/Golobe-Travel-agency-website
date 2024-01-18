@@ -6,14 +6,14 @@ import SignInImage from "../../../../public/SignIn/sideImage.png";
 import { FaGoogle, FaApple, FaGithub } from "react-icons/fa";
 
 import { auth, googleProvider, githubProvider } from "../../../config/firebase";
-import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth"
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth"
 import { useFormik } from "formik";
 import * as yup from "yup";
 import "./signIn.css"
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import GuestGuard from "@/components/GuestGuard/GuestGuard";
-
+import { notification } from "antd"
 
 const validationSchema = yup.object({
   email: yup.string().email("Invalid email address").required("Required"),
@@ -21,6 +21,7 @@ const validationSchema = yup.object({
 });
 
 export default function SignIn() {
+  const [api, contextHolder] = notification.useNotification();
   const router = useRouter();
   const formik = useFormik({
     initialValues: {
@@ -30,13 +31,23 @@ export default function SignIn() {
     validationSchema: validationSchema,
     onSubmit: async (values) => {
       try {
-        const userCredential: any = await createUserWithEmailAndPassword(auth, values.email, values.password);
+        const userCredential: any = await signInWithEmailAndPassword(auth, values.email, values.password);
         // Access the user information from the UserCredential object
         const user = userCredential.user;
         localStorage.setItem('userToken', JSON.stringify(user?.accessToken));
-        router.push("/");
-      } catch (err) {
-        console.error(err);
+        api.success({
+          message: "user logged in succesfully",
+          placement: 'topRight',
+        })
+        setTimeout(() => {
+          router.push("/")
+        }, 1000)
+
+      } catch (err: any) {
+        api.error({
+          message: err.message,
+          placement: 'topRight',
+        })
       }
     },
   });
@@ -45,9 +56,18 @@ export default function SignIn() {
       const userCredential = await signInWithPopup(auth, googleProvider);
       const user: any = userCredential.user;
       localStorage.setItem('userToken', JSON.stringify(user?.accessToken));
-      router.push("/");
-    } catch (err) {
-      console.error(err);
+      api.success({
+        message: "user logged in succesfully",
+        placement: 'topRight',
+      })
+      setTimeout(() => {
+        router.push("/")
+      }, 1000)
+    } catch (err:any) {
+      api.error({
+        message:err.message,
+        placement: 'topRight',
+      })
     }
   };
   const signInWithGitHub = async () => {
@@ -55,27 +75,33 @@ export default function SignIn() {
       const userCredential = await signInWithPopup(auth, githubProvider);
       const user: any = userCredential.user;
       localStorage.setItem('userToken', JSON.stringify(user?.accessToken));
-      router.push("/");
-      console.log("GitHub user:", user);
-    } catch (err) {
-      console.error(err);
+      api.success({
+        message: "user logged in succesfully",
+        placement: 'topRight',
+      })
+      setTimeout(() => {
+        router.push("/");
+      }, 1000)
+    } catch (err:any) {
+      api.error({
+        message: err.message,
+        placement: 'topRight',
+      })
     }
   };
-
-
   return (
     <GuestGuard>
+      {contextHolder}
       <div className="min-h-screen flex flex-col sm:flex-row">
         <div className="flex-1 py-16 flex flex-col justify-center px-4 sm:px-6  lg:px-20 xl:px-24">
           <div className="mx-auto w-full max-w-sm lg:max-w-md xl:max-w-lg">
             <div className="mx-auto form__header">
-              <Image alt="Golobe" className="h-12 w-44" src={Logo} width={100} />
+              <Image alt="Golobe" className="h-12 w-32" src={Logo} width={100} />
               <h2 className="mt-6 text-3xl font-extrabold text-gray-900">Login</h2>
               <p className="mt-2 text-sm text-gray-600">
                 Login to access your Golobe account
               </p>
             </div>
-
             <div className="mt-8">
               <form onSubmit={formik.handleSubmit} className="space-y-6">
                 <div>
