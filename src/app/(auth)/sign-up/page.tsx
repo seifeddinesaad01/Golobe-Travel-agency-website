@@ -8,6 +8,7 @@ import Logo from "../../../../public/Logo.png";
 import { FaGoogle, FaApple, FaFacebook } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
+import GuestGuard from '@/components/GuestGuard/GuestGuard';
 
 const validationSchema = Yup.object({
   firstName: Yup.string().required('First Name is required'),
@@ -40,6 +41,7 @@ export default function SignUpForm() {
   });
 
   return (
+    <GuestGuard>
     <div className="min-h-screen bg-white flex justify-center flex-col-reverse sm:flex-row">
       <div
         className="flex justify-center items-center lg:w-1/2"
@@ -212,6 +214,8 @@ export default function SignUpForm() {
         </div>
       </div>
     </div>
+    </GuestGuard>
+
   )
 }
 
