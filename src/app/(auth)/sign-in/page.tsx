@@ -6,7 +6,7 @@ import SignInImage from "../../../../public/SignIn/sideImage.png";
 import { FaGoogle, FaApple, FaGithub } from "react-icons/fa";
 
 import { auth, googleProvider, githubProvider } from "../../../config/firebase";
-import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth"
+import { signInWithEmailAndPassword, signInWithPopup, createUserWithEmailAndPassword } from "firebase/auth"
 import { useFormik } from "formik";
 import * as yup from "yup";
 import "./signIn.css"
