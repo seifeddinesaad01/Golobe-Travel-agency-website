@@ -176,23 +176,25 @@ export default function SignIn() {
                     <div className="w-full border-t border-gray-300" />
                   </div>
                   <div
-                    className="relative flex justify-center text-sm pb-4"
+                    className="relative flex justify-between text-sm pb-4"
                   >
                     <p>
                       Don’t have an account?
                       <Link
                         href="/sign-up"
-                        style={{
-                          color: "#ff8682ff",
-                          fontSize: "1rem",
-                          cursor: "pointer",
-                          paddingLeft: "0.5rem",
-                          fontWeight: '500'
-                        }}
+                        className="link__style"
                       >
                         Sign up
                       </Link>
                     </p>
+                    <p className="link__style">
+                    <Link
+                        href="/forget-password"
+                        className="link__style"
+                      >
+                        Forget password ?
+                      </Link>
+                      </p>
                   </div>
                   <div className="relative flex justify-center text-sm">
                     <div className="relative flex justify-center text-sm">

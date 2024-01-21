@@ -1,16 +1,23 @@
-.form__header{
-    display: flex;
-    flex-direction: column;
+.form__header {
+  display: flex;
+  flex-direction: column;
 }
 @media screen and (max-width: 640px) {
-    .form__header {
-      align-items: center;
-      justify-self: center;
-      align-self: center;
-      text-align: center;
-    }
-    .image{
-        display: none;
-    }
+  .form__header {
+    align-items: center;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
   }
-  
+  .image {
+    display: none;
+  }
+}
+
+.link__style {
+  color: #ff8682ff;
+  font-size: 1rem;
+  cursor: pointer;
+  padding-left: 0.5rem;
+  font-weight: 500;
+}
