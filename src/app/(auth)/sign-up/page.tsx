@@ -9,8 +9,10 @@ import Image from "next/image";
 import Link from "next/link";
 import GuestGuard from '@/components/GuestGuard/GuestGuard';
 import { auth } from "../../../config/firebase";
+import { notification } from "antd"
 
 import { createUserWithEmailAndPassword } from "firebase/auth"
+import { useRouter } from 'next/navigation';
 
 const validationSchema = Yup.object({
   firstName: Yup.string().required('First Name is required'),
@@ -21,45 +23,29 @@ const validationSchema = Yup.object({
   confirmPassword: Yup.string()
     .oneOf([Yup.ref('password')], 'Passwords must match')
     .required('Confirm Password is required'),
-  terms: Yup.boolean().oneOf([true], 'You must accept the terms and conditions'),
 });
 
 export default function SignUpForm() {
-  // const handleSignup = async (e:any, values:any) => {
-  //   e.preventDefault();
+  const router= useRouter()
+  const [api, contextHolder] = notification.useNotification();
 
-  //   try {
-  //     // Create user account
-  //     const userCredential = await createUserWithEmailAndPassword(auth,values.email, values.password);
-
-  //     // Get the user ID from the authentication result
-  //     const userId = userCredential.user.uid;
-
-  //     // Store additional user data in Firestore
-  //     // await firebase.firestore().collection('users').doc(userId).set({
-  //     //   firstName: firstName,
-  //     //   lastName: lastName,
-  //     //   email: email,
-  //     //   phone: phone,
-  //     // });
-
-  //     console.log('User signed up successfully!');
-  //   } catch (error:any) {
-  //     console.error('Error signing up:', error.message);
-  //   }
-  // };
-  const handleSubmit = (values: any) => {
-    console.log(values,'saad')
-    // try {
-    //   // Create user account
-    //   const userCredential = await createUserWithEmailAndPassword(auth, values.email, values.password);
-    //   // Get the user ID from the authentication result
-    //   const userId = userCredential.user.uid;
-    //   console.log('User signed up successfully!');
-    // } catch (error: any) {
-    //   console.error('Error signing up:', error.message);
-    // }
-  }
+   const handleSignup = async (values:any) => {
+      try {
+        const userCredential = await createUserWithEmailAndPassword(auth,values.email, values.password);
+        api.success({
+          message: "User registred succesfully",
+          placement: 'topRight',
+        })
+         setTimeout(() => {
+           router.push("/sign-in");
+         }, 1000)
+    
+      } catch (error:any) {
+        api.error({
+          message: error.message,
+          placement: 'topRight',
+        })      }
+   };
   const formik: any = useFormik({
     initialValues: {
       firstName: '',
@@ -68,15 +54,15 @@ export default function SignUpForm() {
       phone: '',
       password: '',
       confirmPassword: '',
-      terms: false,
     },
     validationSchema: validationSchema,
-    onSubmit:handleSubmit,
+    onSubmit:handleSignup,
   },
   );
 
   return (
     <GuestGuard>
+      {contextHolder}
       <div className="min-h-screen bg-white flex justify-center flex-col-reverse sm:flex-row">
         <div
           className="flex justify-center items-center lg:w-1/2"
@@ -90,7 +76,7 @@ export default function SignUpForm() {
               <h1 className="text-4xl font-bold mt-2 mb-6">Sign up</h1>
               <p className="text-gray-600">Let’s get you all set up so you can access your personal account.</p>
             </div>
-            <form onSubmit={formik.onSubmit} className="space-y-6">
+            <form onSubmit={formik.handleSubmit} className="space-y-6">
               <div className="flex gap-4">
                 <div className="flex-1">
                   <label className="block text-sm font-medium text-gray-700" htmlFor="first-name">
