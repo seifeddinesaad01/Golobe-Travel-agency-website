@@ -1,20 +1,19 @@
 "use client"
+import { useState } from 'react';
+import Link from 'next/link';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { Button } from "@/components/ui/button";
-import SignInImage from "../../../../public/SignIn/sideImage.png";
-import Logo from "../../../../public/Logo.png";
-import { FaGoogle, FaApple, FaFacebook } from "react-icons/fa";
-import Image from "next/image";
-import Link from "next/link";
+import { notification } from 'antd';
 import GuestGuard from '@/components/GuestGuard/GuestGuard';
-import { auth } from "../../../config/firebase";
-import { notification } from "antd"
-
-import { createUserWithEmailAndPassword } from "firebase/auth"
-import { useRouter } from 'next/navigation';
+import { auth } from '../../../config/firebase';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import ImageSlider from '@/components/ImageSlider';
 import { validUrls } from '@/constants/data';
+import { Button } from '@/components/ui/button';
+import Logo from '../../../../public/Logo.png';
+import Image from 'next/image';
+import { Input } from '@/components/Input';
+import { useRouter } from 'next/navigation';
 
 const validationSchema = Yup.object({
   firstName: Yup.string().required('First Name is required'),
@@ -28,12 +27,12 @@ const validationSchema = Yup.object({
 });
 
 export default function SignUpForm() {
-  const router = useRouter()
+  const router = useRouter();
   const [api, contextHolder] = notification.useNotification();
 
   const handleSignup = async (values: any) => {
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, values.email, values.password);
+      await createUserWithEmailAndPassword(auth, values.email, values.password);
       api.success({
         message: "User registred succesfully",
         placement: 'topRight',
@@ -81,129 +80,88 @@ export default function SignUpForm() {
             </div>
             <form onSubmit={formik.handleSubmit} className="space-y-6">
               <div className="flex gap-4">
-                <div className="flex-1">
-                  <label className="block text-sm font-medium text-gray-700" htmlFor="first-name">
-                    First Name
-                  </label>
-                  <input
-                    type="text"
-                    id="first-name"
-                    name="firstName"
-                    placeholder="John"
-                    className={`${formik.touched.firstName && formik.errors.firstName
-                      ? "border-red-300"
-                      : "border-gray-300"
-                      } appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.firstName}
-                  />
-                  {formik.touched.firstName && formik.errors.firstName && (
-                    <p className="mt-1 text-sm text-red-500">{formik.errors.firstName}</p>
-                  )}
-                </div>
-                <div className="flex-1">
-                  <label className="block text-sm font-medium text-gray-700" htmlFor="last-name">
-                    Last Name
-                  </label>
-                  <input
-                    type="text"
-                    id="last-name"
-                    name="lastName"
-                    placeholder="Doe"
-                    className={`${formik.touched.lastName && formik.errors.lastName
-                      ? "border-red-300"
-                      : "border-gray-300"
-                      } appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.lastName}
-                  />
-                  {formik.touched.lastName && formik.errors.lastName && (
-                    <p className="mt-1 text-sm text-red-500">{formik.errors.lastName}</p>
-                  )}
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex-1">
-                  <label className="block text-sm font-medium text-gray-700" htmlFor="email">
-                    Email
-                  </label>
-                  <input
-                    id="email"
-                    placeholder="john.doe@gmail.com"
-                    className={`${formik.touched.email && formik.errors.email
-                      ? "border-red-300"
-                      : "border-gray-300"
-                      } appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.email}
-                  />
-                  {formik.touched.email && formik.errors.email && (
-                    <p className="mt-1 text-sm text-red-500">{formik.errors.email}</p>
-                  )}
-                </div>
-                <div className="flex-1">
-                  <label className="block text-sm font-medium text-gray-700" htmlFor="phone">
-                    Phone Number
-                  </label>
-                  <input
-                    id="phone"
-                    placeholder="123-456-7890"
-                    className={`${formik.touched.phone && formik.errors.phone
-                      ? "border-red-300"
-                      : "border-gray-300"
-                      } appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.phone}
-                  />
-                  {formik.touched.phone && formik.errors.phone && (
-                    <p className="mt-1 text-sm text-red-500">{formik.errors.phone}</p>
-                  )}
-                </div>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700" htmlFor="password">
-                  Password
-                </label>
-                <input
-                  id="password"
-                  placeholder="••••••••"
-                  type="password"
-                  className={`${formik.touched.password && formik.errors.password
-                    ? "border-red-300"
-                    : "border-gray-300"
-                    } appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}
+                <Input
+                  name='firstName'
+                  onBlur={formik.handleBlur}
+                  value={formik.values.firstName}
                   onChange={formik.handleChange}
+                  errors={formik.errors}
+                  touched={formik.touched}
+                  placeholder='John'
+                  type="text"
+                  id="first-name"
+                  text='First Name'
+                  className="flex-1"
+                />
+                <Input
+                  name='lastName'
+                  onBlur={formik.handleBlur}
+                  value={formik.values.lastName}
+                  onChange={formik.handleChange}
+                  errors={formik.errors}
+                  touched={formik.touched}
+                  placeholder='saad'
+                  type="text"
+                  id="last-name"
+                  text='Last Name'
+                  className="flex-1"
+                />
+              </div>
+              
+              <div className="flex gap-4">
+              <Input
+                  name='email'
+                  onBlur={formik.handleBlur}
+                  value={formik.values.email}
+                  onChange={formik.handleChange}
+                  errors={formik.errors}
+                  touched={formik.touched}
+                  placeholder='John@gmail.com'
+                  type="email"
+                  id="email"
+                  text='Email'
+                  className="flex-1"
+                />
+                <Input
+                  name='phone'
+                  onBlur={formik.handleBlur}
+                  value={formik.values.phone}
+                  onChange={formik.handleChange}
+                  errors={formik.errors}
+                  touched={formik.touched}
+                  placeholder='+216 12345678'
+                  type="number"
+                  id="phone"
+                  text='Phone Number'
+                  className="flex-1"
+                />
+              </div>
+              <Input
+                  name='password'
                   onBlur={formik.handleBlur}
                   value={formik.values.password}
-                />
-                {formik.touched.password && formik.errors.password && (
-                  <p className="mt-1 text-sm text-red-500">{formik.errors.password}</p>
-                )}
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700" htmlFor="confirm-password">
-                  Confirm Password
-                </label>
-                <input
-                  id="confirmPassword"
-                  placeholder="••••••••"
-                  type="password"
-                  className={`${formik.touched.confirmPassword && formik.errors.confirmPassword
-                    ? "border-red-300"
-                    : "border-gray-300"
-                    } appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}
                   onChange={formik.handleChange}
+                  errors={formik.errors}
+                  touched={formik.touched}
+                  placeholder='••••••••'
+                  type="password"
+                  id="password"
+                  text='Password'
+                  className="flex-1"
+                />
+                <Input
+                  name='confirmPassword'
                   onBlur={formik.handleBlur}
                   value={formik.values.confirmPassword}
+                  onChange={formik.handleChange}
+                  errors={formik.errors}
+                  touched={formik.touched}
+                  placeholder='••••••••'
+                  type="password"
+                  id="password"
+                  text='Confirm Password'
+                  className="flex-1"
                 />
-                {formik.touched.confirmPassword && formik.errors.confirmPassword && (
-                  <p className="mt-1 text-sm text-red-500">{formik.errors.confirmPassword}</p>
-                )}
-              </div>
               <div className="flex items-center">
                 <input
                   className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
@@ -211,7 +169,7 @@ export default function SignUpForm() {
                   type="checkbox"
                 />
                 <label className="ml-2 block text-sm text-gray-900" htmlFor="terms">
-                  I agree to all the
+                  I agree to all the rules  
                 </label>
               </div>
               <Button type="submit" className="w-full text-black" style={{
@@ -223,14 +181,11 @@ export default function SignUpForm() {
                 Already have an account?{" "}
                 <Link
                   href="/sign-in"
-                  style={{
-                    color: "#ff8682ff",
-                    fontSize: "1rem",
-                    cursor: "pointer",
-                    paddingLeft: "0.5rem",
-                    fontWeight: '500'
-                  }}
-                  className="text-indigo-600 hover:text-indigo-500">
+                   style={{
+                     color: "#ff8682ff",
+                   }}
+                  className=" text-base cursor-pointer pl-2 font-medium hover:text-pink-600"
+                  >
                   Login
                 </Link>
               </p>

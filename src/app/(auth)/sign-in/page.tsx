@@ -16,6 +16,7 @@ import GuestGuard from "@/components/GuestGuard/GuestGuard";
 import { notification } from "antd"
 import ImageSlider from "@/components/ImageSlider";
 import { validUrls } from "@/constants/data";
+import { Input } from "@/components/Input";
 
 const validationSchema = yup.object({
   email: yup.string().email("Invalid email address").required("Required"),
@@ -106,60 +107,33 @@ export default function SignIn() {
             </div>
             <div className="mt-8">
               <form onSubmit={formik.handleSubmit} className="space-y-6">
-                <div>
-                  <label
-                    className="block text-sm font-medium text-gray-700"
-                    htmlFor="email"
-                  >
-                    Email
-                  </label>
-                  <div className="mt-1">
-                    <input
-                      autoComplete="email"
-                      className={`${formik.touched.email && formik.errors.email
-                        ? "border-red-300"
-                        : "border-gray-300"
-                        } appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}
-                      id="email"
-                      name="email"
-                      placeholder="john.doe@gmail.com"
-                      type="email"
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-                      value={formik.values.email}
-                    />
-                    {formik.touched.email && formik.errors.email && (
-                      <p className="mt-1 text-sm text-red-500">{formik.errors.email}</p>
-                    )}
-                  </div>
-                </div>
-                <div className="space-y-1">
-                  <label
-                    className="block text-sm font-medium text-gray-700"
-                    htmlFor="password"
-                  >
-                    Password
-                  </label>
-                  <div className="mt-1">
-                    <input
-                      autoComplete="current-password"
-                      className={`${formik.touched.password && formik.errors.password
-                        ? "border-red-300"
-                        : "border-gray-300"
-                        } appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}
-                      id="password"
-                      name="password"
-                      placeholder="******************"
-                      type="password"
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-                      value={formik.values.password}
-                    />
-                    {formik.touched.password && formik.errors.password && (
-                      <p className="mt-1 text-sm text-red-500">{formik.errors.password}</p>
-                    )}
-                  </div>
-                </div>
+                
+                  <Input
+                  name='email'
+                  onBlur={formik.handleBlur}
+                  value={formik.values.email}
+                  onChange={formik.handleChange}
+                  errors={formik.errors}
+                  touched={formik.touched}
+                  placeholder='••••••••'
+                  type="email"
+                  id="email"
+                  text='Email'
+                  className="mt-1"
+                />
+                <Input
+                  name='password'
+                  onBlur={formik.handleBlur}
+                  value={formik.values.password}
+                  onChange={formik.handleChange}
+                  errors={formik.errors}
+                  touched={formik.touched}
+                  placeholder='••••••••'
+                  type="password"
+                  id="password"
+                  text='password'
+                  className="mt-1"
+                />
                 <div>
                   <button
                     type="submit"
