@@ -12,6 +12,7 @@ import { sendPasswordResetEmail } from 'firebase/auth';
 
 import { auth } from "../../../config/firebase";
 import ImageSlider from "@/components/ImageSlider";
+import { validUrls } from "@/constants/data";
 
 const validationSchema = yup.object({
     email: yup.string().email("Invalid email address").required("Required"),
@@ -38,14 +39,6 @@ export default function SignIn() {
         onSubmit: handleResetPassword,
     });
 
-    type ImportedImage = typeof SignInImage;
-
-    // Create an array of imported images
-    const validImages: ImportedImage[] = [SignInImage, SignInImage];
-    
-    // Convert the array of imported images into an array of strings
-    const validUrls: any = validImages.map(image => image?.src || image);
-        console.log(validUrls, "validUrls")
 
     return (
         <GuestGuard>
@@ -105,8 +98,8 @@ export default function SignIn() {
                         </div>
                     </div>
                 </div>
-                <div className="flex-1 flex justify-center pt-28 p-16" style={{height:"100vh"}}>
-                    <ImageSlider urls={validUrls}/>
+                <div className="flex-1 flex justify-center pt-28 p-16" style={{ height: "100vh" }}>
+                    <ImageSlider urls={validUrls} />
                 </div>
             </div>
         </GuestGuard>

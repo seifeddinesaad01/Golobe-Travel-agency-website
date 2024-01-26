@@ -13,6 +13,8 @@ import { notification } from "antd"
 
 import { createUserWithEmailAndPassword } from "firebase/auth"
 import { useRouter } from 'next/navigation';
+import ImageSlider from '@/components/ImageSlider';
+import { validUrls } from '@/constants/data';
 
 const validationSchema = Yup.object({
   firstName: Yup.string().required('First Name is required'),
@@ -26,26 +28,27 @@ const validationSchema = Yup.object({
 });
 
 export default function SignUpForm() {
-  const router= useRouter()
+  const router = useRouter()
   const [api, contextHolder] = notification.useNotification();
 
-   const handleSignup = async (values:any) => {
-      try {
-        const userCredential = await createUserWithEmailAndPassword(auth,values.email, values.password);
-        api.success({
-          message: "User registred succesfully",
-          placement: 'topRight',
-        })
-         setTimeout(() => {
-           router.push("/sign-in");
-         }, 1000)
-    
-      } catch (error:any) {
-        api.error({
-          message: error.message,
-          placement: 'topRight',
-        })      }
-   };
+  const handleSignup = async (values: any) => {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, values.email, values.password);
+      api.success({
+        message: "User registred succesfully",
+        placement: 'topRight',
+      })
+      setTimeout(() => {
+        router.push("/sign-in");
+      }, 1000)
+
+    } catch (error: any) {
+      api.error({
+        message: error.message,
+        placement: 'topRight',
+      })
+    }
+  };
   const formik: any = useFormik({
     initialValues: {
       firstName: '',
@@ -56,7 +59,7 @@ export default function SignUpForm() {
       confirmPassword: '',
     },
     validationSchema: validationSchema,
-    onSubmit:handleSignup,
+    onSubmit: handleSignup,
   },
   );
 
@@ -65,9 +68,9 @@ export default function SignUpForm() {
       {contextHolder}
       <div className="min-h-screen bg-white flex justify-center flex-col-reverse sm:flex-row">
         <div
-          className="flex justify-center items-center lg:w-1/2"
+          className="flex justify-center items-center lg:w-1/2 p-20"
         >
-          <Image src={SignInImage} alt="image" className="h-3/4 " height={200} width={500} />
+          <ImageSlider urls={validUrls} />
         </div>
         <div className="w-full lg:w-1/2 p-8">
           <div className="w-full">
@@ -148,7 +151,7 @@ export default function SignUpForm() {
                   <input
                     id="phone"
                     placeholder="123-456-7890"
-                    className={`${formik.touched.email && formik.errors.email
+                    className={`${formik.touched.phone && formik.errors.phone
                       ? "border-red-300"
                       : "border-gray-300"
                       } appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}

@@ -14,6 +14,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import GuestGuard from "@/components/GuestGuard/GuestGuard";
 import { notification } from "antd"
+import ImageSlider from "@/components/ImageSlider";
+import { validUrls } from "@/constants/data";
 
 const validationSchema = yup.object({
   email: yup.string().email("Invalid email address").required("Required"),
@@ -230,13 +232,9 @@ export default function SignIn() {
             </div>
           </div>
         </div>
-        <div className="flex-1 flex justify-center py-16 image">
-          <Image
-            alt="Hotel resort"
-            className="object-cover object-center rounded-lg"
-            height="600"
-            src={SignInImage}
-          />
+        <div className="flex-1 flex justify-center py-16 image" style={{height:"100vh"}}>
+        <ImageSlider urls={validUrls}/>
+
         </div>
       </div>
     </GuestGuard>
