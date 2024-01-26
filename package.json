@@ -22,7 +22,10 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.12.0",
+    "react-image-gallery": "^1.3.0",
     "react-responsive-carousel": "^3.2.23",
+    "react-slideshow-image": "^4.3.0",
+    "swiper": "^11.0.5",
     "tailwind-merge": "^2.1.0",
     "tailwindcss-animate": "^1.0.7",
     "yup": "^1.3.3"
