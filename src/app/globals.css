@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -19,6 +19,8 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  font-family: 'Open Sans', sans-serif;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
+
+
