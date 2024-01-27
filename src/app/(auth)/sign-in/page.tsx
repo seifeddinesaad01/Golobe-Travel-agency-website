@@ -107,7 +107,6 @@ export default function SignIn() {
             </div>
             <div className="mt-8">
               <form onSubmit={formik.handleSubmit} className="space-y-6">
-                
                   <Input
                   name='email'
                   onBlur={formik.handleBlur}
@@ -115,7 +114,7 @@ export default function SignIn() {
                   onChange={formik.handleChange}
                   errors={formik.errors}
                   touched={formik.touched}
-                  placeholder='••••••••'
+                  placeholder='John@gmail.com'
                   type="email"
                   id="email"
                   text='Email'
@@ -131,7 +130,7 @@ export default function SignIn() {
                   placeholder='••••••••'
                   type="password"
                   id="password"
-                  text='password'
+                  text='Password'
                   className="mt-1"
                 />
                 <div>
