@@ -23,25 +23,13 @@ const page = () => {
         <div style={{ display: 'flex', justifyContent: "center", alignItems: 'center', flexDirection: "column", backgroundColor: "#FAFBFC", width: "100%" }}>
             <div className='bgimage'>
                 <Header />
-                <div style={{
-                    color: "#fff",
-                    display: "flex",
-                    flexDirection: 'column',
-                    justifyContent: "center",
-                    alignItems: "center",
-                    gap: "0.5rem"
-                }}>
-                    <h2 style={{
-                        fontSize: "2rem"
-                    }}>Helping Others</h2>
-                    <h1 style={{
-                        fontSize: "4rem"
-                    }}>Live & Travel</h1>
-                    <p style={{
-                        fontSize: "1.2rem"
-                    }}>Socia offers to suit your plan</p>
+                <div className="text-white flex flex-col justify-center items-center gap-2 mt-4">
+                    <h2 className="text-5xl">Helping Others</h2>
+                    <h1 className="text-7xl uppercase font-bold tracking-wide leading-tight font-roboto">L i v e & T r a v e l</h1>
+                    <p className="text-lg">Socia offers to suit your plan</p>
                 </div>
             </div>
+
             <div style={{
                 backgroundColor: "#fff",
                 height: "40vh",
@@ -61,7 +49,7 @@ const page = () => {
                 flexDirection: "column",
                 width: '85%',
                 gap: "2.5rem",
-                marginTop:"2.5rem"
+                marginTop: "2.5rem"
 
             }}>
                 <div style={{
@@ -96,11 +84,11 @@ const page = () => {
                     }
                 </div>
                 <div style={{
-                    display:"flex",
+                    display: "flex",
                     justifyContent: "center",
-                    alignItems:"center", 
-                    gap:"1rem",
-                     marginTop:"2.5rem"
+                    alignItems: "center",
+                    gap: "1rem",
+                    marginTop: "2.5rem"
                 }}>
                     <TripDisplay />
                     <TripDisplay />

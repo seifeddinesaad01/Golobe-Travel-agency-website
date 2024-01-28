@@ -19,14 +19,14 @@ const Header: React.FC = () => {
             </div>
             <div>
                 <Link href="/">
-                    <Image alt="Golobe" className="h-12 w-32" src={Logo} width={120} />
+                    <Image alt="Golobe"  src={Logo} />
                 </Link>
             </div>
             <div className="flex items-center space-x-4">
                 <button className="px-4 py-2 rounded">
                     Login
                 </button>
-                <button style={{ color: "black" }} className="bg-white  px-4 py-2 rounded">
+                <button style={{ color: "black", borderRadius:"8px" }} className="bg-white  px-6 p-3 ">
                     Sign up
                 </button>
             </div>
