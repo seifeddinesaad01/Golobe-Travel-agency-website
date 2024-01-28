@@ -5,13 +5,13 @@ import Header from './components/Header'
 import Tabs from './components/Tabs';
 import stayIcon from "../../../public/Home/bIcon2.png";
 import flightIcon from "../../../public/Home/bIcon1.png";
-import { Input } from '@/components/Input';
 import { FlightTab } from './components/FlightTab';
+import { StaysTab } from './components/StaysTab';
 
 const page = () => {
     const tabs = [
         { id: 1, label: 'Flights', content: <FlightTab />, icon: flightIcon },
-        { id: 2, label: 'Stays', content: <div>Content for Tab 2</div>, icon: stayIcon },
+        { id: 2, label: 'Stays', content: <StaysTab />, icon: stayIcon },
     ];
     return (
         <div style={{ display: 'flex', flexDirection: "column", backgroundColor: "#FAFBFC" }}>
@@ -35,7 +35,6 @@ const page = () => {
                         fontSize: "1.2rem"
                     }}>Socia offers to suit your plan</p>
                 </div>
-
             </div>
             <div style={{
                 backgroundColor: "#fff",
@@ -44,7 +43,8 @@ const page = () => {
                 alignSelf: "center",
                 marginTop: "-6rem",
                 padding: "1rem",
-                borderRadius: "16px"
+                borderRadius: "16px",
+                marginBottom: "2rem"
             }}>
                 <Tabs tabs={tabs} />
             </div>
