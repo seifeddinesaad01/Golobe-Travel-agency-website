@@ -1,16 +1,20 @@
+"use client"
 import React from 'react'
 import '../(auth)/sign-in/signIn.css'
 import Header from './components/Header'
 import Tabs from './components/Tabs';
-import stayIcon from "../../../public/Home/icon1.png";
-import flightIcon from "../../../public/Home/icon2.png";
+import stayIcon from "../../../public/Home/bIcon2.png";
+import flightIcon from "../../../public/Home/bIcon1.png";
+import { Input } from '@/components/Input';
+import { FlightTab } from './components/FlightTab';
+
 const page = () => {
     const tabs = [
-        { id: 1, label: 'Tab 1', content: <div>Content for Tab 1</div>,icon: flightIcon},
-        { id: 2, label: 'Tab 2', content: <div>Content for Tab 2</div>, icon: stayIcon },
-      ];
+        { id: 1, label: 'Flights', content: <FlightTab />, icon: flightIcon },
+        { id: 2, label: 'Stays', content: <div>Content for Tab 2</div>, icon: stayIcon },
+    ];
     return (
-        <div style={{  display:'flex', flexDirection:"column", backgroundColor:"#FAFBFC"}}>
+        <div style={{ display: 'flex', flexDirection: "column", backgroundColor: "#FAFBFC" }}>
             <div className='bgimage'>
                 <Header />
                 <div style={{
@@ -39,10 +43,10 @@ const page = () => {
                 width: "80%",
                 alignSelf: "center",
                 marginTop: "-6rem",
-                padding:"1rem",
-                borderRadius:"16px"
+                padding: "1rem",
+                borderRadius: "16px"
             }}>
-                <Tabs tabs={tabs}/>
+                <Tabs tabs={tabs} />
             </div>
         </div>
     )

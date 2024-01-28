@@ -26,8 +26,8 @@ const Tabs: React.FC<TabsProps> = ({ tabs }) => {
         {tabs.map((tab) => (
           <div
             key={tab.id}
-            className={`cursor-pointer px-4 py-2 flex gap-1 ${
-              activeTab === tab.id ? 'text-red-500' : 'bg-gray-300'
+            className={`cursor-pointer px-4 py-2 flex gap-2 ${
+              activeTab === tab.id ? 'border-b-4 border-green-300' : 'border-b-4 border-white'
             }`}
             onClick={() => handleTabClick(tab.id)}
           >
