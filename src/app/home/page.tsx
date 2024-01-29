@@ -8,8 +8,13 @@ import flightIcon from "../../../public/Home/bIcon1.png";
 import { FlightTab } from './components/FlightTab';
 import { StaysTab } from './components/StaysTab';
 import TripCard from './components/TripCard';
-import { trips, tripsDisplay } from '@/constants/data';
+import { reviews, trips, tripsDisplay } from '@/constants/data';
 import TripDisplay from './components/TripDisplay';
+import ReviewCard from './components/ReviewCard';
+import Slider from './components/Slider';
+// import ReactCardSlider from 'react-card-slider-component';
+
+
 
 const page = () => {
     const tabs = [
@@ -18,7 +23,7 @@ const page = () => {
     ];
 
     return (
-        <div className="flex justify-center items-center flex-col bg-gray-100 w-full">
+        <div className="flex justify-center items-center flex-col bg-gray-100 w-full overflow-hidden">
             <div className='bgimage'>
                 <Header />
                 <div className="text-white flex flex-col justify-center items-center gap-2 mt-4">
@@ -60,6 +65,29 @@ const page = () => {
                             description={trip.description}
                         />
                     })}
+                </div>
+            </div>
+            <div style={{
+                width: '85%'
+            }} className="flex justify-center flex-col  gap-10 p-10">
+                <div className="self-start flex flex-col gap-1">
+                    <h1 className="text-3xl font-bold">Plan your perfect trip</h1>
+                    <p className="text-lg text-gray-500">Search Flights & Places Hire to our most popular destinations</p>
+                </div>
+                <div style={{
+                    width: '100%'
+                }}>
+                    <Slider options={{ align: "start" }}>
+                        {reviews.map((review, i) => (
+                            <div key={i} className="flex-[0_0_50%] md:flex-[0_0_20%]">
+                                <ReviewCard
+                                    image={review.image}
+                                    title={review.title}
+                                    description={review.description}
+                                />
+                            </div>
+                        ))}
+                    </Slider>
                 </div>
             </div>
         </div>

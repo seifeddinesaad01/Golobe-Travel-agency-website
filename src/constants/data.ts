@@ -10,6 +10,9 @@ import tripImg7 from "../../public/Home/tripImg7.png";
 import tripImg8 from "../../public/Home/tripImg8.png";
 import trip1Bg from "../../public/Home/trip1bg.png";
 import trip2Bg from "../../public/Home/trip2bg.png";
+import review1Img from "../../public/Home/review1Img.png";
+import review2Img from "../../public/Home/review2Img.png";
+import review3Img from "../../public/Home/review3Img.png";
 
 type ImportedImage = typeof SignInImage;
 
@@ -76,8 +79,34 @@ export const tripsDisplay = [
   },
   {
     title: "Hotels",
-    description:
-      "Search hotels & Places Hire to our most popular destinations",
+    description: "Search hotels & Places Hire to our most popular destinations",
     image: trip2Bg,
+  },
+];
+
+export const reviews = [
+  {
+    title: "“A real sense of community, nurtured”",
+    description:
+      "Really appreciate the help and support from the staff during these tough times. Shoutout to Katie for...",
+    image: review1Img,
+  },
+  {
+    title: "“The facilities are superb. Clean, slick, bright.”",
+    description:
+      "“A real sense of community, nurtured”Really appreciate the help and support from the staff...",
+    image: review2Img,
+  },
+  {
+    title: "“A real sense of community, nurtured”",
+    description:
+      "Really appreciate the help and support from the staff during these tough times. Shoutout to Katie for...",
+    image: review3Img,
+  },
+  {
+    title: "“A real sense of community, nurtured”",
+    description:
+      "Really appreciate the help and support from the staff during these tough times. Shoutout to Katie for...",
+    image: review1Img,
   },
 ];
