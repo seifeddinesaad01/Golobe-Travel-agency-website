@@ -8,7 +8,7 @@ import flightIcon from "../../../public/Home/bIcon1.png";
 import { FlightTab } from './components/FlightTab';
 import { StaysTab } from './components/StaysTab';
 import TripCard from './components/TripCard';
-import { trips } from '@/constants/data';
+import { trips, tripsDisplay } from '@/constants/data';
 import TripDisplay from './components/TripDisplay';
 
 const page = () => {
@@ -41,8 +41,8 @@ const page = () => {
                     <p className="text-lg text-gray-500">Search Flights & Places Hire to our most popular destinations</p>
                 </div>
 
-                <div  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 justify-start w-full">
-                    {trips?.map((trip: any, index: any) => (
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 justify-start w-full">
+                    {trips?.map((trip: any) => (
                         <TripCard
                             key={trip.id}
                             tripImg={trip.tripImg}
@@ -51,10 +51,15 @@ const page = () => {
                         />
                     ))}
                 </div>
-
-                <div className="flex justify-center items-center gap-4 mt-10">
-                    <TripDisplay />
-                    <TripDisplay />
+                <div className="flex justify-center items-center gap-4 w-full m-10">
+                    {tripsDisplay?.map((trip, index) => {
+                        return <TripDisplay
+                            key={index}
+                            image={trip.image}
+                            title={trip.title}
+                            description={trip.description}
+                        />
+                    })}
                 </div>
             </div>
         </div>
