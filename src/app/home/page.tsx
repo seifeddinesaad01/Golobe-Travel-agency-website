@@ -17,10 +17,8 @@ const page = () => {
         { id: 2, label: 'Stays', content: <StaysTab />, icon: stayIcon },
     ];
 
-
-
     return (
-        <div style={{ display: 'flex', justifyContent: "center", alignItems: 'center', flexDirection: "column", backgroundColor: "#FAFBFC", width: "100%" }}>
+        <div className="flex justify-center items-center flex-col bg-gray-100 w-full">
             <div className='bgimage'>
                 <Header />
                 <div className="text-white flex flex-col justify-center items-center gap-2 mt-4">
@@ -30,70 +28,34 @@ const page = () => {
                 </div>
             </div>
 
-            <div style={{
-                backgroundColor: "#fff",
-                height: "40vh",
-                width: "85%",
-                alignSelf: "center",
-                marginTop: "-6rem",
-                padding: "1rem",
-                borderRadius: "16px",
-                marginBottom: "2rem"
-            }}>
+            <div
+                style={{
+                    marginTop: "-8rem",
+                    borderRadius: "16px"
+                }} className="shadow-lg bg-white h-40vh w-5/6 self-center p-4 rounded-16 mb-2">
                 <Tabs tabs={tabs} />
             </div>
-            <div style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                flexDirection: "column",
-                width: '85%',
-                gap: "2.5rem",
-                marginTop: "2.5rem"
-
-            }}>
-                <div style={{
-                    alignSelf: "flex-start",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: '0.3rem'
-                }}>
-                    <h1 style={{
-                        fontSize: "2rem",
-                        fontWeight: "bold",
-                    }}>Plan your perfect trip</h1>
-                    <p style={{
-                        fontSize: "1.2rem",
-                        color: "gray"
-                    }}>Search Flights & Places Hire to our most popular destinations</p>
+            <div className="flex justify-center items-center flex-col w-85 gap-10 mt-10">
+                <div className="self-start flex flex-col gap-1">
+                    <h1 className="text-3xl font-bold">Plan your perfect trip</h1>
+                    <p className="text-lg text-gray-500">Search Flights & Places Hire to our most popular destinations</p>
                 </div>
-                <div
-                    style={{
-                        display: "grid",
-                        gridTemplateColumns: "1fr 1fr 1fr",
-                        gap: "2rem",
-                        width: "100%"
-                    }}>
-                    {trips?.map((trip: any, index: any) => {
-                        return <TripCard
+
+                <div  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 justify-start w-full">
+                    {trips?.map((trip: any, index: any) => (
+                        <TripCard
+                            key={trip.id}
                             tripImg={trip.tripImg}
                             title={trip?.title}
                             description={trip?.description}
                         />
-                    })
-                    }
-                </div>
-                <div style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    gap: "1rem",
-                    marginTop: "2.5rem"
-                }}>
-                    <TripDisplay />
-                    <TripDisplay />
+                    ))}
                 </div>
 
+                <div className="flex justify-center items-center gap-4 mt-10">
+                    <TripDisplay />
+                    <TripDisplay />
+                </div>
             </div>
         </div>
     )

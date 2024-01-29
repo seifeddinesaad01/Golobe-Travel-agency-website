@@ -4,7 +4,7 @@ export default function TripCard({
   tripImg, title, description
 }: any) {
   return (
-    <div className="max-w-sm rounded-lg overflow-hidden shadow-lg flex p-4">
+    <div style={{boxShadow: "0px 4px 16px 0px rgba(17, 34, 17, 0.05)"}} className="max-w-sm rounded-xl overflow-hidden flex p-4 bg-white">
       <Image
         alt="Tokyo"
         className="w-24 h-24 object-cover"
