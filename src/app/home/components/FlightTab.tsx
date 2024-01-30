@@ -3,6 +3,7 @@ import { useFormik } from "formik";
 import Image from "next/image";
 import * as yup from "yup";
 import flighIcon from "../../../../public/Home/bIcon3.png"
+import Link from "next/link";
 const validationSchema = yup.object({
     // email: yup.string().email("Invalid email address").required("Required"),
     // password: yup.string().required("Password is required").min(6, "Password must be at least 6 characters"),
@@ -20,7 +21,6 @@ export const FlightTab = () => {
     return (
         <form
             onSubmit={formik.handleSubmit}
-            // className="space-y-6"
             style={{
                 display: "flex",
                 justifyContent: "center",
@@ -88,21 +88,25 @@ export const FlightTab = () => {
                     className="mt-1"
                 />
             </div>
-            <button type="submit"
-                style={{
-                    alignSelf: "flex-end",
-                    marginRight: '6rem',
-                    display:'flex',
-                    justifyContent:"center",
-                    alignItems:"center",
-                    gap:"0.5rem",
-                    backgroundColor:"#8ed4bbff",
-                    padding:"1rem",
-                    borderRadius:'4px'
-                }}>
-                <Image src={flighIcon} alt="icon" />
-                <p>Show flights</p>
-            </button>
+            <Link href="/find-flight" style={{
+                alignSelf: "flex-end",
+                marginRight: '6rem',
+            }}>
+                <button
+                    type="submit"
+                    style={{
+                        backgroundColor: "#8ed4bbff",
+                        padding: "1rem",
+                        borderRadius: '4px',
+                        display: 'flex',
+                        justifyContent: "center",
+                        alignItems: "center",
+                        gap: "0.5rem",
+                    }}>
+                    <Image src={flighIcon} alt="icon" />
+                    <p>Show flights</p>
+                </button>
+            </Link>
 
         </form>
     )

@@ -13,8 +13,6 @@ import TripDisplay from './components/TripDisplay';
 import ReviewCard from './components/ReviewCard';
 import Slider from './components/Slider';
 import Footer from '@/components/Footer';
-// import ReactCardSlider from 'react-card-slider-component';
-
 
 
 const page = () => {
