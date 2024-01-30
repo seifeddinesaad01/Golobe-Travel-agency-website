@@ -12,6 +12,7 @@ import { reviews, trips, tripsDisplay } from '@/constants/data';
 import TripDisplay from './components/TripDisplay';
 import ReviewCard from './components/ReviewCard';
 import Slider from './components/Slider';
+import Footer from '@/components/Footer';
 // import ReactCardSlider from 'react-card-slider-component';
 
 
@@ -32,7 +33,6 @@ const page = () => {
                     <p className="text-lg">Socia offers to suit your plan</p>
                 </div>
             </div>
-
             <div
                 style={{
                     marginTop: "-8rem",
@@ -90,6 +90,7 @@ const page = () => {
                     </Slider>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }
