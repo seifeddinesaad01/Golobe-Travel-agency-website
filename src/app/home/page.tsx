@@ -26,12 +26,13 @@ const page = () => {
             <div className='bgimage'>
                 <Header />
                 <div className="text-white flex flex-col justify-center items-center gap-2 mt-4">
-                    <h2 className="text-5xl">Helping Others</h2>
-                    <h1 className="text-7xl uppercase font-bold tracking-wide leading-tight font-roboto">L i v e & T r a v e l</h1>
-                    <p className="text-lg">Socia offers to suit your plan</p>
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl">Helping Others</h2>
+                    <h1 className="text-3xl md:text-6xl lg:text-6xl xl:text-7xl uppercase font-bold tracking-wide leading-tight font-roboto">L i v e & T r a v e l</h1>
+                    <p className="text-base md:text-lg lg:text-xl xl:text-2xl">Socia offers to suit your plan</p>
                 </div>
+
             </div>
-            <div
+            {/* <div
                 style={{
                     marginTop: "-8rem",
                     borderRadius: "16px"
@@ -88,7 +89,7 @@ const page = () => {
                     </Slider>
                 </div>
             </div>
-            <Footer />
+            <Footer /> */}
         </div>
     )
 }
