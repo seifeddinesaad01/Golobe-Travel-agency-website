@@ -1,0 +1,63 @@
+.bgimage {
+    background-image: url("https://i.ibb.co/DYz8sD7/Group-6.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin: 1.6rem;
+    height: 100%;
+    border-radius: 24px;
+    /* position: relative; */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 5rem;
+    height: 90vh;
+    width: 96%;
+    border: 1px solid black;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .bgimage {
+      margin: 0rem;
+      border-radius: 0px;
+    }
+  }
+  
+  .drawer {
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    transform: translateX(-100%);
+    transition: 0.3s ease-in-out;
+    min-height: 100vh;
+    color: black;
+  }
+  
+  .hiddenDrawer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    width: 100%;
+    padding: 1em;
+    display: flex;
+    background-color: #fff;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-end;
+    transition: 0.3s ease-in-out;
+    border-right: 1px solid rgb(206, 202, 202);
+    min-height: 100vh;
+    color: black;
+  }
+  

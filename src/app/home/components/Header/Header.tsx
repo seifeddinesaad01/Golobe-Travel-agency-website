@@ -2,16 +2,18 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Logo from '../../../../public/whiteLogo.png';
-import stayIcon from '../../../../public/Home/icon1.png';
-import flightIcon from '../../../../public/Home/icon2.png';
-
+import Logo from '../../../../../public/whiteLogo.png';
+import stayIcon from '../../../../../public/Home/icon1.png';
+import flightIcon from '../../../../../public/Home/icon2.png';
+import { ImCross } from "react-icons/im";
+import "../Header/header.css";
 const Header: React.FC = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
   };
+
 
   return (
     <header className="text-white p-6 flex items-center justify-between ">
@@ -52,13 +54,10 @@ const Header: React.FC = () => {
       </div>
 
       {/* Menu for small screens */}
-      <div className={`md:flex items-center space-x-4 ${isMenuOpen ? 'flex' : 'hidden'}`}>
-        <button className="px-4 py-2 rounded">
-          <Link href="/sign-in">Login</Link>
-        </button>
-        <button style={{ color: 'black', borderRadius: '8px' }} className="bg-white px-6 p-3">
-          <Link href="/sign-up">Sign up</Link>
-        </button>
+      <div
+        className={!isMenuOpen ? "drawer" : 'hiddenDrawer'}
+      >
+        <ImCross onClick={()=> setMenuOpen(false)}/>
       </div>
     </header>
   );

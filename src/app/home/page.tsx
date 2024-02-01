@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import '../(auth)/sign-in/signIn.css'
-import Header from './components/Header'
+import Header from './components/Header/Header'
 import Tabs from './components/Tabs';
 import stayIcon from "../../../public/Home/bIcon2.png";
 import flightIcon from "../../../public/Home/bIcon1.png";
@@ -20,7 +20,7 @@ const page = () => {
         { id: 1, label: 'Flights', content: <FlightTab />, icon: flightIcon },
         { id: 2, label: 'Stays', content: <StaysTab />, icon: stayIcon },
     ];
-
+    
     return (
         <div className="flex justify-center items-center flex-col bg-gray-100 w-full overflow-hidden">
             <div className='bgimage'>
