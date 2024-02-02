@@ -32,14 +32,14 @@ const page = () => {
                 </div>
 
             </div>
-            {/* <div
+             <div
                 style={{
-                    marginTop: "-8rem",
+                    marginTop: "-7rem",
                     borderRadius: "16px"
                 }} className="shadow-lg bg-white h-40vh w-5/6 self-center p-4 rounded-16 mb-2">
                 <Tabs tabs={tabs} />
             </div>
-            <div className="flex justify-center items-center flex-col w-85 gap-10 mt-10">
+           {/* <div className="flex justify-center items-center flex-col w-85 gap-10 mt-10">
                 <div className="self-start flex flex-col gap-1">
                     <h1 className="text-3xl font-bold">Plan your perfect trip</h1>
                     <p className="text-lg text-gray-500">Search Flights & Places Hire to our most popular destinations</p>

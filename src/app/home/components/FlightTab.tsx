@@ -21,20 +21,12 @@ export const FlightTab = () => {
     return (
         <form
             onSubmit={formik.handleSubmit}
+            className="flex items-center justify-center flex-col gap-4"
             style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                gap: "2rem",
-                flexDirection: "column"
-            }}>
-            <div
-                style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    gap: "2rem"
-                }}>
+                width: "90%",
+            }}
+        >
+            <div className="flex justify-center items-center flex-wrap lg:flex-nowrap gap-8 w-full">
                 <Input
                     name='fromTo'
                     onBlur={formik.handleBlur}
@@ -88,25 +80,25 @@ export const FlightTab = () => {
                     className="mt-1"
                 />
             </div>
-            <Link href="/find-flight" style={{
-                alignSelf: "flex-end",
-                marginRight: '6rem',
-            }}>
-                <button
-                    type="submit"
-                    style={{
-                        backgroundColor: "#8ed4bbff",
-                        padding: "1rem",
-                        borderRadius: '4px',
-                        display: 'flex',
-                        justifyContent: "center",
-                        alignItems: "center",
-                        gap: "0.5rem",
-                    }}>
-                    <Image src={flighIcon} alt="icon" />
-                    <p>Show flights</p>
-                </button>
-            </Link>
+            <div className="flex justify-end items-center gap-8 lg:self-end">
+                <Link href="/find-flight" >
+                    <button
+                        type="submit"
+                        style={{
+                            backgroundColor: "#8ed4bbff",
+                            padding: "1rem",
+                            borderRadius: '4px',
+                            display: 'flex',
+                            justifyContent: "center",
+                            alignItems: "center",
+                            gap: "0.5rem",
+                        }}>
+                        <Image src={flighIcon} alt="icon" />
+                        <p>Show flights</p>
+                    </button>
+                </Link>
+            </div>
+
 
         </form>
     )
