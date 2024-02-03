@@ -23,6 +23,26 @@
       border-radius: 0px;
     }
   }
+  .bgimage1 {
+    background-image: url("../../../../../public/FindFlights/bg1.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 5rem;
+    height: 90vh;
+    width: 100%;
+  }
+  @media only screen and (max-width: 600px) {
+    .bgimage1 {
+      margin: 0rem;
+      border-radius: 0px;
+    }
+  }
   
   .drawer {
     position: absolute;

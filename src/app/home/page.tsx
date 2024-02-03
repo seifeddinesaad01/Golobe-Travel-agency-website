@@ -90,7 +90,7 @@ const page = () => {
                     </Slider>
                 </div>
             </div>
-            {/* <Footer />  */}
+             <Footer /> 
         </div>
     )
 }
