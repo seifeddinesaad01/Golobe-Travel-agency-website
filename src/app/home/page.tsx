@@ -20,7 +20,7 @@ const page = () => {
         { id: 1, label: 'Flights', content: <FlightTab />, icon: flightIcon },
         { id: 2, label: 'Stays', content: <StaysTab />, icon: stayIcon },
     ];
-    
+
     return (
         <div className="flex justify-center items-center flex-col bg-gray-100 w-full overflow-hidden">
             <div className='bgimage'>
@@ -32,20 +32,19 @@ const page = () => {
                 </div>
 
             </div>
-             <div
+            <div
                 style={{
-                    marginTop: "-7rem",
+                    marginTop: "-8rem",
                     borderRadius: "16px"
                 }} className="shadow-lg bg-white h-40vh w-5/6 self-center p-4 rounded-16 mb-2">
                 <Tabs tabs={tabs} />
             </div>
-           {/* <div className="flex justify-center items-center flex-col w-85 gap-10 mt-10">
-                <div className="self-start flex flex-col gap-1">
-                    <h1 className="text-3xl font-bold">Plan your perfect trip</h1>
-                    <p className="text-lg text-gray-500">Search Flights & Places Hire to our most popular destinations</p>
+            <div className="flex justify-center items-center flex-col w-85 gap-10 mt-10">
+                <div className="self-center sm:self-start flex flex-col gap-1">
+                    <h1 className="text-3xl font-bold text-center sm:text-left">Plan your perfect trip</h1>
+                    <p className="text-lg text-gray-500 text-center sm:text-left">Search Flights & Places Hire to our most popular destinations</p>
                 </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 justify-start w-full">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center justify-center w-full">
                     {trips?.map((trip: any) => (
                         <TripCard
                             key={trip.id}
@@ -55,7 +54,7 @@ const page = () => {
                         />
                     ))}
                 </div>
-                <div className="flex justify-center items-center gap-4 w-full m-10">
+                {/* <div className="flex justify-center items-center gap-4 w-full m-10">
                     {tripsDisplay?.map((trip, index) => {
                         return <TripDisplay
                             key={index}
@@ -64,8 +63,9 @@ const page = () => {
                             description={trip.description}
                         />
                     })}
-                </div>
+                </div> */}
             </div>
+            {/*
             <div style={{
                 width: '85%'
             }} className="flex justify-center flex-col  gap-10 p-10">
