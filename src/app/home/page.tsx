@@ -54,7 +54,7 @@ const page = () => {
                         />
                     ))}
                 </div>
-                {/* <div className="flex justify-center items-center gap-4 w-full m-10">
+                <div className="flex justify-center items-center gap-4 w-full m-10 flex-col sm:flex-row">
                     {tripsDisplay?.map((trip, index) => {
                         return <TripDisplay
                             key={index}
@@ -63,7 +63,7 @@ const page = () => {
                             description={trip.description}
                         />
                     })}
-                </div> */}
+                </div>
             </div>
             {/*
             <div style={{
