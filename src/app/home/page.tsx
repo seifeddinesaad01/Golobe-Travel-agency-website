@@ -65,13 +65,14 @@ const page = () => {
                     })}
                 </div>
             </div>
-            {/*
+
             <div style={{
                 width: '85%'
-            }} className="flex justify-center flex-col  gap-10 p-10">
+            }}
+                className="flex justify-center flex-col  gap-10 p-0 sm:p-10">
                 <div className="self-start flex flex-col gap-1">
-                    <h1 className="text-3xl font-bold">Plan your perfect trip</h1>
-                    <p className="text-lg text-gray-500">Search Flights & Places Hire to our most popular destinations</p>
+                    <h1 className="text-3xl font-bold text-center sm:text-left">Plan your perfect trip</h1>
+                    <p className="text-lg text-gray-500 text-center sm:text-left">Search Flights & Places Hire to our most popular destinations</p>
                 </div>
                 <div style={{
                     width: '100%'
@@ -89,7 +90,7 @@ const page = () => {
                     </Slider>
                 </div>
             </div>
-            <Footer /> */}
+            {/* <Footer />  */}
         </div>
     )
 }
