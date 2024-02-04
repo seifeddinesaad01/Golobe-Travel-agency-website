@@ -1,10 +1,7 @@
 "use client"
 import React from 'react'
 import '../(auth)/sign-in/signIn.css'
-import Header from './components/Header/Header'
-import Tabs from './components/Tabs';
-import stayIcon from "../../../public/Home/bIcon2.png";
-import flightIcon from "../../../public/Home/bIcon1.png";
+import Tabs from '../../components/Tabs';
 import { FlightTab } from './components/FlightTab';
 import { StaysTab } from './components/StaysTab';
 import TripCard from './components/TripCard';
@@ -13,6 +10,10 @@ import TripDisplay from './components/TripDisplay';
 import ReviewCard from './components/ReviewCard';
 import Slider from './components/Slider';
 import Footer from '@/components/Footer';
+import Header from '@/components/Header/Header';
+import Logo from "../../../public/whiteLogo.png"
+import stayIcon from '../../../public/Home/icon1.png';
+import flightIcon from '../../../public/Home/icon2.png';
 
 
 const page = () => {
@@ -24,7 +25,7 @@ const page = () => {
     return (
         <div className="flex justify-center items-center flex-col bg-gray-100 w-full overflow-hidden">
             <div className='bgimage'>
-                <Header />
+                <Header logo={Logo} flightIcon={flightIcon} stayIcon={stayIcon} />
                 <div className="text-white flex flex-col justify-center items-center gap-2 mt-4">
                     <h2 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl">Helping Others</h2>
                     <h1 className="text-3xl md:text-6xl lg:text-6xl xl:text-7xl uppercase font-bold tracking-wide leading-tight font-roboto">L i v e & T r a v e l</h1>
@@ -90,7 +91,7 @@ const page = () => {
                     </Slider>
                 </div>
             </div>
-             <Footer /> 
+            <Footer />
         </div>
     )
 }

@@ -1,22 +1,30 @@
-// components/Header.tsx
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Logo from '../../../../../public/whiteLogo.png';
-import stayIcon from '../../../../../public/Home/icon1.png';
-import flightIcon from '../../../../../public/Home/icon2.png';
 import { ImCross } from "react-icons/im";
 import "../Header/header.css";
-const Header: React.FC = () => {
+import { usePathname } from 'next/navigation';
+const Header = ({ bgColor, logo, color, flightIcon, stayIcon }: any) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
-
+  const pathname = usePathname();
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
   };
-
+  const navLinks = [
+    {
+      name: "Find flight", href: "/find-flight", icon: flightIcon
+    },
+    {
+      name: "Find stay", href: "/find-stay", icon: stayIcon
+    }
+  ]
 
   return (
-    <header className="text-white p-6 flex items-center justify-between ">
+    <header style={{
+      background: bgColor,
+      color: color
+    }}
+      className="text-white p-6 flex items-center justify-between ">
       <div className="flex items-center space-x-4">
         {/* Hamburger menu icon for small screens */}
         <div className="md:hidden cursor-pointer" onClick={toggleMenu}>
@@ -35,29 +43,28 @@ const Header: React.FC = () => {
             />
           </svg>
         </div>
-
-        <Link href="/find-flight" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem' }}>
-          <Image src={flightIcon} alt="icon" />
-          <span className="hidden md:inline">Find flights</span>
-        </Link>
-        <Link href="/find-stay" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem' }}>
-          <Image src={stayIcon} alt="icon" />
-          <p className="hidden md:inline">Find stays</p>
-        </Link>
+        {navLinks.map((link) => {
+          const isActive = pathname.startsWith(link.href)
+          return <Link
+            href={link.href}
+            className={isActive ? 'border-b-4 border-green-300 flex items-center justify-center gap-1' : "flex items-center justify-center gap-1"}
+          >
+            <Image src={link.icon} alt="icon" />
+            <span className="hidden md:inline">{link.name}</span>
+          </Link>
+        })}
       </div>
-
       {/* Logo */}
       <div>
         <Link href="/">
-          <Image alt="Golobe" src={Logo} />
+          <Image alt="Golobe" src={logo} />
         </Link>
-      </div>
-
+      </div>  
       {/* Menu for small screens */}
       <div
         className={!isMenuOpen ? "drawer" : 'hiddenDrawer'}
       >
-        <ImCross onClick={()=> setMenuOpen(false)}/>
+        <ImCross onClick={() => setMenuOpen(false)} />
       </div>
     </header>
   );

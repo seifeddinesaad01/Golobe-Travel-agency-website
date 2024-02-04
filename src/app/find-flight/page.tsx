@@ -6,8 +6,9 @@ import flightIcon from "../../../public/Home/bIcon1.png";
 import Footer from '@/components/Footer';
 import { FlightTab } from '../home/components/FlightTab';
 import { StaysTab } from '../home/components/StaysTab';
-import Tabs from '../home/components/Tabs';
-import Header from '../home/components/Header/Header';
+import Header from '@/components/Header/Header';
+import Tabs from '../../components/Tabs';
+import Logo from "../../../public/Logo.png";
 
 const page = () => {
   const tabs = [
@@ -18,7 +19,7 @@ const page = () => {
   return (
     <div className="flex justify-center items-center flex-col bg-gray-100 w-full overflow-hidden">
       <div className='bgimage1'>
-        <Header />
+        <Header logo={Logo} bgColor="#fff" color="black" flightIcon={flightIcon} stayIcon={stayIcon}/>
         <div className="text-white flex flex-col justify-center items-center gap-2 mt-4">
           <h2 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl">Helping Others</h2>
           <h1 className="text-3xl md:text-6xl lg:text-6xl xl:text-7xl uppercase font-bold tracking-wide leading-tight font-roboto">L i v e & T r a v e l</h1>
