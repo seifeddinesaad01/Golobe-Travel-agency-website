@@ -20,7 +20,7 @@ export default function Card({ title, description, price, imageUrl }: any) {
                         <span className="text-3xl font-bold text-white">${price}</span>
                     </div>
                 </div>
-                <Button className="text-xs bg-green-300 text-black w-full">Book Flight</Button>
+                <Button className="text-4xs bg-green-300 text-black w-full">Book Flight</Button>
             </div>
         </div>
     )
