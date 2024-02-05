@@ -4,56 +4,21 @@ import '../(auth)/sign-in/signIn.css'
 import stayIcon from "../../../public/Home/bIcon2.png";
 import flightIcon from "../../../public/Home/bIcon1.png";
 import Footer from '@/components/Footer';
-import { FlightTab } from '../home/components/FlightTab';
-import { StaysTab } from '../home/components/StaysTab';
 import Header from '@/components/Header/Header';
 import Tabs from '../../components/Tabs';
 import Logo from "../../../public/Logo.png";
 import Card from './components/Card';
 import { Button } from "@/components/ui/button"
 import Image from 'next/image';
-import image1 from "../../../public/FindFlights/im5.png"
-import image2 from "../../../public/FindFlights/im6.png"
-import image3 from "../../../public/FindFlights/im7.png"
-import image4 from "../../../public/FindFlights/im8.png"
+import { FlightTab } from "@/app/home/components/FlightTab";
+import { StaysTab } from "@/app/home/components/StaysTab";
+import { cards, images } from '@/constants/data';
 const page = () => {
-  const tabs = [
-    { id: 1, label: 'Flights', content: <FlightTab />, icon: flightIcon },
-    { id: 2, label: 'Stays', content: <StaysTab />, icon: stayIcon },
-  ];
-  const cards = [
-    {
-      title: "Melbourne",
-      description: "An amazing journey",
-      imageUrl: "https://i.ibb.co/qmKcJn9/Rectangle-3.png",
-      price: "700"
-    },
-    {
-      title: "Paris",
-      description: "A Paris Adventure",
-      imageUrl: "https://i.ibb.co/h9TfzvF/Rectangle-4.png",
-      price: "600"
-    },
-    {
-      title: "London",
-      description: "London eye adventure",
-      imageUrl: "https://i.ibb.co/nntGGJf/Rectangle-5.png",
-      price: "350"
-    },
-    {
-      title: "Columbia",
-      description: "Amazing streets",
-      imageUrl: "https://i.ibb.co/TmWKLr4/Rectangle-6.png",
-      price: "700"
-    },
-  ];
 
-  const images = [
-    image1,
-    image2,
-    image3,
-    image4
-  ]
+  const tabs = [
+    { id: 1, label: "Flights", content: <FlightTab />, icon: flightIcon },
+    { id: 2, label: "Stays", content: <StaysTab />, icon: stayIcon },
+  ];
   return (
     <div className="flex justify-center items-center flex-col bg-gray-100 w-full overflow-hidden">
       <div className='bgimage1'>
@@ -118,6 +83,7 @@ const page = () => {
           <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 lg:mt-0 lg:w-1/2 lg:grid-cols-2">
             {images.map((image, index) => {
               return <Image
+                key={index}
                 alt="Tea fields in Sri Lanka"
                 className="rounded-lg"
                 height="200"
@@ -134,7 +100,7 @@ const page = () => {
         </div>
       </div>
 
-      {/* <Footer /> */}
+      <Footer /> 
     </div>
   )
 }

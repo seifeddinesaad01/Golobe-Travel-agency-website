@@ -13,6 +13,11 @@ import trip2Bg from "../../public/Home/trip2bg.png";
 import review1Img from "../../public/Home/review1Img.png";
 import review2Img from "../../public/Home/review2Img.png";
 import review3Img from "../../public/Home/review3Img.png";
+import image1 from "../../public/FindFlights/im5.png";
+import image2 from "../../public/FindFlights/im6.png";
+import image3 from "../../public/FindFlights/im7.png";
+import image4 from "../../public/FindFlights/im8.png";
+
 
 type ImportedImage = typeof SignInImage;
 
@@ -110,3 +115,33 @@ export const reviews = [
     image: review1Img,
   },
 ];
+
+export const cards = [
+  {
+    title: "Melbourne",
+    description: "An amazing journey",
+    imageUrl: "https://i.ibb.co/qmKcJn9/Rectangle-3.png",
+    price: "700",
+  },
+  {
+    title: "Paris",
+    description: "A Paris Adventure",
+    imageUrl: "https://i.ibb.co/h9TfzvF/Rectangle-4.png",
+    price: "600",
+  },
+  {
+    title: "London",
+    description: "London eye adventure",
+    imageUrl: "https://i.ibb.co/nntGGJf/Rectangle-5.png",
+    price: "350",
+  },
+  {
+    title: "Columbia",
+    description: "Amazing streets",
+    imageUrl: "https://i.ibb.co/TmWKLr4/Rectangle-6.png",
+    price: "700",
+  },
+];
+
+export const images = [image1, image2, image3, image4];
+
