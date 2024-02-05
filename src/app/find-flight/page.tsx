@@ -23,9 +23,9 @@ const page = () => {
     <div className="flex justify-center items-center flex-col bg-gray-100 w-full overflow-hidden">
       <div className='bgimage1'>
         <Header logo={Logo} bgColor="#fff" color="black" flightIcon={flightIcon} stayIcon={stayIcon} />
-        <div className="self-start text-white flex flex-col justify-start items-start pl-24 gap-2 mt-4">
-          <h2 className="text-3xl md:text-5xl lg:text-5xl xl:text-6xl">Make your travel <br /> whishlist, we'll do <br /> the rest</h2>
-          <p className="text-base md:text-lg lg:text-xl xl:text-2xl">Special offers to suit your plan</p>
+        <div className="slef-center sm:self-start text-white flex flex-col justify-start items-center pl-0 sm:pl-24 gap-2 mt-4">
+          <h2 className="text-3xl md:text-5xl lg:text-5xl xl:text-6xl text-center sm:text-left">Make your travel <br /> whishlist, we'll do <br /> the rest</h2>
+          <h3 className="text-base md:text-lg lg:text-xl xl:text-2xl self-center sm:self-start ">Special offers to suit your plan</h3>
         </div>
       </div>
       <div
@@ -35,9 +35,9 @@ const page = () => {
         }}
         className="shadow-lg bg-white h-40vh w-5/6 self-center p-4 rounded-16 mb-2">
         <Tabs tabs={tabs} />
-      </div>
+      </div> 
 
-      <div className="flex justify-center items-center flex-col gap-10 mt-10 w-[85%]">
+       <div className="flex justify-center items-center flex-col gap-10 mt-10 w-[85%]">
         <div className="self-center sm:self-start flex flex-col gap-1">
           <h1 className="text-3xl font-bold text-center sm:text-left">Fall into travel</h1>
           <p className="text-lg text-gray-500 text-center sm:text-left">
@@ -54,8 +54,8 @@ const page = () => {
             />
           })}
         </div>
-      </div>
-      <div className="flex justify-center items-center flex-col gap-10 mt-10 w-[85%] pb-16 pt-8">
+      </div> 
+       <div className="flex justify-center items-center flex-col gap-10 mt-10 w-[85%] pb-16 pt-8">
         <div className="self-center sm:self-start flex flex-col gap-1">
           <h1 className="text-3xl font-bold text-center sm:text-left">Fall into travel</h1>
           <p className="text-lg text-black text-center sm:text-left">
@@ -91,15 +91,15 @@ const page = () => {
                 style={{
                   //  aspectRatio: "300/200",
                   objectFit: "cover",
-                  width:'100%',
+                  width: '100%',
                 }}
                 width="300"
               />
             })}
           </div>
         </div>
-      </div>
-      <Footer />
+      </div> 
+       <Footer /> 
     </div>
   )
 }
