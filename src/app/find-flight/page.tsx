@@ -34,10 +34,11 @@ const page = () => {
           borderRadius: "16px"
         }}
         className="shadow-lg bg-white h-40vh w-5/6 self-center p-4 rounded-16 mb-2">
-        <Tabs tabs={tabs} />
-      </div> 
+        {/* <Tabs tabs={tabs} /> */}
+        <FlightTab title={true} />
+      </div>
 
-       <div className="flex justify-center items-center flex-col gap-10 mt-10 w-[85%]">
+      <div className="flex justify-center items-center flex-col gap-10 mt-10 w-[85%]">
         <div className="self-center sm:self-start flex flex-col gap-1">
           <h1 className="text-3xl font-bold text-center sm:text-left">Fall into travel</h1>
           <p className="text-lg text-gray-500 text-center sm:text-left">
@@ -54,8 +55,8 @@ const page = () => {
             />
           })}
         </div>
-      </div> 
-       <div className="flex justify-center items-center flex-col gap-10 mt-10 w-[85%] pb-16 pt-8">
+      </div>
+      <div className="flex justify-center items-center flex-col gap-10 mt-10 w-[85%] pb-16 pt-8">
         <div className="self-center sm:self-start flex flex-col gap-1">
           <h1 className="text-3xl font-bold text-center sm:text-left">Fall into travel</h1>
           <p className="text-lg text-black text-center sm:text-left">
@@ -98,8 +99,8 @@ const page = () => {
             })}
           </div>
         </div>
-      </div> 
-       <Footer /> 
+      </div>
+      <Footer />
     </div>
   )
 }
