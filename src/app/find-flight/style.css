@@ -1,5 +1,4 @@
 .bgimage3 {
-    background-image: url("../../../public/FindFlights/bg1.png");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -10,6 +9,6 @@
     flex-direction: column;
     height: 100%;
     gap: 5rem;
-    height: 50vh;
+    height: 60vh;
     width: 100%;
   }

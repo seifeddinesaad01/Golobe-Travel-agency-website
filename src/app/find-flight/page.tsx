@@ -16,7 +16,32 @@ const page = () => {
     { id: 1, label: 'Flights', content: <FlightTab />, icon: flightIcon },
     { id: 2, label: 'Stays', content: <StaysTab />, icon: stayIcon },
   ];
-
+  const cards = [
+    {
+      title: "Melbourne",
+      description: "An amazing journey",
+      imageUrl: "https://i.ibb.co/qmKcJn9/Rectangle-3.png",
+      price: "700"
+    },
+    {
+      title: "Paris",
+      description: "A Paris Adventure",
+      imageUrl: "https://i.ibb.co/h9TfzvF/Rectangle-4.png",
+      price: "600"
+    },
+    {
+      title: "London",
+      description: "London eye adventure",
+      imageUrl: "https://i.ibb.co/nntGGJf/Rectangle-5.png",
+      price: "350"
+    },
+    {
+      title: "Columbia",
+      description: "Amazing streets",
+      imageUrl: "https://i.ibb.co/TmWKLr4/Rectangle-6.png",
+      price: "700"
+    },
+  ]
   return (
     <div className="flex justify-center items-center flex-col bg-gray-100 w-full overflow-hidden">
       <div className='bgimage1'>
@@ -35,17 +60,22 @@ const page = () => {
         <Tabs tabs={tabs} />
       </div>
 
-      <div className="flex justify-center items-center flex-col w-85 gap-10 mt-10">
+      <div className="flex justify-center items-center flex-col gap-10 mt-10 w-[85%]">
         <div className="self-center sm:self-start flex flex-col gap-1">
           <h1 className="text-3xl font-bold text-center sm:text-left">Fall into travel</h1>
           <p className="text-lg text-gray-500 text-center sm:text-left">
             Going somewhere to celebrate this season? Whether you’re going home or somewhere to roam, we’ve got <br />
             the travel tools to get you to your destination.</p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center justify-center w-full">
-          <Card />
-          <Card />
-          <Card />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 items-center justify-center w-full m-10">
+          {cards.map((card) => {
+            return <Card
+              title={card.title}
+              description={card.description}
+              imageUrl={card.imageUrl}
+              price={card.price}
+            />
+          })}
         </div>
         {/* <div className="flex justify-center items-center gap-4 w-full m-10 flex-col sm:flex-row">
                     {tripsDisplay?.map((trip, index) => {
