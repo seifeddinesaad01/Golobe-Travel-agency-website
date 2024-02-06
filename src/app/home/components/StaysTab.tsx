@@ -9,7 +9,7 @@ const validationSchema = yup.object({
     // password: yup.string().required("Password is required").min(6, "Password must be at least 6 characters"),
 });
 
-export const StaysTab = () => {
+export const StaysTab = ({ title }: any) => {
     const formik = useFormik({
         initialValues: {
             email: "",
@@ -19,89 +19,92 @@ export const StaysTab = () => {
         onSubmit: async (values) => { },
     })
     return (
-        <form
-            onSubmit={formik.handleSubmit}
-            // className="space-y-6"
-            style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                gap: "2rem",
-                flexDirection: "column"
-            }}>
-            <div className="flex justify-center items-center flex-wrap lg:flex-nowrap gap-8 w-full">
-                <Input
-                    name='email'
-                    onBlur={formik.handleBlur}
-                    value={formik.values.email}
-                    onChange={formik.handleChange}
-                    errors={formik.errors}
-                    touched={formik.touched}
-                    placeholder='Al Amir Palace'
-                    type="text"
-                    id="email"
-                    text='Hotel'
-                    className="mt-1"
-                />
-                <Input
-                    name='email'
-                    onBlur={formik.handleBlur}
-                    value={formik.values.email}
-                    onChange={formik.handleChange}
-                    errors={formik.errors}
-                    touched={formik.touched}
-                    placeholder='Deluxe Room'
-                    type="email"
-                    id="email"
-                    text='Room Type'
-                    className="mt-1"
-                />
-                <Input
-                    name='fromTo'
-                    onBlur={formik.handleBlur}
-                    value={formik.values.email}
-                    onChange={formik.handleChange}
-                    errors={formik.errors}
-                    touched={formik.touched}
-                    placeholder='0'
-                    type="number"
-                    id="fromTo"
-                    text='Days'
-                    className="mt-1"
-                />
-                <Input
-                    name='email'
-                    onBlur={formik.handleBlur}
-                    value={formik.values.email}
-                    onChange={formik.handleChange}
-                    errors={formik.errors}
-                    touched={formik.touched}
-                    placeholder='0'
-                    type="number"
-                    id="email"
-                    text='Visitors number'
-                    className="mt-1"
-                />
-            </div>
-            <div className="flex justify-end items-center gap-8 lg:self-end">
-                <Link href="/find-flight" >
-                    <button
-                        type="submit"
-                        style={{
-                            backgroundColor: "#8ed4bbff",
-                            padding: "1rem",
-                            borderRadius: '4px',
-                            display: 'flex',
-                            justifyContent: "center",
-                            alignItems: "center",
-                            gap: "0.5rem",
-                        }}>
-                        <Image src={flighIcon} alt="icon" />
-                        <p>Show flights</p>
-                    </button>
-                </Link>
-            </div>
+        <div className="flex flex-col justify-start items-center gap-2 w-full">
+            {title && <h1 className="self-center sm:self-start text-xl font-bold">Where are you staying? </h1>}
+            <form
+                onSubmit={formik.handleSubmit}
+                // className="space-y-6"
+                style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    gap: "2rem",
+                    flexDirection: "column"
+                }}>
+                <div className="flex justify-center items-center flex-wrap lg:flex-nowrap gap-8 w-full">
+                    <Input
+                        name='email'
+                        onBlur={formik.handleBlur}
+                        value={formik.values.email}
+                        onChange={formik.handleChange}
+                        errors={formik.errors}
+                        touched={formik.touched}
+                        placeholder='Al Amir Palace'
+                        type="text"
+                        id="email"
+                        text='Hotel'
+                        className="mt-1 w-full"
+                    />
+                    <Input
+                        name='email'
+                        onBlur={formik.handleBlur}
+                        value={formik.values.email}
+                        onChange={formik.handleChange}
+                        errors={formik.errors}
+                        touched={formik.touched}
+                        placeholder='Deluxe Room'
+                        type="email"
+                        id="email"
+                        text='Room Type'
+                        className="mt-1 w-full"
+                    />
+                    <Input
+                        name='fromTo'
+                        onBlur={formik.handleBlur}
+                        value={formik.values.email}
+                        onChange={formik.handleChange}
+                        errors={formik.errors}
+                        touched={formik.touched}
+                        placeholder='0'
+                        type="number"
+                        id="fromTo"
+                        text='Days'
+                        className="mt-1 w-full"
+                    />
+                    <Input
+                        name='email'
+                        onBlur={formik.handleBlur}
+                        value={formik.values.email}
+                        onChange={formik.handleChange}
+                        errors={formik.errors}
+                        touched={formik.touched}
+                        placeholder='0'
+                        type="number"
+                        id="email"
+                        text='Visitors number'
+                        className="mt-1 w-full"
+                    />
+                </div>
+                <div className="flex justify-end items-center gap-8 lg:self-end">
+                    <Link href="/find-flight" >
+                        <button
+                            type="submit"
+                            style={{
+                                backgroundColor: "#8ed4bbff",
+                                padding: "1rem",
+                                borderRadius: '4px',
+                                display: 'flex',
+                                justifyContent: "center",
+                                alignItems: "center",
+                                gap: "0.5rem",
+                            }}>
+                            <Image src={flighIcon} alt="icon" />
+                            <p>Show flights</p>
+                        </button>
+                    </Link>
+                </div>
 
-        </form>
+            </form>
+        </div>
     )
 }

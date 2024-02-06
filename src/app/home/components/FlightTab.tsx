@@ -19,16 +19,13 @@ export const FlightTab = ({ title }: any) => {
         onSubmit: async (values) => { },
     })
     return (
-        <div className="flex flex-col justify-start items-center gap-2">
-            {title && <h1 className="self-center sm:self-start  pl-0 sm:pl-10 text-xl font-bold">Where are you flying? </h1>}
+        <div className="flex flex-col justify-start items-center gap-2 w-full">
+            {title && <h1 className="self-center sm:self-start text-xl font-bold">Where are you flying? </h1>}
             <form
                 onSubmit={formik.handleSubmit}
-                className="flex items-center justify-center flex-col gap-4"
-                style={{
-                    width: "100%",
-                }}
+                className="flex items-center justify-center flex-col gap-4 w-full"
             >
-                <div className="flex justify-center items-center flex-wrap lg:flex-nowrap gap-8 w-[100%]">
+                <div className="flex justify-center items-center flex-wrap lg:flex-nowrap gap-8 w-full">
                     <Input
                         name='fromTo'
                         onBlur={formik.handleBlur}
@@ -40,7 +37,7 @@ export const FlightTab = ({ title }: any) => {
                         type="text"
                         id="fromTo"
                         text='From To'
-                        className="mt-1"
+                        className="mt-1 w-full"
                     />
                     <Input
                         name='email'
@@ -53,7 +50,7 @@ export const FlightTab = ({ title }: any) => {
                         type="text"
                         id="email"
                         text='Trip'
-                        className="mt-1"
+                        className="mt-1 w-full"
                     />
                     <Input
                         name='email'
@@ -66,7 +63,7 @@ export const FlightTab = ({ title }: any) => {
                         type="email"
                         id="email"
                         text='Depart-Return'
-                        className="mt-1"
+                        className="mt-1 w-full"
                     />
                     <Input
                         name='email'
@@ -79,7 +76,7 @@ export const FlightTab = ({ title }: any) => {
                         type="email"
                         id="email"
                         text='Passenger - Class'
-                        className="mt-1"
+                        className="mt-1 w-full"
                     />
                 </div>
                 <div className="flex justify-end items-center gap-8 lg:self-end">

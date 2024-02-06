@@ -11,17 +11,15 @@ import Card from './components/Card';
 import { Button } from "@/components/ui/button"
 import Image from 'next/image';
 import { FlightTab } from "@/app/home/components/FlightTab";
-import { StaysTab } from "@/app/home/components/StaysTab";
 import { cards, images } from '@/constants/data';
 const page = () => {
+  const backgroundImageUrl = 'url("https://i.ibb.co/PjnvH54/Frame-36-1.png")';
 
-  const tabs = [
-    { id: 1, label: "Flights", content: <FlightTab />, icon: flightIcon },
-    { id: 2, label: "Stays", content: <StaysTab />, icon: stayIcon },
-  ];
   return (
     <div className="flex justify-center items-center flex-col bg-gray-100 w-full overflow-hidden">
-      <div className='bgimage1'>
+      <div style={{
+        backgroundImage: backgroundImageUrl,
+      }} className='bgimage1'>
         <Header logo={Logo} bgColor="#fff" color="black" flightIcon={flightIcon} stayIcon={stayIcon} />
         <div className="slef-center sm:self-start text-white flex flex-col justify-start items-center pl-0 sm:pl-24 gap-2 mt-4">
           <h2 className="text-3xl md:text-5xl lg:text-5xl xl:text-6xl text-center sm:text-left">Make your travel <br /> whishlist, we'll do <br /> the rest</h2>
@@ -34,7 +32,6 @@ const page = () => {
           borderRadius: "16px"
         }}
         className="shadow-lg bg-white h-40vh w-5/6 self-center p-4 rounded-16 mb-2">
-        {/* <Tabs tabs={tabs} /> */}
         <FlightTab title={true} />
       </div>
 
