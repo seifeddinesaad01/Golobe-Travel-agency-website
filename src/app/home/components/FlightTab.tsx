@@ -25,10 +25,10 @@ export const FlightTab = ({ title }: any) => {
                 onSubmit={formik.handleSubmit}
                 className="flex items-center justify-center flex-col gap-4"
                 style={{
-                    width: "90%",
+                    width: "100%",
                 }}
             >
-                <div className="flex justify-center items-center flex-wrap lg:flex-nowrap gap-8 w-full">
+                <div className="flex justify-center items-center flex-wrap lg:flex-nowrap gap-8 w-[100%]">
                     <Input
                         name='fromTo'
                         onBlur={formik.handleBlur}

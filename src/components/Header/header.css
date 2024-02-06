@@ -23,7 +23,7 @@
     }
   }
   .bgimage1 {
-    background-image: url("../../../public/FindFlights/bg1.png");
+    /* background-image: url("../../../public/FindFlights/bg1.png"); */
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
