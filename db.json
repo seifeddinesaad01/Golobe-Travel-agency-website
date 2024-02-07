@@ -1,0 +1,10 @@
+{
+    "flights": [
+        {
+            "_id": "12345678",
+            "name": "king",
+            "email": "saadseif304@gmail.com",
+            "phone": "92532269"
+        }
+    ]
+}

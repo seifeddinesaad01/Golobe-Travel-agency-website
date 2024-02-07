@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../(auth)/sign-in/signIn.css'
 import stayIcon from "../../../public/Home/bIcon2.png";
 import flightIcon from "../../../public/Home/bIcon1.png";
@@ -12,8 +12,15 @@ import { Button } from "@/components/ui/button"
 import Image from 'next/image';
 import { FlightTab } from "@/app/home/components/FlightTab";
 import { cards, images } from '@/constants/data';
+import { useFetch } from '@/Data/Fetchs';
+
 const page = () => {
   const backgroundImageUrl = 'url("https://i.ibb.co/PjnvH54/Frame-36-1.png")';
+  const [flights, setFlights] = useState<any>(null)
+  useFetch("http://localhost:8000/flights");
+
+
+  // Empty dependency array to ensure the effect runs only once on mount
 
   return (
     <div className="flex justify-center items-center flex-col bg-gray-100 w-full overflow-hidden">

@@ -23,7 +23,6 @@ export const StaysTab = ({ title }: any) => {
             {title && <h1 className="self-center sm:self-start text-xl font-bold">Where are you staying? </h1>}
             <form
                 onSubmit={formik.handleSubmit}
-                // className="space-y-6"
                 style={{
                     display: "flex",
                     justifyContent: "center",

@@ -1,7 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import {getAuth, GoogleAuthProvider, GithubAuthProvider} from "firebase/auth"
+import { GithubAuthProvider, GoogleAuthProvider, getAuth } from "firebase/auth";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -14,7 +15,7 @@ const firebaseConfig = {
   storageBucket: "react-firebase-auth-f1039.appspot.com",
   messagingSenderId: "273776555646",
   appId: "1:273776555646:web:2254e9d086c4b81088ca2f",
-  measurementId: "G-L9NLJC6V32"
+  measurementId: "G-L9NLJC6V32",
 };
 
 // Initialize Firebase
@@ -22,6 +23,4 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
 export const githubProvider = new GithubAuthProvider(); // Add this line
-
-
 const analytics = getAnalytics(app);
