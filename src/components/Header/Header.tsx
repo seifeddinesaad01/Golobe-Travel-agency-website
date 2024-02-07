@@ -11,7 +11,7 @@ const Header = ({ bgColor, logo, color, flightIcon, stayIcon }: any) => {
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
   };
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem("userToken");
   const navLinks = [
     {
       name: "Find flight", href: "/find-flight", icon: flightIcon
