@@ -4,12 +4,14 @@ import Link from 'next/link';
 import { ImCross } from "react-icons/im";
 import "../Header/header.css";
 import { usePathname } from 'next/navigation';
+import MenuDropDown from '../Dropdown';
 const Header = ({ bgColor, logo, color, flightIcon, stayIcon }: any) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
   };
+  const token = localStorage.getItem("token");
   const navLinks = [
     {
       name: "Find flight", href: "/find-flight", icon: flightIcon
@@ -59,7 +61,13 @@ const Header = ({ bgColor, logo, color, flightIcon, stayIcon }: any) => {
         <Link href="/">
           <Image alt="Golobe" src={logo} />
         </Link>
-      </div>  
+      </div>
+      {/* Login and signUp buttons */}
+      {!token ?
+        <div className='flex items-center justify-center gap-2'>
+          <button className='p-2'>Login</button>
+          <button className='py-2 px-4 bg-black border-solid-2 rounded-lg'>Sign Up</button>
+        </div> : <MenuDropDown />}
       {/* Menu for small screens */}
       <div
         className={!isMenuOpen ? "drawer" : 'hiddenDrawer'}
