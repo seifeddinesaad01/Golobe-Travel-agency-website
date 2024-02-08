@@ -7,24 +7,23 @@ import profileIcon from "../../public/Home/profile.png";
 import settingsIcon from "../../public/Home/Settings.png";
 import LogoutIcon from "../../public/Home/Logout.png";
 import Link from 'next/link';
-import { LogOutIcon } from 'lucide-react';
-const items: MenuProps['items'] = [
+import ActionLink from './ActionLink';
+export const items: MenuProps['items'] = [
     {
-        label: <Link href="/profile" className='flex items-center justify-start gap-2'><Image src={profileIcon} alt="icon" /> <p>Profile</p></Link>,
+        label: <ActionLink text='Profile' href="/profile" icon={profileIcon} />,
         key: '0',
     },
     {
-        label: <Link href="/settings" className='flex items-center justify-start gap-2'><Image src={settingsIcon} alt="icon" /> <p>Settings</p></Link>,
+        label: <ActionLink text='Settings' href="/settings" icon={settingsIcon} />,
         key: '1',
     },
     {
         type: 'divider',
     },
     {
-        label: <Link href="/Logout" className='flex items-center justify-start gap-2'><Image src={LogoutIcon} alt="icon" /> <p>Logout</p></Link>,
+        label: <ActionLink text='Logout' href="/logout" icon={LogoutIcon} />,
         key: '2',
     },
-
 ];
 
 export const MenuDropDown = ({ user }: any) => {
