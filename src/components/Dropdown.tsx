@@ -25,7 +25,6 @@ export const items: MenuProps['items'] = [
 ];
 
 export const MenuDropDown = ({ user }: any) => {
-    console.log(user)
     return (
         <Dropdown menu={{ items }} trigger={['click']}>
             <a onClick={(e) => e.preventDefault()} className='cursor-pointer'>
