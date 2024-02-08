@@ -6,6 +6,7 @@ import flightIcon from "../../../../public/Home/bIcon1.png";
 import Logo from "../../../../public/Logo.png";
 import { FlightTab } from '@/app/home/components/FlightTab';
 import searchIcon from "../../../../public/FindFlights/searchIcon.png"
+import Filter from '@/components/Filter';
 const page = () => {
     return (
         <div className='flex flex-col'>
@@ -22,6 +23,15 @@ const page = () => {
                     borderRadius: "16px"
                 }}>
                 <FlightTab showButton={true} href="" icon={searchIcon} />
+            </div>
+            <div className='grid grid-cols-2'>
+                <div className='w-1/4 p-8'>
+                    <h1>Filters</h1>
+                    <Filter />
+                </div>
+                <div className='w-full'>
+                    <p>Showcase</p>
+                </div>
             </div>
         </div >
     )
