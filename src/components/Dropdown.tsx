@@ -22,7 +22,7 @@ const items: MenuProps['items'] = [
 
 export const MenuDropDown: React.FC = () => (
     <Dropdown menu={{ items }} trigger={['click']}>
-        <a onClick={(e) => e.preventDefault()}>
+        <a onClick={(e) => e.preventDefault()} className='cursor-pointer'>
             <Space>
                 <img src="https://i.ibb.co/vL7MPSV/113129314.jpg" alt="avatar" width="40" height={40} style={{
                     borderRadius:"50%"
