@@ -5,6 +5,7 @@ import { ImCross } from "react-icons/im";
 import "../Header/header.css";
 import { usePathname } from 'next/navigation';
 import MenuDropDown from '../Dropdown';
+import { useFetch } from '@/Data/Fetchs';
 const Header = ({ bgColor, logo, color, flightIcon, stayIcon }: any) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -20,7 +21,7 @@ const Header = ({ bgColor, logo, color, flightIcon, stayIcon }: any) => {
       name: "Find stay", href: "/find-stay", icon: stayIcon
     }
   ]
-
+  const user = useFetch("http://localhost:8000/me");
   return (
     <header style={{
       background: bgColor,
@@ -67,7 +68,7 @@ const Header = ({ bgColor, logo, color, flightIcon, stayIcon }: any) => {
         <div className='flex items-center justify-center gap-2'>
           <button className='p-2'>Login</button>
           <button className='py-2 px-4 bg-black border-solid-2 rounded-lg'>Sign Up</button>
-        </div> : <MenuDropDown />}
+        </div> : <MenuDropDown user={user} />}
       {/* Menu for small screens */}
       <div
         className={!isMenuOpen ? "drawer" : 'hiddenDrawer'}

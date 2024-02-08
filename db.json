@@ -6,5 +6,10 @@
             "email": "saadseif304@gmail.com",
             "phone": "92532269"
         }
-    ]
+    ],
+    "me": {
+        "name": "Seif Saad",
+        "age": 30,
+        "email": "john@example.com"
+    }
 }
