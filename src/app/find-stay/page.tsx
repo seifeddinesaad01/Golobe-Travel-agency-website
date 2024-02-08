@@ -5,7 +5,6 @@ import stayIcon from "../../../public/Home/bIcon2.png";
 import flightIcon from "../../../public/Home/bIcon1.png";
 import Footer from '@/components/Footer';
 import Header from '@/components/Header/Header';
-import Tabs from '../../components/Tabs';
 import Logo from "../../../public/Logo.png";
 import Card from '../find-flight/components/Card';
 import { Button } from "@/components/ui/button"
@@ -13,10 +12,7 @@ import Image from 'next/image';
 import { FlightTab } from "@/app/home/components/FlightTab";
 import { cards, images } from '@/constants/data';
 const page = () => {
-
-
   const backgroundImageUrl = 'url("https://i.ibb.co/dm3wMqJ/Frame-36-2.png")';
-
   return (
     <div className="flex justify-center items-center flex-col bg-gray-100 w-full overflow-hidden">
       <div style={{

@@ -1,15 +1,13 @@
 import { Input } from "@/components/Input";
 import { useFormik } from "formik";
-import Image from "next/image";
 import * as yup from "yup";
-import flighIcon from "../../../../public/Home/bIcon3.png"
-import Link from "next/link";
+import GenericButton from "@/components/GenericButton";
 const validationSchema = yup.object({
     // email: yup.string().email("Invalid email address").required("Required"),
     // password: yup.string().required("Password is required").min(6, "Password must be at least 6 characters"),
 });
 
-export const FlightTab = ({ title }: any) => {
+export const FlightTab = ({ title, showButton, href, icon, buttonText }: any) => {
     const formik = useFormik({
         initialValues: {
             email: "",
@@ -78,27 +76,9 @@ export const FlightTab = ({ title }: any) => {
                         text='Passenger - Class'
                         className="mt-1 w-full"
                     />
+                    {showButton && <GenericButton href={href} icon={icon} text={buttonText} className="flex justify-end items-center gap-8 lg:self-end w-64" />}
                 </div>
-                <div className="flex justify-end items-center gap-8 lg:self-end">
-                    <Link href="/find-flight" >
-                        <button
-                            type="submit"
-                            style={{
-                                backgroundColor: "#8ed4bbff",
-                                padding: "1rem",
-                                borderRadius: '4px',
-                                display: 'flex',
-                                justifyContent: "center",
-                                alignItems: "center",
-                                gap: "0.5rem",
-                            }}>
-                            <Image src={flighIcon} alt="icon" />
-                            <p>Show flights</p>
-                        </button>
-                    </Link>
-                </div>
-
-
+                {!showButton && <GenericButton href={href} icon={icon} text={buttonText} className="flex justify-end items-center gap-8 lg:self-end" />}
             </form>
         </div>
     )

@@ -1,11 +1,10 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import '../(auth)/sign-in/signIn.css'
 import stayIcon from "../../../public/Home/bIcon2.png";
 import flightIcon from "../../../public/Home/bIcon1.png";
 import Footer from '@/components/Footer';
 import Header from '@/components/Header/Header';
-import Tabs from '../../components/Tabs';
 import Logo from "../../../public/Logo.png";
 import Card from './components/Card';
 import { Button } from "@/components/ui/button"
@@ -13,15 +12,11 @@ import Image from 'next/image';
 import { FlightTab } from "@/app/home/components/FlightTab";
 import { cards, images } from '@/constants/data';
 import { useFetch } from '@/Data/Fetchs';
+import buttonIcon from "../../../public/Home/bIcon3.png"
 
 const page = () => {
   const backgroundImageUrl = 'url("https://i.ibb.co/PjnvH54/Frame-36-1.png")';
-  const [flights, setFlights] = useState<any>(null)
   useFetch("http://localhost:8000/flights");
-
-
-  // Empty dependency array to ensure the effect runs only once on mount
-
   return (
     <div className="flex justify-center items-center flex-col bg-gray-100 w-full overflow-hidden">
       <div style={{
@@ -39,7 +34,7 @@ const page = () => {
           borderRadius: "16px"
         }}
         className="shadow-lg bg-white h-40vh w-5/6 self-center p-4 rounded-16 mb-2">
-        <FlightTab title={true} />
+        <FlightTab title={true} buttonText="Show flight" icon={buttonIcon} />
       </div>
 
       <div className="flex justify-center items-center flex-col gap-10 mt-10 w-[85%]">
