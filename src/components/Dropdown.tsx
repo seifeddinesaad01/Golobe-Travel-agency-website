@@ -2,11 +2,9 @@ import React from 'react';
 import { DownOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Dropdown, Space } from 'antd';
-import Image from 'next/image';
 import profileIcon from "../../public/Home/profile.png";
 import settingsIcon from "../../public/Home/Settings.png";
 import LogoutIcon from "../../public/Home/Logout.png";
-import Link from 'next/link';
 import ActionLink from './ActionLink';
 export const items: MenuProps['items'] = [
     {
