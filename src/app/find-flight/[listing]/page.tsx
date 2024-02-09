@@ -8,6 +8,7 @@ import { FlightTab } from '@/app/home/components/FlightTab';
 import searchIcon from "../../../../public/FindFlights/searchIcon.png"
 import Filter from '@/components/Filter';
 import { Divider } from 'antd';
+import CheckboxFilter from '@/components/CheckboxFilter';
 const page = () => {
     return (
         <div className='flex flex-col bg-[#fafbfcff]'>
@@ -32,7 +33,10 @@ const page = () => {
                     <h1 className='text-2xl font-bold'>Filters</h1>
                     <Filter title="Price" />
                     <Divider />
-                    
+                    <CheckboxFilter />
+                    <Divider />
+                    <CheckboxFilter />
+
                 </div>
                 <div className='w-full'>
                     <p>Showcase</p>
