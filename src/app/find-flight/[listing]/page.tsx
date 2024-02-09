@@ -10,6 +10,8 @@ import Filter from '@/components/Filter';
 import { Divider } from 'antd';
 import CheckboxFilter from '@/components/CheckboxFilter';
 import GenericCard from '@/components/GenericCard';
+import { flightsList } from '@/constants/data';
+
 const airlines = [
     "Emirated",
     "Fly Dubai",
@@ -50,10 +52,18 @@ const page = () => {
                     <CheckboxFilter checkboxs={trips} title="Trips" />
                 </div>
                 <div className='w-full flex flex-col gap-4'>
-                    <GenericCard />
-                    <GenericCard />
-                    <GenericCard />
-                    <GenericCard />
+                    {flightsList?.map((airline) => {
+                        return <GenericCard
+                            image={airline?.image}
+                            rate={airline?.rate}
+                            id={airline?.id}
+                            price={airline?.price}
+                            reviewsNumber={airline?.reviewsNumber}
+                            departureTime={airline?.departureTime}
+                            arrivalTime={airline?.arrivalTime}
+                        />
+                    }
+                    )}
 
                 </div>
             </div>
