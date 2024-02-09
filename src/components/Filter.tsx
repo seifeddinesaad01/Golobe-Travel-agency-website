@@ -4,9 +4,6 @@ import { Slider } from 'antd';
 
 const Filter = () => {
     const [value, setValue] = useState<number>(50);
-
-
-
     return (
         <div className='flex flex-col gap-2'>
             <label htmlFor="rangeInput">Price:</label>

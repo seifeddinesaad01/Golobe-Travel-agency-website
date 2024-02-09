@@ -9,7 +9,7 @@ import searchIcon from "../../../../public/FindFlights/searchIcon.png"
 import Filter from '@/components/Filter';
 const page = () => {
     return (
-        <div className='flex flex-col'>
+        <div className='flex flex-col bg-[#fafbfcff]'>
             <Header
                 logo={Logo}
                 stayIcon={stayIcon}
@@ -17,10 +17,12 @@ const page = () => {
                 bgColor="white"
                 color="black"
             />
-            <div
+            <div className='shadow-md hover:shadow-lg'
                 style={{
-                    padding: '2rem',
-                    borderRadius: "16px"
+                    margin: '2rem',
+                    padding: "2rem",
+                    borderRadius: "16px",
+                    backgroundColor: "white",
                 }}>
                 <FlightTab showButton={true} href="" icon={searchIcon} />
             </div>
