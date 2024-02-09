@@ -9,6 +9,7 @@ import searchIcon from "../../../../public/FindFlights/searchIcon.png"
 import Filter from '@/components/Filter';
 import { Divider } from 'antd';
 import CheckboxFilter from '@/components/CheckboxFilter';
+import GenericCard from '@/components/GenericCard';
 const airlines = [
     "Emirated",
     "Fly Dubai",
@@ -40,17 +41,20 @@ const page = () => {
                 }}>
                 <FlightTab showButton={true} href="" icon={searchIcon} />
             </div>
-            <div className='grid grid-cols-2'>
-                <div className='w-2/4 p-8 flex gap-4 flex-col'>
+            <div className='flex flex-row justify-center items-start m-4'>
+                <div className='w-1/4 p-8 flex gap-4 flex-col'>
                     <h1 className='text-2xl font-bold'>Filters</h1>
                     <Filter title="Price" />
                     <Divider />
                     <CheckboxFilter checkboxs={airlines} title="Airlines" />
-                    {/* <Divider /> */}
                     <CheckboxFilter checkboxs={trips} title="Trips" />
                 </div>
-                <div className='w-full'>
-                    <p>Showcase</p>
+                <div className='w-full flex flex-col gap-4'>
+                    <GenericCard />
+                    <GenericCard />
+                    <GenericCard />
+                    <GenericCard />
+
                 </div>
             </div>
         </div >
