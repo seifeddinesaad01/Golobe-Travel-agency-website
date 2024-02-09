@@ -2,19 +2,30 @@
 import React, { useState } from 'react'
 import { Slider } from 'antd';
 
-const Filter = () => {
+const Filter = ({ title }: any) => {
     const [value, setValue] = useState<number>(50);
     return (
-        <div className='flex flex-col gap-2'>
-            <label htmlFor="rangeInput">Price:</label>
+        <div className='flex flex-col gap-2 w-full'>
+            <label htmlFor="rangeInput" className='font-bolder text-xl'>{title}:</label>
             <Slider
-                range={{ draggableTrack: true }}
-                defaultValue={[50, 1500]}
+                defaultValue={50}
                 min={50}
                 max={1500}
                 onChange={(value: any) => setValue(value)}
+                styles={{
+                    track: {
+                        background: '#8ed4bbff',
+                    },
+                    tracks: {
+                        background: "red"
+                    }
+                }}
             />
-            <p>{value.toString().substring(0, 3)} |{value.toString().substring(4)}</p>
+            <div className='flex justify-between items-center'>
+                <p>$50</p>
+                <p>${value || '50'}</p>
+                <p>$1500</p>
+            </div>
         </div>
     );
 };
