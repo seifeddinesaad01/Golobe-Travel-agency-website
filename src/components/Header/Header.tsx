@@ -65,9 +65,10 @@ const Header = ({ bgColor, logo, color, flightIcon, stayIcon }: any) => {
       </div>
       {/* Login and signUp buttons */}
       {!token ?
-        <div className='flex items-center justify-center gap-2'>
+        <div
+          className='flex items-center justify-center gap-2'>
           <button className='p-2'>Login</button>
-          <button className='py-2 px-4 bg-black border-solid-2 rounded-lg'>Sign Up</button>
+          <button className='py-2 px-4 bg-black text-white border-solid-2 rounded-lg'>Sign Up</button>
         </div> : <MenuDropDown user={user} />}
       {/* Menu for small screens */}
       <div
