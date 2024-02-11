@@ -59,7 +59,7 @@ const Header = ({ bgColor, logo, color, flightIcon, stayIcon }: any) => {
       </div>
       {/* Logo */}
       <div>
-        <Link href="/">
+        <Link href="/home">
           <Image alt="Golobe" src={logo} />
         </Link>
       </div>
@@ -67,8 +67,8 @@ const Header = ({ bgColor, logo, color, flightIcon, stayIcon }: any) => {
       {!token ?
         <div
           className='flex items-center justify-center gap-2'>
-          <button className='p-2'>Login</button>
-          <button className='py-2 px-4 bg-black text-white border-solid-2 rounded-lg'>Sign Up</button>
+          <Link href="/sign-in"> <button className='p-2'>Login</button></Link>
+          <Link href="/sign-up"> <button className='py-2 px-4 bg-black text-white border-solid-2 rounded-lg'>Sign Up</button></Link>
         </div> : <MenuDropDown user={user} />}
       {/* Menu for small screens */}
       <div
