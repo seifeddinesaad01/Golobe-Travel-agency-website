@@ -50,7 +50,7 @@ const Header = ({ bgColor, logo, color, flightIcon, stayIcon }: any) => {
           const isActive = pathname.startsWith(link.href)
           return <Link
             href={link.href}
-            className={isActive ? 'border-b-4 border-green-300 flex items-center justify-center gap-1' : "flex items-center justify-center gap-1"}
+            className={isActive ? 'border-b-4 border-green-300 flex items-center justify-center gap-1' : "border-b-4 border-white flex items-center justify-center gap-1"}
           >
             <Image src={link.icon} alt="icon" />
             <span className="hidden md:inline">{link.name}</span>
