@@ -34,7 +34,7 @@ const page = () => {
           borderRadius: "16px"
         }}
         className="shadow-lg bg-white h-40vh w-5/6 self-center p-4 rounded-16 mb-2">
-        <FlightTab title={true} buttonText="Show flight" icon={buttonIcon} />
+        <FlightTab title={true} buttonText="Show flight" icon={buttonIcon} href="/find-flight/listing"/>
       </div>
 
       <div className="flex justify-center items-center flex-col gap-10 mt-10 w-[85%]">
@@ -86,10 +86,8 @@ const page = () => {
                 key={index}
                 alt="Tea fields in Sri Lanka"
                 className="rounded-lg"
-                // height="200"
                 src={image}
                 style={{
-                  //  aspectRatio: "300/200",
                   objectFit: "cover",
                   width: '100%',
                 }}

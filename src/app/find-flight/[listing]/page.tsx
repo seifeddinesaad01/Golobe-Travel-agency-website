@@ -11,6 +11,7 @@ import { Divider } from 'antd';
 import CheckboxFilter from '@/components/CheckboxFilter';
 import GenericCard from '@/components/GenericCard';
 import { flightsList } from '@/constants/data';
+import Footer from '@/components/Footer';
 
 const airlines = [
     "Emirated",
@@ -43,7 +44,7 @@ const page = () => {
                 }}>
                 <FlightTab showButton={true} href="" icon={searchIcon} />
             </div>
-            <div className='flex flex-col sm:flex-row justify-center items-start m-4'>
+            <div className='flex flex-col sm:flex-row justify-center items-start m-4 mb-20'>
                 <div className='w-1/4 p-8 flex gap-4 flex-row sm:flex-col'>
                     <h1 className='text-2xl font-bold'>Filters</h1>
                     <Filter title="Price" />
@@ -64,9 +65,10 @@ const page = () => {
                         />
                     }
                     )}
-
+                    <button className='w-full py-2 px-4 text-white bg-[#112111ff] rounded-md'>Show more results</button>
                 </div>
             </div>
+            <Footer />
         </div >
     )
 }
