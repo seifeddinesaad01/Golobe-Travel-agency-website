@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function GenericCard({ image, rate, id, price, reviewsNumber, departureTime, arrivalTime }: any) {
     return (
-        <div className="flex justify-center items-center gap-2 bg-white rounded-lg shadow-md p-8 ">
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-2 bg-white rounded-lg shadow-md p-8 ">
             <Image
                 alt="Emirates Logo"
                 className="h-1/2 w-1/5"
@@ -29,7 +29,7 @@ export default function GenericCard({ image, rate, id, price, reviewsNumber, dep
                     </div>
                 </div>
                 <div className="pt-4">
-                    <div className="flex items-center justify-between mb-2 w-3/4">
+                    <div className="flex items-center justify-between mb-2 w-full lg:w-3/4">
                         <div className="flex items-center space-x-2">
                             {/* <ClockIcon className="text-gray-500 w-6 h-6" /> */}
                             <span className="text-lg font-medium">{departureTime} pm - {arrivalTime} pm</span>
@@ -38,7 +38,7 @@ export default function GenericCard({ image, rate, id, price, reviewsNumber, dep
                         <span className="text-lg font-medium">2h 28m <span className="text-sm text-gray-500">EWR-BNA</span></span>
 
                     </div>
-                    <div className="flex items-center justify-between w-3/4">
+                    <div className="flex items-center justify-between w-full lg:w-3/4">
                         <div className="flex items-center space-x-2">
                             {/* <ClockIcon className="text-gray-500 w-6 h-6" /> */}
                             <span className="text-lg font-medium">{departureTime} pm - {arrivalTime} pm</span>

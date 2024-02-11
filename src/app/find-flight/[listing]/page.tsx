@@ -43,11 +43,11 @@ const page = () => {
                 }}>
                 <FlightTab showButton={true} href="" icon={searchIcon} />
             </div>
-            <div className='flex flex-row justify-center items-start m-4'>
-                <div className='w-1/4 p-8 flex gap-4 flex-col'>
+            <div className='flex flex-col sm:flex-row justify-center items-start m-4'>
+                <div className='w-1/4 p-8 flex gap-4 flex-row sm:flex-col'>
                     <h1 className='text-2xl font-bold'>Filters</h1>
                     <Filter title="Price" />
-                    <Divider />
+                    {/* <Divider /> */}
                     <CheckboxFilter checkboxs={airlines} title="Airlines" />
                     <CheckboxFilter checkboxs={trips} title="Trips" />
                 </div>
