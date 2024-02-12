@@ -11,6 +11,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { trips } from '@/constants/data';
 import Footer from '@/components/Footer';
+import { Breadcrumb } from 'antd';
 
 const page = () => {
   return (
@@ -18,6 +19,31 @@ const page = () => {
       <Header logo={Logo} bgColor="#fff" color="black" flightIcon={flightIcon} stayIcon={stayIcon} />
       <div className='flex justify-between p-10'>
         <div className='flex flex-col gap-2'>
+          <Breadcrumb
+            separator=">"
+            className='text-lg'
+            items={[
+              {
+                title: 'Home',
+                href:'/home',
+                className:"text-[#ff8682ff]",
+              },
+              {
+                title: 'find-flight',
+                href: '/find-flight',
+                className:"text-[#ff8682ff]",
+              },
+              {
+                title: 'flight-list',
+                className:"text-[#ff8682ff]",
+                href: '/listing',
+              },
+              {
+                title: 'details',
+                href: '',
+              },
+            ]}
+          />
           <h1 className='font-bold text-xl'>Emirates A380 Airbus</h1>
           <div className='flex gap-1 justify-center items-center'>
             <Image src={locationIcon} alt="icon" />
