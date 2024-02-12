@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import Image from "next/image";
+import Link from "next/link";
 
 export default function GenericCard({ image, rate, id, price, reviewsNumber, departureTime, arrivalTime }: any) {
     return (
@@ -50,7 +51,14 @@ export default function GenericCard({ image, rate, id, price, reviewsNumber, dep
                 </div>
                 <div className="flex items-center justify-between mt-4">
                     {/* <Checkbox id="favorite" className="w-1/5 self-center" /> */}
-                    <Button className="bg-[#8ed4bbff] hover:bg-green-200 text-black py-2 px-4 rounded-lg w-full">View Deals</Button>
+                    <Link
+                        className="bg-[#8ed4bbff] hover:bg-green-200 text-black py-2 px-4 rounded-lg w-full text-center"
+                        href="saad"
+                    >
+                        <button>
+                            View details
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>

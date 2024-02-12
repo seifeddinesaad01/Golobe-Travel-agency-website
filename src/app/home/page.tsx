@@ -25,7 +25,7 @@ const page = () => {
     return (
         <div className="flex justify-center items-center flex-col bg-gray-100 w-full overflow-hidden">
             <div className='bgimage'>
-                <Header logo={Logo} flightIcon={flightIcon} stayIcon={stayIcon} />
+                <Header logo={Logo} flightIcon={flightIcon} stayIcon={stayIcon}/>
                 <div className="text-white flex flex-col justify-center items-center gap-2 mt-4">
                     <h2 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl">Helping Others</h2>
                     <h1 className="text-3xl md:text-6xl lg:text-6xl xl:text-7xl uppercase font-bold tracking-wide leading-tight font-roboto">L i v e & T r a v e l</h1>
