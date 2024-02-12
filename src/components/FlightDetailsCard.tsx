@@ -30,7 +30,7 @@ export default function FlighDetailsCard() {
 
                 </div>
             </div>
-            <div className="flex justify-between items-center w-[60%] self-center">
+            <div className="flex flex-col sm:flex-row justify-between items-center md:w-[90%] lg:w-[60%] w-[90%] self-center">
                 <div className="flex items-center space-x-2">
                     <span className="font-bold text-xl">12:00 pm</span>
                     <span className="text-gray-500">Newark(EWR)</span>
