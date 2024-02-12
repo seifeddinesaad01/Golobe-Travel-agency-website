@@ -10,6 +10,7 @@ import clockIcon from "../../../.././../public/FindFlights/clock.png"
 import Link from 'next/link';
 import Image from 'next/image';
 import { trips } from '@/constants/data';
+import Footer from '@/components/Footer';
 
 const page = () => {
   return (
@@ -44,7 +45,7 @@ const page = () => {
           })}
         </div>
       </div>
-      <div className='bg-[#b8e3d5ff] p-4 self-center w-[95%] mt-10 flex flex-col gap-4 rounded-lg'>
+      <div className='bg-[#b8e3d5ff] p-4 self-center w-[95%] mt-10 flex flex-col gap-4 rounded-lg mb-20'>
         <h1 className='font-bold text-xl'>Emirates Airlines Policies</h1>
         <div className='flex justify-between w-[70%] gap-2'>
           <div className='flex justify-start items-center gap-1'>
@@ -54,10 +55,10 @@ const page = () => {
           <div className='flex justify-start items-center gap-1'>
             <Image src={clockIcon} alt='icon'/>
           <p>Pre-flight health screening questions.</p>
-
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }
