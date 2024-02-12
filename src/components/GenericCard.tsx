@@ -19,7 +19,6 @@ export default function GenericCard({ image, rate, id, price, reviewsNumber, dep
                 <div className="flex flex-col md:flex-row md:items-center justify-between border-b pb-4">
                     <div className="flex items-center space-x-4">
                         <div className="flex items-center space-x-1">
-                            {/* <StarIcon className="text-yellow-400 w-5 h-5" /> */}
                             <span className="text-lg font-semibold">{rate}</span>
                             <span className="text-sm text-gray-500">Very Good {reviewsNumber} reviews</span>
                         </div>
