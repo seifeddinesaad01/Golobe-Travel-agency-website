@@ -12,6 +12,7 @@ import Image from 'next/image';
 import { trips } from '@/constants/data';
 import Footer from '@/components/Footer';
 import { Breadcrumb } from 'antd';
+import FlighDetailsCard from '@/components/FlightDetailsCard';
 
 const page = () => {
   return (
@@ -25,17 +26,17 @@ const page = () => {
             items={[
               {
                 title: 'Home',
-                href:'/home',
-                className:"text-[#ff8682ff]",
+                href: '/home',
+                className: "text-[#ff8682ff]",
               },
               {
                 title: 'find-flight',
                 href: '/find-flight',
-                className:"text-[#ff8682ff]",
+                className: "text-[#ff8682ff]",
               },
               {
                 title: 'flight-list',
-                className:"text-[#ff8682ff]",
+                className: "text-[#ff8682ff]",
                 href: '/listing',
               },
               {
@@ -86,6 +87,10 @@ const page = () => {
           </div>
         </div>
       </div>
+      <FlighDetailsCard />
+      <FlighDetailsCard />
+
+
       <Footer />
     </div>
   )
