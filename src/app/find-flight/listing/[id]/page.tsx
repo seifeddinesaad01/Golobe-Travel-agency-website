@@ -31,8 +31,10 @@ const page = () => {
         </div>
         <div className='flex flex-col gap-1'>
           <p className='text-[#ff8682ff] font-bold text-xl self-end'>$240</p>
-          <Link href="">
-            <button className='py-2 px-6 rounded-sm bg-[#8ed4bbff]'>Book now</button>
+          <Link
+            className='py-2 px-6 rounded-md bg-[#8ed4bbff]'
+            href="">
+            <button>Book now</button>
           </Link>
         </div>
       </div>
@@ -49,12 +51,12 @@ const page = () => {
         <h1 className='font-bold text-xl'>Emirates Airlines Policies</h1>
         <div className='flex justify-between w-[70%] gap-2'>
           <div className='flex justify-start items-center gap-1'>
-            <Image src={clockIcon} alt="icon"/>
+            <Image src={clockIcon} alt="icon" />
             <p>Pre-flight cleaning, installation of cabin HEPA filters.</p>
           </div>
           <div className='flex justify-start items-center gap-1'>
-            <Image src={clockIcon} alt='icon'/>
-          <p>Pre-flight health screening questions.</p>
+            <Image src={clockIcon} alt='icon' />
+            <p>Pre-flight health screening questions.</p>
           </div>
         </div>
       </div>
