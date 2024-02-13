@@ -21,10 +21,16 @@ import FlyEmirates from "../../public/FindFlights/flyEmirates.png";
 import FlyDubai from "../../public/FindFlights/flyDubai.png";
 import QatarAirways from "../../public/FindFlights/QatarAirways.png";
 import EtihadAirways from "../../public/FindFlights/EtihadAirways.png";
-import hotel1 from "../../public/FindStays/hotel1.png"
-import hotel2 from "../../public/FindStays/hotel2.png"
-import hotel3 from "../../public/FindStays/hotel3.png"
-import hotel4 from "../../public/FindStays/hotel4.png"
+import hotel1 from "../../public/FindStays/hotel1.png";
+import hotel2 from "../../public/FindStays/hotel2.png";
+import hotel3 from "../../public/FindStays/hotel3.png";
+import hotel4 from "../../public/FindStays/hotel4.png";
+import avatar1 from "../../public/FindStays/avatar1.png";
+import avatar2 from "../../public/FindStays/avatar2.png";
+import avatar3 from "../../public/FindStays/avatar3.png";
+import avatar4 from "../../public/FindStays/avatar4.png";
+import avatar5 from "../../public/FindStays/avatar5.png";
+
 
 type ImportedImage = typeof SignInImage;
 
@@ -194,7 +200,7 @@ export const flightsList = [
 export const staysList = [
   {
     id: "4",
-    hotelName:"Eresin Hotels Sultanahmet  -Boutique Class",
+    hotelName: "Eresin Hotels Sultanahmet  -Boutique Class",
     image: hotel1,
     price: "241",
     rate: "4,6",
@@ -203,7 +209,7 @@ export const staysList = [
   },
   {
     id: "4",
-    hotelName:"CVK Park Bosphorus Hotel Istanbul",
+    hotelName: "CVK Park Bosphorus Hotel Istanbul",
     image: hotel2,
     price: "104",
     rate: "4,2",
@@ -212,7 +218,7 @@ export const staysList = [
   },
   {
     id: "4",
-    hotelName:"Eresin Hotels Sultanahmet  -Boutique Class",
+    hotelName: "Eresin Hotels Sultanahmet  -Boutique Class",
     image: hotel3,
     price: "108",
     rate: "4,1",
@@ -221,7 +227,7 @@ export const staysList = [
   },
   {
     id: "4",
-    hotelName:"Eresin Hotels Sultanahmet  -Boutique Class",
+    hotelName: "Eresin Hotels Sultanahmet  -Boutique Class",
     image: hotel4,
     price: "136",
     rate: "4,9",
@@ -229,3 +235,59 @@ export const staysList = [
     location: "Kucukayasofya No. 40 Sultanahmet, Istanbul 34022",
   },
 ];
+
+export const roomsAvailibilty = [
+  {
+    image: hotel1,
+    title: "Superior room - 1 double bed or 2 twin beds",
+    price: "240",
+  },
+  {
+    image: hotel2,
+    title: "Superior room - City view  - 1 double bed or 2 twin beds",
+    price: "240",
+  },
+  {
+    image: hotel3,
+    title: "Superior room - City view  - 1 double bed or 2 twin beds",
+    price: "240",
+  },
+  {
+    image: hotel4,
+    title: "Superior room - City view  - 1 double bed or 2 twin beds",
+    price: "240",
+  },
+];
+
+export const hotelReviews =[
+  {
+    avatar: avatar1,
+    rate:"5.0",
+    name:"Omar Siphron",
+    review:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    avatar: avatar2,
+    rate:"5.0",
+    name:"Cristofer Botman",
+    review:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    avatar: avatar3,
+    rate:"5.0",
+    name:"Kaiya Lubin",
+    review:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    avatar: avatar4,
+    rate:"5.0",
+    name:"Erin Septimus",
+    review:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    avatar: avatar5,
+    rate:"5.0",
+    name:"Terry George",
+    review:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+]
