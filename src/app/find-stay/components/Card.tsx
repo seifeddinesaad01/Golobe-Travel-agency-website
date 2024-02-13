@@ -1,7 +1,13 @@
 import Image from "next/image"
 import Hotel from "../../../../public/FindStays/hotel1.png"
 import { Divider } from "antd"
-export default function Component() {
+export default function Card({ image, id, price, rate, reviewsNumber, location, hotelName }: any) {
+    // id: "4",
+    // image: EtihadAirways,
+    // price: "108",
+    // rate: "4,4",
+    // reviewsNumber: "54",
+    // location: "K
     return (
         <div className="bg-white rounded-lg shadow-md overflow-hidden w-[90%] ">
             <div className="md:flex w-full">
@@ -10,7 +16,7 @@ export default function Component() {
                         alt="Hotel"
                         className="h-48 object-cover md:h-full w-full"
                         height="192"
-                        src={Hotel}
+                        src={image}
                         style={{
                             aspectRatio: "192/192",
                             objectFit: "cover",
@@ -20,8 +26,8 @@ export default function Component() {
                 <div className="py-2 px-6 w-full">
                     <div className="flex justify-between w-full">
                         <div className="block">
-                            <p className="mt-2 text-2xl font-semibold text-gray-800">CVK Park Bosphorus Hotel Istanbul</p>
-                            <p className="mt-2 text-sm text-gray-600">Gümüşsuyu Mah. İnönü Cad. No:8, Istanbul 34437</p>
+                            <p className="mt-2 text-2xl font-semibold text-gray-800">{hotelName}</p>
+                            <p className="mt-2 text-sm text-gray-600">{location}</p>
                             <div className="mt-3 flex items-center">
                                 <div className="flex text-lg text-yellow-500">
                                     <StarIcon className="w-5 h-5" />
@@ -31,14 +37,14 @@ export default function Component() {
                                     <StarIcon className="w-5 h-5" />
                                 </div>
                             </div>
-                            <div className="mt-4 ml-2 text-sm text-gray-600">4.2 Very Good 371 reviews</div>
+                            <div className="mt-4 ml-2 text-sm text-gray-600">{rate} Very Good {reviewsNumber} reviews</div>
 
                         </div>
                         <div className="flex justify-between items-center">
                             <span className="px-3 py-1  rounded-full"></span>
                             <div className="text-right">
                                 <span className="text-sm text-gray-600">starting from</span>
-                                <div className="text-xl font-semibold text-[#ff8682ff]">$240/night</div>
+                                <div className="text-xl font-semibold text-[#ff8682ff]">${price}/night</div>
                                 <span className="text-sm text-gray-500">excl. tax</span>
                             </div>
                         </div>

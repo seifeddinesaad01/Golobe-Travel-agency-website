@@ -8,7 +8,7 @@ import { FlightTab } from '@/app/home/components/FlightTab';
 import searchIcon from "../../../../public/FindFlights/searchIcon.png"
 import Filter from '@/components/Filter';
 import CheckboxFilter from '@/components/CheckboxFilter';
-import { flightsList } from '@/constants/data';
+import { flightsList, staysList } from '@/constants/data';
 import Footer from '@/components/Footer';
 import Card from '@/app/find-stay/components/Card';
 
@@ -50,9 +50,17 @@ const page = () => {
                     <CheckboxFilter checkboxs={airlines} title="Airlines" />
                     <CheckboxFilter checkboxs={trips} title="Trips" />
                 </div>
-                <div className='w-full flex flex-col gap-4 self-end'>
-                    {flightsList?.map((airline) => {
-                        return <Card />
+                <div className='w-full flex flex-col gap-4'>
+                    {staysList?.map((hotel) => {
+                        return <Card
+                            image={hotel.image}
+                            id={hotel.id}
+                            price={hotel.price}
+                            rate={hotel.rate}
+                            reviewsNumber={hotel.reviewsNumber}
+                            location={hotel.location}
+                            hotelName={hotel.hotelName}
+                        />
                     })}
                     <button className='w-full py-2 px-4 text-white bg-[#112111ff] rounded-md'>Show more results</button>
                 </div>

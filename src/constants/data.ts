@@ -21,6 +21,10 @@ import FlyEmirates from "../../public/FindFlights/flyEmirates.png";
 import FlyDubai from "../../public/FindFlights/flyDubai.png";
 import QatarAirways from "../../public/FindFlights/QatarAirways.png";
 import EtihadAirways from "../../public/FindFlights/EtihadAirways.png";
+import hotel1 from "../../public/FindStays/hotel1.png"
+import hotel2 from "../../public/FindStays/hotel2.png"
+import hotel3 from "../../public/FindStays/hotel3.png"
+import hotel4 from "../../public/FindStays/hotel4.png"
 
 type ImportedImage = typeof SignInImage;
 
@@ -184,5 +188,44 @@ export const flightsList = [
     reviewsNumber: "54",
     departureTime: "12:00",
     arrivalTime: "01:28",
+  },
+];
+
+export const staysList = [
+  {
+    id: "4",
+    hotelName:"Eresin Hotels Sultanahmet  -Boutique Class",
+    image: hotel1,
+    price: "241",
+    rate: "4,6",
+    reviewsNumber: "66",
+    location: "Kucukayasofya No. 40 Sultanahmet, Istanbul 34022",
+  },
+  {
+    id: "4",
+    hotelName:"CVK Park Bosphorus Hotel Istanbul",
+    image: hotel2,
+    price: "104",
+    rate: "4,2",
+    reviewsNumber: "34",
+    location: "Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437",
+  },
+  {
+    id: "4",
+    hotelName:"Eresin Hotels Sultanahmet  -Boutique Class",
+    image: hotel3,
+    price: "108",
+    rate: "4,1",
+    reviewsNumber: "54",
+    location: "Kucukayasofya No. 40 Sultanahmet, Istanbul 34022",
+  },
+  {
+    id: "4",
+    hotelName:"Eresin Hotels Sultanahmet  -Boutique Class",
+    image: hotel4,
+    price: "136",
+    rate: "4,9",
+    reviewsNumber: "54",
+    location: "Kucukayasofya No. 40 Sultanahmet, Istanbul 34022",
   },
 ];
