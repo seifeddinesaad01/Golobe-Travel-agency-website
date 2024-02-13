@@ -30,12 +30,12 @@ const page = () => {
                 className: "text-[#ff8682ff]",
               },
               {
-                title: 'find-flight',
-                href: '/find-flight',
+                title: 'find-stay',
+                href: '/find-stay',
                 className: "text-[#ff8682ff]",
               },
               {
-                title: 'flight-list',
+                title: 'stays-list',
                 className: "text-[#ff8682ff]",
                 href: '/listing',
               },
