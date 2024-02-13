@@ -11,6 +11,8 @@ import { Button } from "@/components/ui/button"
 import Image from 'next/image';
 import { FlightTab } from "@/app/home/components/FlightTab";
 import { cards, images } from '@/constants/data';
+import buttonIcon from "../../../public/Home/bIcon3.png"
+
 const page = () => {
   const backgroundImageUrl = 'url("https://i.ibb.co/dm3wMqJ/Frame-36-2.png")';
   return (
@@ -30,7 +32,7 @@ const page = () => {
           borderRadius: "16px"
         }}
         className="shadow-lg bg-white h-40vh w-5/6 self-center p-4 rounded-16 mb-2">
-        <FlightTab title={true} />
+        <FlightTab title={true} buttonText="Show flight" icon={buttonIcon} href="/find-stay/listing"/>
       </div>
 
       <div className="flex justify-center items-center flex-col gap-10 mt-10 w-[85%]">
