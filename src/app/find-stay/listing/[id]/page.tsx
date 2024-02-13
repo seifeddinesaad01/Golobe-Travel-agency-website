@@ -59,7 +59,7 @@ const page = () => {
           <p className='text-[#ff8682ff] font-bold text-3xl sm:self-end mt-2 sm:mt-0 self-start'>$240</p>
           <Link
             className='py-2 px-6 rounded-md bg-[#8ed4bbff] w-32'
-            href="">
+            href="2/booking-details">
             <button>Book now</button>
           </Link>
         </div>
