@@ -45,10 +45,10 @@ const page = () => {
               },
             ]}
           />
-          <h1 className='font-bold text-xl'>Emirates A380 Airbus</h1>
+          <h1 className='font-bold text-3xl'>CVK Park Bosphorus Hotel Istanbul </h1>
           <div className='flex gap-1 items-center'>
             <Image src={locationIcon} alt="icon" />
-            <p>Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437</p>
+            <p className='text-xl'>Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437</p>
           </div>
           <div className="flex items-center space-x-1">
             <span className="text-lg font-semibold border-2 rounded-md border-[#8ed4bbff] px-1">4.3</span>
@@ -56,7 +56,7 @@ const page = () => {
           </div>
         </div>
         <div className='flex flex-col gap-1'>
-          <p className='text-[#ff8682ff] font-bold text-xl sm:self-end mt-2 sm:mt-0 self-start'>$240</p>
+          <p className='text-[#ff8682ff] font-bold text-3xl sm:self-end mt-2 sm:mt-0 self-start'>$240</p>
           <Link
             className='py-2 px-6 rounded-md bg-[#8ed4bbff] w-32'
             href="">
