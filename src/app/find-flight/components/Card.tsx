@@ -1,9 +1,13 @@
 import { Button } from "@/components/ui/button"
-import "../style.css"
-export default function Card({ title, description, price, imageUrl }: any) {
+import "../style.css";
+interface Icard{
+    title:string,
+    description:string,
+    price:string,
+    imageUrl:string
+}
+export default function Card({ title, description, price, imageUrl }: Icard) {
     const backgroundImageUrl = 'url(' + imageUrl + ')';
-
-
     return (
         <div style={{
             backgroundImage: backgroundImageUrl

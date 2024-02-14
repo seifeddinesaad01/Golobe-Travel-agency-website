@@ -1,7 +1,13 @@
 import React from 'react'
 import overviewIcon from "../../../../public/FindStays/overviewIcon.png"
 import Image from 'next/image'
-const OverviewCard = ({ rate, grade, nbReviewers, text }: any) => {
+interface Ioverview {
+    rate: string,
+    grade: string,
+    nbReviewers: string,
+    text: string
+}
+const OverviewCard = ({ rate, grade, nbReviewers, text }: Ioverview) => {
     return (
         <div className='flex flex-col gap-1 justify-start items-start p-4 rounded-xl pr-16 border border-[#8ed4bbff] hover:bg-[#8ed4bbff]'>
             {rate

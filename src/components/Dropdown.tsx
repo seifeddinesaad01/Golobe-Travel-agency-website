@@ -23,7 +23,11 @@ export const items: MenuProps['items'] = [
         key: '2',
     },
 ];
-
+interface IUser {
+    name: string;
+    email: string;
+    age: number;
+}
 export const MenuDropDown = ({ user }: any) => {
     return (
         <Dropdown menu={{ items }} trigger={['click']}>

@@ -1,7 +1,15 @@
 import Image from "next/image"
-import Hotel from "../../../../public/FindStays/hotel1.png"
 import { Divider } from "antd"
-export default function Card({ image, id, price, rate, reviewsNumber, location, hotelName }: any) {
+interface Icard {
+    image: string,
+    id: string,
+    price: string,
+    rate: string,
+    reviewsNumber: string,
+    location: string,
+    hotelName: string,
+}
+export default function Card({ image, id, price, rate, reviewsNumber, location, hotelName }: Icard) {
     return (
         <div className="bg-white rounded-lg shadow-md overflow-hidden w-[90%] ">
             <div className="md:flex w-full">

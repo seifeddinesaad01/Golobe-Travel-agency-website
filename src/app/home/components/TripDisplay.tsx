@@ -1,7 +1,11 @@
 import Image from "next/image"
 import flighIcon from "../../../../public/Home/bIcon3.png"
-
-export default function TripDisplay({ image, title, description }: any) {
+interface ItripDisplay {
+  image: any,
+  title: string,
+  description: string
+}
+export default function TripDisplay({ image, title, description }: ItripDisplay) {
   return (
     <div className="relative bg-black text-white w-full"
       style={{
@@ -33,8 +37,8 @@ export default function TripDisplay({ image, title, description }: any) {
             backgroundColor: "#8ed4bbff",
             padding: "1rem",
             borderRadius: '4px',
-            color:"black", 
-            fontWeight:"500"
+            color: "black",
+            fontWeight: "500"
           }}>
           <Image src={flighIcon} alt="icon" />
           <p>Show {title}</p>

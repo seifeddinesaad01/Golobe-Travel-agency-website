@@ -6,8 +6,14 @@ const validationSchema = yup.object({
     // email: yup.string().email("Invalid email address").required("Required"),
     // password: yup.string().required("Password is required").min(6, "Password must be at least 6 characters"),
 });
-
-export const FlightTab = ({ title, showButton, href, icon, buttonText }: any) => {
+interface IflightTab {
+    title?: string,
+    showButton?: boolean,
+    href?: string,
+    icon?: any,
+    buttonText?: string,
+}
+export const FlightTab = ({ title, showButton, href, icon, buttonText }: IflightTab) => {
     const formik = useFormik({
         initialValues: {
             email: "",

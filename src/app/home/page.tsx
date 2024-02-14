@@ -46,9 +46,9 @@ const page = () => {
                     <p className="text-lg text-gray-500 text-center sm:text-left">Search Flights & Places Hire to our most popular destinations</p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center justify-center w-full">
-                    {trips?.map((trip: any) => (
+                    {trips?.map((trip) => (
                         <TripCard
-                            key={trip.id}
+                            key={trip?.id}
                             tripImg={trip.tripImg}
                             title={trip?.title}
                             description={trip?.description}

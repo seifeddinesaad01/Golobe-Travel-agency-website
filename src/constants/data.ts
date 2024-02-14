@@ -42,46 +42,55 @@ export const validUrls: any = validImages.map((image) => image?.src || image);
 
 export const trips = [
   {
+    id:"1",
     tripImg: tripImg,
     title: "Istanbul, Turkey",
     description: "Flights · Hotels · Resorts",
   },
   {
+    id:"2",
     tripImg: tripImg1,
     title: "Sydney, Australia",
     description: "Flights · Hotels · Resorts",
   },
   {
+    id:"3",
     tripImg: tripImg2,
     title: "Baku, Azerbaijan",
     description: "Flights · Hotels · Resorts",
   },
   {
+    id:"4",
     tripImg: tripImg3,
     title: "Malé, Maldives",
     description: "Flights · Hotels · Resorts",
   },
   {
+    id:"5",
     tripImg: tripImg4,
     title: "Paris, France",
     description: "Flights · Hotels · Resorts",
   },
   {
+    id:"6",
     tripImg: tripImg5,
     title: "New York, US",
     description: "Flights · Hotels · Resorts",
   },
   {
+    id:"7",
     tripImg: tripImg6,
     title: "London, UK",
     description: "Flights · Hotels · Resorts",
   },
   {
+    id:"8",
     tripImg: tripImg7,
     title: "Tokyo, Japan",
     description: "Flights · Hotels · Resorts",
   },
   {
+    id:"9",
     tripImg: tripImg8,
     title: "Dubai, UAE",
     description: "Flights · Hotels · Resorts",

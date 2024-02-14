@@ -1,13 +1,18 @@
 import Link from "next/link"
-import Review1Img from "../../../../public/Home/review1Img.png"
-import Image from "next/image"
-export default function ReviewCard({ title, description, image}:any) {
+import Image from "next/image";
+
+interface Ireview {
+    title: string,
+    description: string,
+    image: any
+}
+export default function ReviewCard({ title, description, image }: Ireview) {
     return (
         <div className="w-[400px] bg-white rounded-lg shadow-md overflow-hidden p-4 flex flex-col">
             <div className="flex flex-col gap-3 pb-6">
                 <h3 className="text-2xl font-semibold leading-tight text-gray-900">{title}</h3>
                 <p className="mt-2 text-sm text-gray-600">
-                   {description}
+                    {description}
                 </p>
                 <Link className="text-sm text-blue-600 hover:underline mt-4 block" href="#">
                     View more
@@ -26,7 +31,7 @@ export default function ReviewCard({ title, description, image}:any) {
                 height="200"
                 src={image}
                 style={{
-                     borderRadius: "0.6rem",
+                    borderRadius: "0.6rem",
                     aspectRatio: "350/200",
                     objectFit: "cover",
                 }}

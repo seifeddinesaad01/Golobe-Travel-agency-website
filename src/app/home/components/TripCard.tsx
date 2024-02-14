@@ -1,8 +1,10 @@
 import Image from "next/image";
-
-export default function TripCard({
-  tripImg, title, description
-}: any) {
+interface ItripCard {
+  tripImg: any,
+  title: string,
+  description: string
+}
+export default function TripCard({ tripImg, title, description }: ItripCard) {
   return (
     <div className=" max-w-sm rounded-xl overflow-hidden flex p-2 bg-white shadow-md md:shadow-lg">
       <div className="flex-shrink-0">

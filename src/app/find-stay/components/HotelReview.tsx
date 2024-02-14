@@ -1,6 +1,11 @@
 import Image from "next/image"
-
-export const HotelReview = ({avatar, name, review, rate}:any) => {
+interface IhotelReview {
+  avatar: string,
+  name: string,
+  review: string,
+  rate: string,
+}
+export const HotelReview = ({ avatar, name, review, rate }: IhotelReview) => {
   return (
     <div className="flex flex-col gap-1 md:flex-row md:items-center  text-black p-4 border-b-2">
       <div className="flex items-center mb-4 md:mb-0">
@@ -9,7 +14,7 @@ export const HotelReview = ({avatar, name, review, rate}:any) => {
           className="h-12 w-12 rounded-full mr-4"
           src={avatar}
           style={{
-             objectFit: "cover",
+            objectFit: "cover",
           }}
         />
         <div className="w-40">

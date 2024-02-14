@@ -1,5 +1,10 @@
 import Image from "next/image";
-export const AvailibilityCard = ({ image, title, price }: any) => {
+interface Iavailibility {
+    image: string,
+    title: string,
+    price: string
+}
+export const AvailibilityCard = ({ image, title, price }: Iavailibility) => {
     return (
         <div className=" p-4 md:flex md:items-center md:justify-between">
             <div className="flex items-center text-black">
