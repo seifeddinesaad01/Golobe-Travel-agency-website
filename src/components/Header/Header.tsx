@@ -6,6 +6,7 @@ import "../Header/header.css";
 import { usePathname } from 'next/navigation';
 import MenuDropDown from '../Dropdown';
 import { useFetch } from '@/Data/Fetchs';
+import useWindowSize from '@/lib/useWindowSize';
 const Header = ({ bgColor, logo, color, flightIcon, stayIcon }: any) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -22,6 +23,7 @@ const Header = ({ bgColor, logo, color, flightIcon, stayIcon }: any) => {
     }
   ]
   const user = useFetch("http://localhost:8000/me");
+  const { width } = useWindowSize();
   return (
     <header style={{
       background: bgColor,
@@ -65,11 +67,14 @@ const Header = ({ bgColor, logo, color, flightIcon, stayIcon }: any) => {
       </div>
       {/* Login and signUp buttons */}
       {!token ?
-        <div
-          className='flex items-center justify-center gap-2'>
-          <Link href="/sign-in"> <button className='p-2'>Login</button></Link>
-          <Link href="/sign-up"> <button className='py-2 px-4 bg-black text-white border-solid-2 rounded-lg'>Sign Up</button></Link>
-        </div> : <MenuDropDown user={user} />}
+        <>
+          {width && width > 700 && <div
+            className='flex items-center justify-center gap-2'>
+            <Link href="/sign-in"> <button className='p-2'>Login</button></Link>
+            <Link href="/sign-up"> <button className='py-2 px-4 bg-black text-white border-solid-2 rounded-lg'>Sign Up</button></Link>
+          </div>}
+        </>
+        : <MenuDropDown user={user} />}
       {/* Menu for small screens */}
       <div
         className={!isMenuOpen ? "drawer" : 'hiddenDrawer'}
