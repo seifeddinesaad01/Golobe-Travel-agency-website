@@ -28,7 +28,7 @@
         {
             "id": "2",
             "image": "https://i.ibb.co/X79HhRP/flyDubai.png",
-            "price": "108",
+            "price": "380",
             "rate": "4,4",
             "reviewsNumber": "54",
             "departureTime": "12:00",
@@ -39,7 +39,7 @@
         {
             "id": "3",
             "image": "https://i.ibb.co/bL2QG4Y/Etihad-Airways.png",
-            "price": "108",
+            "price": "1200",
             "rate": "4,4",
             "reviewsNumber": "54",
             "departureTime": "12:00",
@@ -50,7 +50,7 @@
         {
             "id": "4",
             "image": "https://i.ibb.co/34pDTSd/Qatar-Airways.png",
-            "price": "108",
+            "price": "1400",
             "rate": "4,4",
             "reviewsNumber": "54",
             "departureTime": "12:00",
