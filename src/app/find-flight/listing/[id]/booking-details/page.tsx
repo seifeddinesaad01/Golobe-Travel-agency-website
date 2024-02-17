@@ -27,6 +27,7 @@ const page = () => {
                         image={data?.image}
                         returnDate={data?.returnDate}
                         lastingTime={data?.lastingTime}
+                        name={data?.name}
                     />
                     <div className='w-[90%] self-center'>
                         <Link

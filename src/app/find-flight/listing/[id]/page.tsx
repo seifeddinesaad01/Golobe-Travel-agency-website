@@ -104,6 +104,7 @@ const page = () => {
             image={data?.image}
             returnDate={data?.returnDate}
             lastingTime={data?.lastingTime}
+            name={data?.name}
           />
           <FlighDetailsCard
             departureTime={data?.departureTime}
@@ -111,6 +112,7 @@ const page = () => {
             image={data?.image}
             returnDate={data?.returnDate}
             lastingTime={data?.lastingTime}
+            name={data?.name}
           />
         </>
       }

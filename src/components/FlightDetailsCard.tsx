@@ -1,7 +1,7 @@
 
 import Image from "next/image"
 import flyEmirates from "../../public/FindFlights/flyEmirates.png"
-export default function FlighDetailsCard({departureTime, arrivalTime, image, returnDate, lastingTime}:any) {
+export default function FlighDetailsCard({departureTime, arrivalTime, image, returnDate, lastingTime, name}:any) {
     return (
         <div className="bg-white rounded-md p-4 shadow-md  mb-10 w-[95%] self-center flex flex-col pb-10">
             <div className="flex justify-between items-center mb-4">
@@ -14,7 +14,7 @@ export default function FlighDetailsCard({departureTime, arrivalTime, image, ret
                             src={image || flyEmirates}
                         />
                         <div className="flex flex-col justify-center items-center gap-1">
-                            <span className="font-semibold">Emirates</span>
+                            <span className="font-semibold">{name}</span>
                             <span className="text-sm text-gray-500">Airbus A320</span>
                         </div>
                     </div>

@@ -17,12 +17,6 @@ const airlines = [
     "Qatar",
     "Etihad"
 ];
-const trips = [
-    "Round Trip",
-    "On Way",
-    "Multi-City",
-    "My Dates Are Flexible"
-]
 const page = () => {
     const { data, isPending, error } = useFetch("http://localhost:8000/flights");
     const [filtredProducts, setFilteredProducts] = useState(data);
@@ -50,7 +44,6 @@ const page = () => {
                     <h1 className='text-2xl font-bold'>Filters</h1>
                     <Filter title="Price" value={value} setValue={setValue} handleClick={handleClick} />
                     <CheckboxFilter checkboxs={airlines} title="Airlines" />
-                    <CheckboxFilter checkboxs={trips} title="Trips" />
                 </div>
                 <div className='w-full flex flex-col gap-4'>
                     {isPending ? (
