@@ -12,6 +12,7 @@ import CheckboxFilter from '@/components/CheckboxFilter';
 import GenericCard from '@/components/GenericCard';
 import Footer from '@/components/Footer';
 import { useFetch } from '@/Data/Fetchs';
+import Spinner from '@/components/Spinner/Spinner';
 
 const airlines = [
     "Emirated",
@@ -56,9 +57,7 @@ const page = () => {
                 </div>
                 <div className='w-full flex flex-col gap-4'>
                     {isPending ? (
-                        <div className="w-12 h-12 rounded-full border-4 border-white animate-spin">
-                            <div className="border-t-4 border-white rounded-full h-full w-full"></div>
-                        </div>
+                        <Spinner />
 
                     ) : (
                         data?.map((airline: any) => (
