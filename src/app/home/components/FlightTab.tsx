@@ -7,7 +7,7 @@ const validationSchema = yup.object({
     // password: yup.string().required("Password is required").min(6, "Password must be at least 6 characters"),
 });
 interface IflightTab {
-    title?: string,
+    title?: boolean,
     showButton?: boolean,
     href?: string,
     icon?: any,

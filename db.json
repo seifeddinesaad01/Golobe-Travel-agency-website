@@ -1,10 +1,40 @@
 {
     "flights": [
         {
-            "_id": "12345678",
-            "name": "king",
-            "email": "saadseif304@gmail.com",
-            "phone": "92532269"
+            "id": "1",
+            "image": "https://i.ibb.co/Tmr0vJQ/fly-Emirates.png",
+            "price": "104",
+            "rate": "4,2",
+            "reviewsNumber": "54",
+            "departureTime": "12:00",
+            "arrivalTime": "01:28"
+        },
+        {
+            "id": "2",
+            "image": "https://i.ibb.co/X79HhRP/flyDubai.png",
+            "price": "108",
+            "rate": "4,4",
+            "reviewsNumber": "54",
+            "departureTime": "12:00",
+            "arrivalTime": "01:28"
+        },
+        {
+            "id": "3",
+            "image": "https://i.ibb.co/bL2QG4Y/Etihad-Airways.png",
+            "price": "108",
+            "rate": "4,4",
+            "reviewsNumber": "54",
+            "departureTime": "12:00",
+            "arrivalTime": "01:28"
+        },
+        {
+            "id": "4",
+            "image": "https://i.ibb.co/34pDTSd/Qatar-Airways.png",
+            "price": "108",
+            "rate": "4,4",
+            "reviewsNumber": "54",
+            "departureTime": "12:00",
+            "arrivalTime": "01:28"
         }
     ],
     "me": {

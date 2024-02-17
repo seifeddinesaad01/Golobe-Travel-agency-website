@@ -17,10 +17,6 @@ import image1 from "../../public/FindFlights/im5.png";
 import image2 from "../../public/FindFlights/im6.png";
 import image3 from "../../public/FindFlights/im7.png";
 import image4 from "../../public/FindFlights/im8.png";
-import FlyEmirates from "../../public/FindFlights/flyEmirates.png";
-import FlyDubai from "../../public/FindFlights/flyDubai.png";
-import QatarAirways from "../../public/FindFlights/QatarAirways.png";
-import EtihadAirways from "../../public/FindFlights/EtihadAirways.png";
 import hotel1 from "../../public/FindStays/hotel1.png";
 import hotel2 from "../../public/FindStays/hotel2.png";
 import hotel3 from "../../public/FindStays/hotel3.png";
@@ -167,44 +163,7 @@ export const cards = [
 
 export const images = [image1, image2, image3, image4];
 
-export const flightsList = [
-  {
-    id: "1",
-    image: FlyEmirates,
-    price: "104",
-    rate: "4,2",
-    reviewsNumber: "54",
-    departureTime: "12:00",
-    arrivalTime: "01:28",
-  },
-  {
-    id: "2",
-    image: FlyDubai,
-    price: "108",
-    rate: "4,4",
-    reviewsNumber: "54",
-    departureTime: "12:00",
-    arrivalTime: "01:28",
-  },
-  {
-    id: "3",
-    image: QatarAirways,
-    price: "108",
-    rate: "4,4",
-    reviewsNumber: "54",
-    departureTime: "12:00",
-    arrivalTime: "01:28",
-  },
-  {
-    id: "4",
-    image: EtihadAirways,
-    price: "108",
-    rate: "4,4",
-    reviewsNumber: "54",
-    departureTime: "12:00",
-    arrivalTime: "01:28",
-  },
-];
+    
 
 export const staysList = [
   {

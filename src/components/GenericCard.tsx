@@ -1,11 +1,9 @@
-import { Button } from "@/components/ui/button"
-import Image from "next/image";
 import Link from "next/link";
 
 export default function GenericCard({ image, rate, id, price, reviewsNumber, departureTime, arrivalTime }: any) {
     return (
         <div className="flex flex-col lg:flex-row justify-center items-center gap-2 bg-white rounded-lg shadow-md p-8 ">
-            <Image
+            <img
                 alt="Emirates Logo"
                 className="h-1/2 w-1/5"
                 src={image}
@@ -14,6 +12,7 @@ export default function GenericCard({ image, rate, id, price, reviewsNumber, dep
                     alignSelf: "flex-start"
                 }}
                 width="100"
+                height="100"
             />
             <div className="w-full ">
                 <div className="flex flex-col md:flex-row md:items-center justify-between border-b pb-4">

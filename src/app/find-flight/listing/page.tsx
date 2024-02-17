@@ -10,8 +10,8 @@ import Filter from '@/components/Filter';
 import { Divider } from 'antd';
 import CheckboxFilter from '@/components/CheckboxFilter';
 import GenericCard from '@/components/GenericCard';
-import { flightsList } from '@/constants/data';
 import Footer from '@/components/Footer';
+import { useFetch } from '@/Data/Fetchs';
 
 const airlines = [
     "Emirated",
@@ -26,6 +26,8 @@ const trips = [
     "My Dates Are Flexible"
 ]
 const page = () => {
+    const { data, isPending, error } = useFetch("http://localhost:8000/flights");
+    console.log(isPending, "is pending")
     return (
         <div className='flex flex-col bg-[#fafbfcff]'>
             <Header
@@ -53,22 +55,28 @@ const page = () => {
                     <CheckboxFilter checkboxs={trips} title="Trips" />
                 </div>
                 <div className='w-full flex flex-col gap-4'>
-                    {flightsList?.map((airline) => {
-                        return <GenericCard
-                            image={airline?.image}
-                            rate={airline?.rate}
-                            id={airline?.id}
-                            price={airline?.price}
-                            reviewsNumber={airline?.reviewsNumber}
-                            departureTime={airline?.departureTime}
-                            arrivalTime={airline?.arrivalTime}
-                        />
-                    }
+                    {isPending ? (
+                        <div className="w-12 h-12 rounded-full border-4 border-white animate-spin">
+                            <div className="border-t-4 border-white rounded-full h-full w-full"></div>
+                        </div>
+
+                    ) : (
+                        data?.map((airline: any) => (
+                            <GenericCard
+                                key={airline?.id}
+                                image={airline?.image}
+                                rate={airline?.rate}
+                                id={airline?.id}
+                                price={airline?.price}
+                                reviewsNumber={airline?.reviewsNumber}
+                                departureTime={airline?.departureTime}
+                                arrivalTime={airline?.arrivalTime}
+                            />
+                        ))
                     )}
-                    <button className='w-full py-2 px-4 text-white bg-[#112111ff] rounded-md'>Show more results</button>
+
                 </div>
             </div>
-            
             <Footer />
         </div >
     )
