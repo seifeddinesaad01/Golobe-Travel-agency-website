@@ -12,6 +12,7 @@ import Image from 'next/image';
 import { FlightTab } from "@/app/home/components/FlightTab";
 import { cards, images } from '@/constants/data';
 import buttonIcon from "../../../public/Home/bIcon3.png"
+import Link from 'next/link';
 const page = () => {
   const backgroundImageUrl = 'url("https://i.ibb.co/PjnvH54/Frame-36-1.png")';
 
@@ -24,6 +25,13 @@ const page = () => {
         <div className="slef-center sm:self-start text-white flex flex-col justify-start items-center pl-0 sm:pl-24 gap-2 mt-4">
           <h2 className="text-3xl md:text-5xl lg:text-5xl xl:text-6xl text-center sm:text-left">Make your travel <br /> whishlist, we'll do <br /> the rest</h2>
           <h3 className="text-base md:text-lg lg:text-xl xl:text-2xl self-center sm:self-start ">Special offers to suit your plan</h3>
+          <Link
+            className='flex justify-center items-center slef-center sm:self-start gap-2 bg-[#8ed4bbff] text-black p-2 rounded-md'
+            href="/find-flight/listing"
+          >
+            <Image src={buttonIcon} alt="icon" />
+            <p>Show Flights</p>
+          </Link>
         </div>
       </div>
       <div className="flex justify-center items-center flex-col gap-10 mt-10 w-[85%]">
