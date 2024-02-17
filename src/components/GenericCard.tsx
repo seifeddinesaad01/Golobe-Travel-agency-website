@@ -30,7 +30,6 @@ export default function GenericCard({ image, rate, id, price, reviewsNumber, dep
                 <div className="pt-4">
                     <div className="flex items-center justify-between mb-2 w-full lg:w-3/4">
                         <div className="flex items-center space-x-2">
-                            {/* <ClockIcon className="text-gray-500 w-6 h-6" /> */}
                             <span className="text-lg font-medium">{departureTime} pm - {arrivalTime} pm</span>
                             <span className="text-sm text-gray-500">non stop</span>
                         </div>
@@ -39,19 +38,16 @@ export default function GenericCard({ image, rate, id, price, reviewsNumber, dep
                     </div>
                     <div className="flex items-center justify-between w-full lg:w-3/4">
                         <div className="flex items-center space-x-2">
-                            {/* <ClockIcon className="text-gray-500 w-6 h-6" /> */}
                             <span className="text-lg font-medium">{departureTime} pm - {arrivalTime} pm</span>
                             <span className="text-sm text-gray-500">non stop</span>
                         </div>
                         <span className="text-lg font-medium">2h 28m <span className="text-sm text-gray-500">EWR-BNA</span></span>
-
                     </div>
                 </div>
                 <div className="flex items-center justify-between mt-4">
-                    {/* <Checkbox id="favorite" className="w-1/5 self-center" /> */}
                     <Link
                         className="bg-[#8ed4bbff] hover:bg-green-200 text-black py-2 px-4 rounded-lg w-full text-center"
-                        href="saad"
+                        href={`listing/${id}`}
                     >
                         <button>
                             View details

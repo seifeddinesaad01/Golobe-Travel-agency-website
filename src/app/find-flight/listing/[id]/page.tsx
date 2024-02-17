@@ -13,8 +13,13 @@ import { trips } from '@/constants/data';
 import Footer from '@/components/Footer';
 import { Breadcrumb } from 'antd';
 import FlighDetailsCard from '@/components/FlightDetailsCard';
+import { useParams } from 'next/navigation';
+import { getFlightById } from '@/Data/Fetchs';
 
 const page = () => {
+  const router = useParams();
+  const { id } = router;
+  const { data, isPending, error } = getFlightById("http://localhost:8000/flights", id);
   return (
     <div className='flex flex-col bg-[#fafbfcff]'>
       <Header logo={Logo} bgColor="#fff" color="black" flightIcon={flightIcon} stayIcon={stayIcon} />
@@ -47,7 +52,7 @@ const page = () => {
           />
           <h1 className='font-bold text-xl'>Emirates A380 Airbus</h1>
           <div className='flex gap-1 items-center'>
-            <Image src={locationIcon} alt="icon"  />
+            <Image src={locationIcon} alt="icon" />
             <p>Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437</p>
 
           </div>
@@ -70,11 +75,11 @@ const page = () => {
         <h1 className='font-bold text-xl'>Basic Economy Features</h1>
         <div className='flex flex-wrap gap-4 w-full'>
           {trips?.map((trip) => {
-            return <Image src={trip.tripImg} alt="trip" style={{objectFit:'cover'}} className='w-36'/>
+            return <Image src={trip.tripImg} alt="trip" style={{ objectFit: 'cover' }} className='w-36' />
           })}
         </div>
       </div>
-       <div className='bg-[#b8e3d5ff] p-4 self-center w-[95%] mt-10 flex flex-col gap-4 rounded-lg mb-20'>
+      <div className='bg-[#b8e3d5ff] p-4 self-center w-[95%] mt-10 flex flex-col gap-4 rounded-lg mb-20'>
         <h1 className='font-bold text-xl'>Emirates Airlines Policies</h1>
         <div className='flex justify-between flex-col sm:flex-row w-[90%] lg:w-[70%] gap-2'>
           <div className='flex justify-start items-center gap-1'>
@@ -86,10 +91,10 @@ const page = () => {
             <p>Pre-flight health screening questions.</p>
           </div>
         </div>
-      </div> 
-       <FlighDetailsCard />
-       <FlighDetailsCard /> 
-       <Footer /> 
+      </div>
+      <FlighDetailsCard />
+      <FlighDetailsCard />
+      <Footer />
     </div>
   )
 }
