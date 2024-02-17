@@ -3,11 +3,27 @@
         {
             "id": "1",
             "image": "https://i.ibb.co/Tmr0vJQ/fly-Emirates.png",
+            "bgImage":"https://i.ibb.co/qWBG020/Rectangle-3-11.png",
             "price": "104",
             "rate": "4,2",
             "reviewsNumber": "54",
             "departureTime": "12:00",
-            "arrivalTime": "01:28"
+            "arrivalTime": "01:28",
+            "name": "Emirates A380 Airbus",
+            "location": "Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437",
+            "returnDate": "Wed, Dec 8",
+            "lastingTime": "2h 28m",
+            "trips": [
+                "https://i.ibb.co/Xs4v33C/Frame-184.png",
+                "https://i.ibb.co/mBvsMLP/Frame-183.png",
+                "https://i.ibb.co/4Zztwxd/Frame-185.png",
+                "https://i.ibb.co/4Zztwxd/Frame-185.png",
+                "https://i.ibb.co/yPryRrx/Frame-189.png",
+                "https://i.ibb.co/4Zztwxd/Frame-185.png",
+                "https://i.ibb.co/1KFb9VQ/Frame-142.png",
+                "https://i.ibb.co/yPryRrx/Frame-189.png",
+                "https://i.ibb.co/0sBqK6k/Frame-186.png"
+            ]
         },
         {
             "id": "2",
@@ -16,7 +32,9 @@
             "rate": "4,4",
             "reviewsNumber": "54",
             "departureTime": "12:00",
-            "arrivalTime": "01:28"
+            "arrivalTime": "01:28",
+            "name": "Emirates A380 Airbus",
+            "location": "Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437"
         },
         {
             "id": "3",
@@ -25,7 +43,9 @@
             "rate": "4,4",
             "reviewsNumber": "54",
             "departureTime": "12:00",
-            "arrivalTime": "01:28"
+            "arrivalTime": "01:28",
+            "name": "Emirates A380 Airbus",
+            "location": "Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437"
         },
         {
             "id": "4",
@@ -34,7 +54,9 @@
             "rate": "4,4",
             "reviewsNumber": "54",
             "departureTime": "12:00",
-            "arrivalTime": "01:28"
+            "arrivalTime": "01:28",
+            "name": "Emirates A380 Airbus",
+            "location": "Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437"
         }
     ],
     "me": {

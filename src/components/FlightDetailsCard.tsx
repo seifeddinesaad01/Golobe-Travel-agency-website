@@ -1,17 +1,17 @@
 
 import Image from "next/image"
 import flyEmirates from "../../public/FindFlights/flyEmirates.png"
-export default function FlighDetailsCard() {
+export default function FlighDetailsCard({departureTime, arrivalTime, image, returnDate, lastingTime}:any) {
     return (
         <div className="bg-white rounded-md p-4 shadow-md  mb-10 w-[95%] self-center flex flex-col pb-10">
             <div className="flex justify-between items-center mb-4">
                 <div className="flex flex-col items-center space-x-2 gap-2">
-                    <p className="font-bold text-xl">Return Wed, Dec 8</p>
+                    <p className="font-bold text-xl">Return {returnDate}</p>
                     <div className="flex items-center justify-center self-start border border-gray-300 p-2 rounded-md gap-2">
-                        <Image
+                        <img
                             alt="Emirates logo"
                             className="h-14 w-16"
-                            src={flyEmirates}
+                            src={image || flyEmirates}
                         />
                         <div className="flex flex-col justify-center items-center gap-1">
                             <span className="font-semibold">Emirates</span>
@@ -20,7 +20,7 @@ export default function FlighDetailsCard() {
                     </div>
                 </div>
                 <div className="flex flex-col">
-                    <span className="text-sm font-semibold self-end">2h 28m</span>
+                    <span className="text-sm font-semibold self-end">{lastingTime}</span>
                     <div className="flex justify-end space-x-4 mt-4">
                         <WifiIcon className="h-5 w-5 text-gray-700" />
                         <BatteryChargingIcon className="h-5 w-5 text-gray-700" />
@@ -32,12 +32,12 @@ export default function FlighDetailsCard() {
             </div>
             <div className="flex flex-col sm:flex-row justify-between items-center md:w-[90%] lg:w-[60%] w-[90%] self-center">
                 <div className="flex items-center space-x-2">
-                    <span className="font-bold text-xl">12:00 pm</span>
+                    <span className="font-bold text-xl">{departureTime} pm</span>
                     <span className="text-gray-500">Newark(EWR)</span>
                 </div>
                 <PlaneTakeoffIcon className="h-5 w-5 text-gray-700" />
                 <div className="flex items-center space-x-2">
-                    <span className="font-bold text-xl">12:00 pm</span>
+                    <span className="font-bold text-xl">{arrivalTime} pm</span>
                     <span className="text-gray-500">Newark(EWR)</span>
                 </div>
             </div>
