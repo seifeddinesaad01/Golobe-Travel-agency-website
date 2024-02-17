@@ -12,6 +12,7 @@ import Image from 'next/image';
 import { FlightTab } from "@/app/home/components/FlightTab";
 import { cards, images } from '@/constants/data';
 import buttonIcon from "../../../public/Home/bIcon3.png"
+import GenericButton from '@/components/GenericButton';
 
 const page = () => {
   const backgroundImageUrl = 'url("https://i.ibb.co/dm3wMqJ/Frame-36-2.png")';
@@ -26,15 +27,6 @@ const page = () => {
           <h3 className="text-base md:text-lg lg:text-xl xl:text-2xl self-center sm:self-start ">Special offers to suit your plan</h3>
         </div>
       </div>
-      <div
-        style={{
-          marginTop: "-6rem",
-          borderRadius: "16px"
-        }}
-        className="shadow-lg bg-white h-40vh w-5/6 self-center p-4 rounded-16 mb-2">
-        <FlightTab title={true} buttonText="Show flight" icon={buttonIcon} href="/find-stay/listing"/>
-      </div>
-
       <div className="flex justify-center items-center flex-col gap-10 mt-10 w-[85%]">
         <div className="self-center sm:self-start flex flex-col gap-1">
           <h1 className="text-3xl font-bold text-center sm:text-left">Fall into travel</h1>

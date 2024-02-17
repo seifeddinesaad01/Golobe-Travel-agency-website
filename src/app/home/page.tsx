@@ -25,20 +25,12 @@ const page = () => {
     return (
         <div className="flex justify-center items-center flex-col bg-gray-100 w-full overflow-hidden">
             <div className='bgimage'>
-                <Header logo={Logo} flightIcon={flightIcon} stayIcon={stayIcon}/>
+                <Header logo={Logo} flightIcon={flightIcon} stayIcon={stayIcon} />
                 <div className="text-white flex flex-col justify-center items-center gap-2 mt-4">
                     <h2 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl">Helping Others</h2>
                     <h1 className="text-3xl md:text-6xl lg:text-6xl xl:text-7xl uppercase font-bold tracking-wide leading-tight font-roboto">L i v e & T r a v e l</h1>
                     <p className="text-base md:text-lg lg:text-xl xl:text-2xl">Socia offers to suit your plan</p>
                 </div>
-
-            </div>
-            <div
-                style={{
-                    marginTop: "-8rem",
-                    borderRadius: "16px"
-                }} className="shadow-lg bg-white h-40vh w-5/6 self-center p-4 rounded-16 mb-2">
-                <Tabs tabs={tabs} />
             </div>
             <div className="flex justify-center items-center flex-col w-85 gap-10 mt-10">
                 <div className="self-center sm:self-start flex flex-col gap-1">
