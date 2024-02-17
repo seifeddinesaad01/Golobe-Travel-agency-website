@@ -5,11 +5,9 @@ import Logo from "../../../../../public/Logo.png";
 import stayIcon from "../../../../../public/Home/bIcon2.png";
 import flightIcon from "../../../../../public/Home/bIcon1.png";
 import locationIcon from "../../../.././../public/FindFlights/location.png"
-import flyEmirates from "../../../.././../public/FindFlights/EmiratesShow.png"
 import clockIcon from "../../../.././../public/FindFlights/clock.png"
 import Link from 'next/link';
 import Image from 'next/image';
-import { trips } from '@/constants/data';
 import Footer from '@/components/Footer';
 import { Breadcrumb } from 'antd';
 import FlighDetailsCard from '@/components/FlightDetailsCard';
@@ -18,16 +16,16 @@ import { getFlightById } from '@/Data/Fetchs';
 import Spinner from '@/components/Spinner/Spinner';
 
 const page = () => {
-  const router = useParams();
-  const { id } = router;
+  const params = useParams();
+  const { id } = params;
   const { data, isPending, error } = getFlightById("http://localhost:8000/flights", id);
-  console.log(data?.showcaseImg);
+
   return (
     <div className='flex flex-col bg-[#fafbfcff]'>
       <Header logo={Logo} bgColor="#fff" color="black" flightIcon={flightIcon} stayIcon={stayIcon} />
       {isPending
         ?
-        <Spinner /> 
+        <Spinner />
         :
         <>
           <div className='flex flex-col sm:flex-row justify-between p-5 sm:p-10'>
@@ -71,7 +69,8 @@ const page = () => {
               <p className='text-[#ff8682ff] font-bold text-xl sm:self-end mt-2 sm:mt-0 self-start'>${data?.price}</p>
               <Link
                 className='py-2 px-6 rounded-md bg-[#8ed4bbff] w-32'
-                href="">
+                href={`${id}/booking-details`}
+              >
                 <button>Book now</button>
               </Link>
             </div>

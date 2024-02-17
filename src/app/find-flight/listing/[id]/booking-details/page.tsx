@@ -8,37 +8,34 @@ import FlighDetailsCard from '@/components/FlightDetailsCard';
 import emirates from "../../../../../../public/FindFlights/EmiratesShow.png"
 import Image from 'next/image';
 import Footer from '@/components/Footer';
-import CustomRadio from '@/components/CustomRadio';
+import { useParams } from 'next/navigation';
+import { getFlightById } from '@/Data/Fetchs';
+import Link from 'next/link';
 const page = () => {
-    const [selectedOption, setSelectedOption] = useState('option1');
-
-    const handleOptionChange = (value: string) => {
-        setSelectedOption(value);
-    };
+    const params = useParams();
+    const { id } = params;
+    const { data, isPending, error } = getFlightById("http://localhost:8000/flights", id);
 
     return (
         <div className='flex flex-col bg-[#fafafaff]'>
             <Header logo={Logo} bgColor="#fff" color="black" flightIcon={flightIcon} stayIcon={stayIcon} />
             <div className='flex flex-col-reverse sm:flex-row gap-4 w-[90%] self-center mt-20 mb-20'>
                 <div className='flex flex-col w-full'>
-                    <FlighDetailsCard />
-                    <div className='flex flex-col gap-2 bg-[#fff] p-4 rounded-lg shadow-lg self-center w-[95%]'>
-                        <CustomRadio
-                            id="option1"
-                            label="Pay in full"
-                            value="option1"
-                            checked={selectedOption === 'option1'}
-                            onChange={handleOptionChange}
-                            text='Pay the total and you are all set'
-                        />
-                        <CustomRadio
-                            id="option2"
-                            label="Pay part now, part later"
-                            value="option2"
-                            checked={selectedOption === 'option2'}
-                            onChange={handleOptionChange}
-                            text='Pay $207.43 now, and the rest ($207.43) will be automatically charged to the same payment method on Nov 14, 2022. No extra fees.'
-                        />
+                    <FlighDetailsCard
+                        departureTime={data?.departureTime}
+                        arrivalTime={data?.arrivalTime}
+                        image={data?.image}
+                        returnDate={data?.returnDate}
+                        lastingTime={data?.lastingTime}
+                    />
+                    <div className='w-[90%] self-center'>
+                        <Link
+                            className='bg-[#8ed4bbff] py-2 px-4 rounded-sm w-full'
+                            href="https://buy.stripe.com/test_3cs7sv1i1fGN1dSaEE">
+                            <button className='w-full'>
+                                Pay now
+                            </button>
+                        </Link>
                     </div>
                 </div>
                 <div className="w-full lg:w-1/3 mx-auto bg-white rounded-lg shadow-md overflow-hidden">
@@ -92,8 +89,8 @@ const page = () => {
                             </div>
                         </div>
                     </div>
-                </div>
 
+                </div>
             </div>
             <Footer />
         </div>

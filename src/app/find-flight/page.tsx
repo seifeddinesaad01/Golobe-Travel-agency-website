@@ -11,12 +11,10 @@ import { Button } from "@/components/ui/button"
 import Image from 'next/image';
 import { FlightTab } from "@/app/home/components/FlightTab";
 import { cards, images } from '@/constants/data';
-import { useFetch } from '@/Data/Fetchs';
 import buttonIcon from "../../../public/Home/bIcon3.png"
-
 const page = () => {
   const backgroundImageUrl = 'url("https://i.ibb.co/PjnvH54/Frame-36-1.png")';
-  
+
   return (
     <div className="flex justify-center items-center flex-col bg-gray-100 w-full overflow-hidden">
       <div style={{
