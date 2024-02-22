@@ -65,10 +65,9 @@ export default function SignUpForm() {
   return (
     <GuestGuard>
       {contextHolder}
-      <div className="min-h-screen bg-white flex justify-center flex-col-reverse sm:flex-row">
-        <div
-          className="flex justify-center items-center lg:w-1/2 p-20"
-        >
+      <div className="min-h-screen flex flex-col sm:flex-row">
+        <div className="flex-1 flex justify-center py-16 image" style={{ height: "100vh" }}>
+
           <ImageSlider urls={validUrls} />
         </div>
         <div className="w-full lg:w-1/2 p-8">
@@ -107,9 +106,9 @@ export default function SignUpForm() {
                   className="flex-1"
                 />
               </div>
-              
+
               <div className="flex gap-4">
-              <Input
+                <Input
                   name='email'
                   onBlur={formik.handleBlur}
                   value={formik.values.email}
@@ -137,31 +136,31 @@ export default function SignUpForm() {
                 />
               </div>
               <Input
-                  name='password'
-                  onBlur={formik.handleBlur}
-                  value={formik.values.password}
-                  onChange={formik.handleChange}
-                  errors={formik.errors}
-                  touched={formik.touched}
-                  placeholder='••••••••'
-                  type="password"
-                  id="password"
-                  text='Password'
-                  className="flex-1"
-                />
-                <Input
-                  name='confirmPassword'
-                  onBlur={formik.handleBlur}
-                  value={formik.values.confirmPassword}
-                  onChange={formik.handleChange}
-                  errors={formik.errors}
-                  touched={formik.touched}
-                  placeholder='••••••••'
-                  type="password"
-                  id="password"
-                  text='Confirm Password'
-                  className="flex-1"
-                />
+                name='password'
+                onBlur={formik.handleBlur}
+                value={formik.values.password}
+                onChange={formik.handleChange}
+                errors={formik.errors}
+                touched={formik.touched}
+                placeholder='••••••••'
+                type="password"
+                id="password"
+                text='Password'
+                className="flex-1"
+              />
+              <Input
+                name='confirmPassword'
+                onBlur={formik.handleBlur}
+                value={formik.values.confirmPassword}
+                onChange={formik.handleChange}
+                errors={formik.errors}
+                touched={formik.touched}
+                placeholder='••••••••'
+                type="password"
+                id="password"
+                text='Confirm Password'
+                className="flex-1"
+              />
               <div className="flex items-center">
                 <input
                   className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
@@ -169,7 +168,7 @@ export default function SignUpForm() {
                   type="checkbox"
                 />
                 <label className="ml-2 block text-sm text-gray-900" htmlFor="terms">
-                  I agree to all the rules  
+                  I agree to all the rules
                 </label>
               </div>
               <Button type="submit" className="w-full text-black" style={{
@@ -181,11 +180,11 @@ export default function SignUpForm() {
                 Already have an account?{" "}
                 <Link
                   href="/sign-in"
-                   style={{
-                     color: "#ff8682ff",
-                   }}
+                  style={{
+                    color: "#ff8682ff",
+                  }}
                   className=" text-base cursor-pointer pl-2 font-medium hover:text-pink-600"
-                  >
+                >
                   Login
                 </Link>
               </p>

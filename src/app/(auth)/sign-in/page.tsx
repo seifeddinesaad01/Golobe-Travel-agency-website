@@ -203,7 +203,7 @@ export default function SignIn() {
             </div>
           </div>
         </div>
-        <div className="flex-1 flex justify-center py-16 image" style={{height:"100vh"}}>
+        <div className="flex-1 flex justify-center py-16 image h-fit" style={{height:"100vh"}}>
         <ImageSlider urls={validUrls}/>
 
         </div>
