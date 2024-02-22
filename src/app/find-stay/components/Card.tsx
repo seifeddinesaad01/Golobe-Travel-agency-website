@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { Divider } from "antd"
 interface Icard {
-    image: string,
+    image?: any,
     id: string,
     price: string,
     rate: string,

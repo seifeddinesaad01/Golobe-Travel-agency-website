@@ -3,7 +3,7 @@
         {
             "id": "1",
             "image": "https://i.ibb.co/Tmr0vJQ/fly-Emirates.png",
-            "bgImage":"https://i.ibb.co/qWBG020/Rectangle-3-11.png",
+            "bgImage": "https://i.ibb.co/qWBG020/Rectangle-3-11.png",
             "price": "104",
             "rate": "4,2",
             "reviewsNumber": "54",
@@ -28,7 +28,7 @@
         {
             "id": "2",
             "image": "https://i.ibb.co/X79HhRP/flyDubai.png",
-            "bgImage":"https://i.ibb.co/jTzSRQ4/flydubai.jpg",
+            "bgImage": "https://i.ibb.co/jTzSRQ4/flydubai.jpg",
             "price": "380",
             "rate": "4,4",
             "reviewsNumber": "54",
@@ -96,6 +96,56 @@
                 "https://i.ibb.co/1KFb9VQ/Frame-142.png",
                 "https://i.ibb.co/yPryRrx/Frame-189.png",
                 "https://i.ibb.co/0sBqK6k/Frame-186.png"
+            ]
+        }
+    ],
+    "stays": [
+        {
+            "name": "Eresin Hotels Sultanahmet -Boutique Class",
+            "location": "Kucukayasofya No. 40 Sultanahmet, Istanbul 34022",
+            "price": "241",
+            "reviewsNumber": "66",
+            "rate": "4,6",
+            "id": "1",
+            "image": "",
+            "rooms": [
+                {
+                    "image": "",
+                    "name": "",
+                    "price": ""
+                }
+            ],
+            "reviewers": [
+                {
+                    "avatar": "",
+                    "name": "",
+                    "rate": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "hotelName": "CVK Park Bosphorus Hotel Istanbul",
+            "image": "hotel2",
+            "price": "104",
+            "rate": "4,2",
+            "reviewsNumber": "34",
+            "location": "Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437",
+            "rooms": [
+                {
+                    "image": "",
+                    "name": "",
+                    "price": ""
+                }
+            ],
+            "reviewers": [
+                {
+                    "avatar": "",
+                    "name": "",
+                    "rate": "",
+                    "description": ""
+                }
             ]
         }
     ],
