@@ -107,7 +107,55 @@
             "reviewsNumber": "66",
             "rate": "4,6",
             "id": "1",
-            "image": "",
+            "image": "https://i.ibb.co/16Z6Pv0/Rectangle-3-15.png",
+            "rooms": [
+                {
+                    "image": "",
+                    "name": "",
+                    "price": ""
+                }
+            ],
+            "reviewers": [
+                {
+                    "avatar": "",
+                    "name": "",
+                    "rate": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "hotelName": "CVK Park Bosphorus Hotel Istanbul",
+            "image": "https://i.ibb.co/qxJ8T0y/Rectangle-3-16.png",
+            "price": "104",
+            "rate": "4,2",
+            "reviewsNumber": "34",
+            "location": "Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437",
+            "rooms": [
+                {
+                    "image": "",
+                    "name": "",
+                    "price": ""
+                }
+            ],
+            "reviewers": [
+                {
+                    "avatar": "",
+                    "name": "",
+                    "rate": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "hotelName": "CVK Park Bosphorus Hotel Istanbul",
+            "image": "https://i.ibb.co/8K2Qvcy/Rectangle-3-17.png",
+            "price": "104",
+            "rate": "4,2",
+            "reviewsNumber": "34",
+            "location": "Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437",
             "rooms": [
                 {
                     "image": "",
@@ -127,7 +175,7 @@
         {
             "id": "4",
             "hotelName": "CVK Park Bosphorus Hotel Istanbul",
-            "image": "hotel2",
+            "image": "https://i.ibb.co/98RV2Zh/Rectangle-3-18.png",
             "price": "104",
             "rate": "4,2",
             "reviewsNumber": "34",

@@ -9,6 +9,8 @@ import CheckboxFilter from '@/components/CheckboxFilter';
 import {  staysList } from '@/constants/data';
 import Footer from '@/components/Footer';
 import Card from '@/app/find-stay/components/Card';
+import { useFetch } from '@/Data/Fetchs';
+import Spinner from '@/components/Spinner/Spinner';
 
 const airlines = [
     "Emirated",
@@ -23,6 +25,7 @@ const trips = [
     "My Dates Are Flexible"
 ]
 const page = () => {
+    const { data, isPending, error } = useFetch("http://localhost:8000/stays")
     return (
         <div className='flex flex-col bg-[#fafbfcff]'>
             <Header
@@ -41,7 +44,9 @@ const page = () => {
                     <CheckboxFilter checkboxs={trips} title="Trips" />
                 </div>
                 <div className='w-full flex flex-col gap-4'>
-                    {staysList?.map((hotel) => {
+                {isPending ? (
+                        <Spinner />
+                    ) : (data?.map((hotel:any) => {
                         return <Card
                             image={hotel.image} 
                             id={hotel.id}
@@ -51,7 +56,7 @@ const page = () => {
                             location={hotel.location}
                             hotelName={hotel.hotelName}
                         />
-                    })}
+                    }))}
                     <button className='w-full py-2 px-4 text-white bg-[#112111ff] rounded-md'>Show more results</button>
                 </div>
             </div>

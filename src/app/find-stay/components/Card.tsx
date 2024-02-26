@@ -14,7 +14,7 @@ export default function Card({ image, id, price, rate, reviewsNumber, location, 
         <div className="bg-white rounded-lg shadow-md overflow-hidden w-[90%] ">
             <div className="md:flex w-full">
                 <div className="md:flex-shrink-0">
-                    <Image
+                    <img
                         alt="Hotel"
                         className="h-48 object-cover md:h-full w-full"
                         height="192"
