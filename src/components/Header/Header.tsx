@@ -79,6 +79,7 @@ const Header = ({ bgColor, logo, color, flightIcon, stayIcon }: any) => {
       <div
         className={!isMenuOpen ? "drawer" : 'hiddenDrawer'}
       >
+      
         <ImCross onClick={() => setMenuOpen(false)} />
       </div>
     </header>

@@ -31,7 +31,7 @@ interface IUser {
 export const MenuDropDown = ({ user }: any) => {
     return (
         <Dropdown menu={{ items }} trigger={['click']}>
-            <a onClick={(e) => e.preventDefault()} className='cursor-pointer'>
+            <a onClick={(e) => e.preventDefault()} className='cursor-pointer flex'>
                 <Space>
                     <img src="https://i.ibb.co/vL7MPSV/113129314.jpg" alt="avatar" width="40" height={40} style={{
                         borderRadius: "50%"
@@ -40,6 +40,7 @@ export const MenuDropDown = ({ user }: any) => {
                     <DownOutlined />
                 </Space>
             </a>
+            
         </Dropdown>
     )
 };

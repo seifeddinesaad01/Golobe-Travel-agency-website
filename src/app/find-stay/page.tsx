@@ -11,21 +11,19 @@ import { Button } from "@/components/ui/button"
 import Image from 'next/image';
 import { cards, images } from '@/constants/data';
 import buttonIcon from "../../../public/Home/bIcon3.png"
+import backgroundImage from "../../../public/FindStays/backgroundImage.png"
 import Link from 'next/link';
 
-const page = () => {
-  const backgroundImageUrl = 'url("https://i.ibb.co/dm3wMqJ/Frame-36-2.png")';
+const Page: React.FC = () => {
   return (
     <div className="flex justify-center items-center flex-col bg-gray-100 w-full overflow-hidden">
-      <div style={{
-        backgroundImage: backgroundImageUrl
-      }} className='bgimage1'>
+      <div className="bgimage1" style={{ backgroundImage: `url(${backgroundImage.src})` }}>
         <Header logo={Logo} bgColor="#fff" color="black" flightIcon={flightIcon} stayIcon={stayIcon} />
-        <div className="slef-center sm:self-start text-white flex flex-col justify-start items-center pl-0 sm:pl-24 gap-2 mt-4">
-          <h2 className="text-3xl md:text-5xl lg:text-5xl xl:text-6xl text-center sm:text-left">Make your travel <br /> whishlist, we'll do <br /> the rest</h2>
-          <h3 className="text-base md:text-lg lg:text-xl xl:text-2xl self-center sm:self-start ">Special offers to suit your plan</h3>
+        <div className="self-center sm:self-start text-white flex flex-col justify-start items-center pl-0 sm:pl-24 gap-2 mt-4">
+          <h2 className="text-3xl md:text-5xl lg:text-5xl xl:text-6xl text-center sm:text-left">Make your travel <br /> wishlist, we'll do <br /> the rest</h2>
+          <h3 className="text-base md:text-lg lg:text-xl xl:text-2xl self-center sm:self-start">Special offers to suit your plan</h3>
           <Link
-            className='flex justify-center items-center slef-center sm:self-start gap-2 bg-[#8ed4bbff] text-black p-2 rounded-md'
+            className='flex justify-center items-center self-center sm:self-start gap-2 bg-[#8ed4bbff] text-black p-2 rounded-md'
             href="/find-stay/listing"
           >
             <Image src={buttonIcon} alt="icon" />
@@ -38,17 +36,19 @@ const page = () => {
           <h1 className="text-3xl font-bold text-center sm:text-left">Fall into travel</h1>
           <p className="text-lg text-gray-500 text-center sm:text-left">
             Going somewhere to celebrate this season? Whether you’re going home or somewhere to roam, we’ve got <br />
-            the travel tools to get you to your destination.</p>
+            the travel tools to get you to your destination.
+          </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 items-center justify-center w-full m-10">
-          {cards.map((card) => {
-            return <Card
+          {cards.map((card) => (
+            <Card
+              key={card.title}
               title={card.title}
               description={card.description}
               imageUrl={card.imageUrl}
               price={card.price}
             />
-          })}
+          ))}
         </div>
       </div>
       <div className="flex justify-center items-center flex-col gap-10 mt-10 w-[85%] pb-16 pt-8">
@@ -56,16 +56,17 @@ const page = () => {
           <h1 className="text-3xl font-bold text-center sm:text-left">Fall into travel</h1>
           <p className="text-lg text-black text-center sm:text-left">
             Going somewhere to celebrate this season? Whether you’re going home or somewhere to roam, we’ve got
-            the travel tools to get you to your <br /> destination.</p>
+            the travel tools to get you to your <br /> destination.
+          </p>
         </div>
         <div className="lg:flex lg:items-center lg:justify-between gap-4 flex-wrap lg:flex-nowrap">
-          <div className="bg-[#8ed4bbff] lg:flex lg:flex-col lg:justify-between lg:w-1/2  border-solid-2 rounded-2xl px-8 py-5 h-full">
+          <div className="bg-[#8ed4bbff] lg:flex lg:flex-col lg:justify-between lg:w-1/2 border-solid-2 rounded-2xl px-8 py-5 h-full">
             <div className='flex flex-col gap-6 h-full'>
               <div className="flex items-center justify-between lg:mt-0">
-                <h1 className="text-3xl font-semibold  lg:text-5xl">Backpacking Sri Lanka</h1>
+                <h1 className="text-3xl font-semibold lg:text-5xl">Backpacking Sri Lanka</h1>
                 <div className="text-right bg-white p-2 border-solid-2 rounded-lg">
-                  <span className="block text-sm font-medium ">From</span>
-                  <span className="block text-2xl font-bold ">$700</span>
+                  <span className="block text-sm font-medium">From</span>
+                  <span className="block text-2xl font-bold">$700</span>
                 </div>
               </div>
               <p>
@@ -77,21 +78,19 @@ const page = () => {
             <Button className="bg-white text-black text-lg">Book Flight</Button>
           </div>
           <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 lg:mt-0 lg:w-1/2 lg:grid-cols-2">
-            {images.map((image, index) => {
-              return <Image
+            {images.map((image, index) => (
+              <Image
                 key={index}
                 alt="Tea fields in Sri Lanka"
                 className="rounded-lg"
-                // height="200"
                 src={image}
                 style={{
-                  //  aspectRatio: "300/200",
                   objectFit: "cover",
                   width: '100%',
                 }}
                 width="300"
               />
-            })}
+            ))}
           </div>
         </div>
       </div>
@@ -100,4 +99,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page;
