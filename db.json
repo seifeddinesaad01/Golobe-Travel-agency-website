@@ -200,6 +200,8 @@
     "me": {
         "name": "Seif Saad",
         "age": 30,
-        "email": "john@example.com"
+        "email": "john@example.com",
+        "avatar":"",
+        "coverImg":""
     }
 }
