@@ -9,7 +9,7 @@ const GuestGuard:any = ({ children }:any) => {
 
     // If no token, redirect to login page
     if (token) {
-        window.location.href = '/';
+        window.location.href = '/home';
     }
   }, []); // Only run this effect once when the component mounts
 
