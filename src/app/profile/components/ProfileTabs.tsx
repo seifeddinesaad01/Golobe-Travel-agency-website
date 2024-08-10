@@ -1,6 +1,9 @@
 import React from 'react';
 import { ConfigProvider, Tabs } from 'antd';
 import type { TabsProps } from 'antd';
+import Account from './Account';
+import History from './History';
+import Payment from './Payment';
 
 const onChange = (key: string) => {
   console.log(key);
@@ -10,17 +13,17 @@ const items: TabsProps['items'] = [
   {
     key: '1',
     label: 'Account',
-    children: 'Content of Tab Pane 1',
+    children: <Account />,
   },
   {
     key: '2',
     label: 'History',
-    children: 'Content of Tab Pane 2',
+    children: <History />,
   },
   {
     key: '3',
     label: 'Payment methods',
-    children: 'Content of Tab Pane 3',
+    children: <Payment />,
   },
 ];
 
