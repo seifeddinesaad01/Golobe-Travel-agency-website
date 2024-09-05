@@ -9,7 +9,7 @@ import Logo from "../../../public/Logo.png";
 import Card from './components/Card';
 import { Button } from "@/components/ui/button"
 import Image from 'next/image';
-import { FlightTab } from "@/app/home/components/FlightTab";
+import { FlightTab } from "@/app/components/FlightTab";
 import { cards, images } from '@/constants/data';
 import buttonIcon from "../../../public/Home/bIcon3.png"
 import Link from 'next/link';

@@ -1,5 +1,5 @@
 import Image from "next/image"
-import flighIcon from "../../../../public/Home/bIcon3.png"
+import flighIcon from "../../../public/Home/bIcon3.png"
 interface ItripDisplay {
   image: any,
   title: string,

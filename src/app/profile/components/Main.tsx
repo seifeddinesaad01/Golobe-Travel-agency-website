@@ -1,11 +1,18 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import coverImage from '../../../../public/profile/coverImage.png'
 import editIcon from '../../../../public/profile/editIcon.png'
 
 import Image from 'next/image'
 import ProfileTabs from './ProfileTabs'
+import PopUp from './Modal'
 
 const Main = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const showModal = () => {
+        setIsModalOpen(isModalOpen);
+    };
     return (
         <div className='flex flex-col justify-center items-center'>
             <div className='flex flex-col justify-center items-center'>
@@ -18,7 +25,7 @@ const Main = () => {
                             objectFit: "cover",
                             border: "4px solid #ff8682"
                         }} />
-                        <Image src={editIcon} alt="icon" className='self-end mt-[-3rem] cursor-pointer'/>
+                        <Image src={editIcon} alt="icon" className='self-end mt-[-3rem] cursor-pointer' onClick={showModal}/>
                     </div>
 
                     <h2 className='text-lg font-bold'>Saif Saad</h2>
@@ -26,6 +33,7 @@ const Main = () => {
                 </div>
             </div>
             <ProfileTabs />
+            <PopUp setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen}/>
 
         </div>
     )

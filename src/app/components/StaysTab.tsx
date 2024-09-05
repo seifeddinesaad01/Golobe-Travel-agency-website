@@ -2,7 +2,7 @@ import { Input } from "@/components/Input";
 import { useFormik } from "formik";
 import Image from "next/image";
 import * as yup from "yup";
-import flighIcon from "../../../../public/Home/bIcon3.png"
+import flighIcon from "../../../public/Home/bIcon3.png"
 import Link from "next/link";
 const validationSchema = yup.object({
     // email: yup.string().email("Invalid email address").required("Required"),
