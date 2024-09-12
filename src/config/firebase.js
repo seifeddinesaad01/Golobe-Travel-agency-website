@@ -1,5 +1,6 @@
-import { initializeApp } from "firebase/app";
+import { getApps, initializeApp } from "firebase/app";
 import { GithubAuthProvider, GoogleAuthProvider, getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseCredentials = {
   apiKey: "AIzaSyCtYVs6N56Z12Fm3spZwWgNB_NnZdxv9rY",
@@ -19,10 +20,12 @@ Object.keys(firebaseCredentials).forEach((key) => {
 });
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
 export const googleProvider = new GoogleAuthProvider();
 export const githubProvider = new GithubAuthProvider();
 export const firebaseConfig = firebaseCredentials;
+export const app = initializeApp(firebaseConfig);
+
 export const firebaseApp =
   getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
 export const auth = getAuth(firebaseApp);
+export const db = getFirestore(app);

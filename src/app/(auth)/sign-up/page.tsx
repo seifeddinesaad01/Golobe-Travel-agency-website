@@ -14,6 +14,8 @@ import Logo from '../../../../public/Logo.png';
 import Image from 'next/image';
 import { Input } from '@/components/Input';
 import { useRouter } from 'next/navigation';
+import { db } from '../../../config/firebase'; // Assuming Firestore is set up and imported
+import { doc, setDoc } from "firebase/firestore";
 
 const validationSchema = Yup.object({
   firstName: Yup.string().required('First Name is required'),
@@ -32,7 +34,16 @@ export default function SignUpForm() {
 
   const handleSignup = async (values: any) => {
     try {
-      await createUserWithEmailAndPassword(auth, values.email, values.password);
+      const userCredential = await createUserWithEmailAndPassword(auth, values.email, values.password);
+      const user = userCredential.user;
+      // Save additional user info in Firestore
+      await setDoc(doc(db, "users"), {
+        _id:user.uid,
+        name: values.name,
+        phoneNumber: values.phoneNumber,
+        email: values.email,
+      });
+
       api.success({
         message: "User registred succesfully",
         placement: 'topRight',
